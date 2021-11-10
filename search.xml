@@ -106,77 +106,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo 搭建博客填坑</title>
-    <url>/2020/07/06/Hexo%20%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E5%A1%AB%E5%9D%91/</url>
-    <content><![CDATA[<h2 id="切换-Next-主题"><a href="#切换-Next-主题" class="headerlink" title="切换 Next 主题"></a>切换 Next 主题</h2><ol>
-<li>找到这个 next 主题的 <a href="https://github.com/theme-next/hexo-theme-next" target="_blank" rel="noopener">GitHub 网站</a></li>
-<li><p>进入你的博客本地路径，例如我的是放在 D 盘下，然后将主题 clone 到本地</p>
- <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd D:\myblog\blog</span><br><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;theme-next&#x2F;hexo-theme-next themes&#x2F;next</span><br></pre></td></tr></table></figure>
- <a id="more"></a></li>
-<li><p>修改配置文件<br>打开根目录下的·<code>_config.yml</code> 的站点配置文件，找到themes的配置项，修改为next</p>
- <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">theme: next</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>调试、发布</p>
-<p> 输入调试指令，在浏览器中输入localhost:4000查看</p>
- <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo server --debug</span><br></pre></td></tr></table></figure>
-<p> 在本地查看无误之后，输入生成和发布命令,就可已将新主题发布到自己的博客网站上了。</p>
- <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
-<p> 如出现缓存引起的异常，可以在生成命令前执行清除缓存命令</p>
- <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<hr>
-<h2 id="Hexo-部署-Next-主题网页字体不生效"><a href="#Hexo-部署-Next-主题网页字体不生效" class="headerlink" title="Hexo 部署 Next 主题网页字体不生效"></a>Hexo 部署 Next 主题网页字体不生效</h2><p>说明：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">hexo 下的 _config.yml 称为站点配置文件</span><br><span class="line">themes/next 中的_config.yml 称为主题配置文件</span><br></pre></td></tr></table></figure>
-<ol>
-<li><p>按照hexo 的官方文档，在站点配置文件设置语言（第7行）</p>
- <figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Site</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">Lee</span> <span class="string">的个人博客</span></span><br><span class="line"><span class="attr">subtitle:</span> <span class="string">'进击的技术客'</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">'Everything will be ok!'</span></span><br><span class="line"><span class="attr">keywords:</span> <span class="string">'努力一片天'</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">Lee</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">zh-Hans</span></span><br><span class="line"><span class="attr">timezone:</span> <span class="string">''</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>这样还是不起作用的话,请查看 <code>theme/next/languages/</code> 目录下是否有 <code>zh-Hans.yml</code> 文件.一般是有 <code>zh-CN.yml</code> ，所以要把 <code>zh-CN.yml</code> 文件改成名字为 <code>zh-Hans.yml</code> 就可以了</p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo爬坑</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>解决Github上md文件[toc]无法创建目录的问题</title>
-    <url>/2020/07/04/github%E7%9B%AE%E5%BD%95%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<h2 id="解决GitHub上md文件-toc-无法创建目录的问题"><a href="#解决GitHub上md文件-toc-无法创建目录的问题" class="headerlink" title="解决GitHub上md文件[toc]无法创建目录的问题"></a>解决GitHub上md文件[toc]无法创建目录的问题</h2><p>熟悉markdown都知道可以使用<code>[TOC]</code>来自动生成markdown文件的标题目录，但是GitHub却不支持<code>[TOC]</code>标签</p>
-<p>因此这里介绍一种插件方法一键生成目录</p>
-<p><strong>注意</strong>：这里只是针对 VScode 用户</p>
-<a id="more"></a>
-<hr>
-<h2 id="步骤如下"><a href="#步骤如下" class="headerlink" title="步骤如下"></a>步骤如下</h2><ul>
-<li>1.安装<code>Markdown All in One</code>这个插件 (看下载量就知道好不好了😊)</li>
-</ul>
-<p><img data-src="/images/loading.gif" data-original="/images/markdown插件.png" alt="Markdown All in One"></p>
-<ul>
-<li>2.对于你要生成目录的md文件，使用VScode快捷键 ctrl + shift + p 打开界面如下：</li>
-</ul>
-<p><img data-src="/images/loading.gif" data-original="/images/生成目录.png" alt="Markdown all in one插件操作"></p>
-<ul>
-<li>3.然后输入 <code>Markdown All in One: Create Table of Contents</code> 回车即可生成目录，是不是很方便呢</li>
-</ul>
-<p>上传至GitHub上也亲测有效哦</p>
-<h2 id="总结步骤"><a href="#总结步骤" class="headerlink" title="总结步骤"></a>总结步骤</h2><ol>
-<li>安装vscode插件 Markdown All in One</li>
-<li>快捷键 ctrl + shift + p 打开后输入<code>Markdown All in One: Create Table of Contents</code></li>
-<li>over(●’◡’●)</li>
-</ol>
-]]></content>
-      <categories>
-        <category>GitHub</category>
-      </categories>
-      <tags>
-        <tag>GitHub</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>hexo中启用mathjax的方式</title>
     <url>/2021/01/04/hexo%E4%BD%BF%E7%94%A8mathjax/</url>
     <content><![CDATA[<h2 id="hexo中如何正确使用mathjax"><a href="#hexo中如何正确使用mathjax" class="headerlink" title="hexo中如何正确使用mathjax"></a>hexo中如何正确使用mathjax</h2><p>今天我在使用hexo写博客的时候，惊讶的发现md文档写的mathjax公式在vscode编辑器上预览是可以正常显示的，但是在部署到博客上时却未能正确显示，按照如下5个步骤操作，即可实现</p>
@@ -223,36 +152,72 @@
       </tags>
   </entry>
   <entry>
-    <title>leetcode每日一题2020.1.14</title>
-    <url>/2021/01/14/lc2021.1.14/</url>
-    <content><![CDATA[<h2 id="1018-可被-5-整除的二进制前缀"><a href="#1018-可被-5-整除的二进制前缀" class="headerlink" title="1018. 可被 5 整除的二进制前缀"></a><a href="https://leetcode-cn.com/problems/binary-prefix-divisible-by-5/" target="_blank" rel="noopener">1018. 可被 5 整除的二进制前缀</a></h2><h3 id="一、题目"><a href="#一、题目" class="headerlink" title="一、题目"></a>一、题目</h3><p>给定由若干 <code>0</code> 和 <code>1</code> 组成的数组 <code>A</code>。我们定义 <code>N_i</code>：从 <code>A[0]</code> 到 <code>A[i]</code> 的第 <code>i</code> 个子数组被解释为一个二进制数（从最高有效位到最低有效位）。</p>
-<p>返回布尔值列表 <code>answer</code>，只有当 <code>N_i</code> 可以被 <code>5</code> 整除时，答案 <code>answer[i]</code> 为 <code>true</code>，否则为 <code>false</code>。</p>
+    <title>leetcode每日一题2020.1.13</title>
+    <url>/2021/01/13/lc2021.1.13/</url>
+    <content><![CDATA[<h2 id="684-冗余连接"><a href="#684-冗余连接" class="headerlink" title="684. 冗余连接"></a><a href="https://leetcode-cn.com/problems/redundant-connection/" target="_blank" rel="noopener">684. 冗余连接</a></h2><h3 id="一、题目"><a href="#一、题目" class="headerlink" title="一、题目"></a>一、题目</h3><p>在本问题中, 树指的是一个连通且无环的无向图。</p>
+<p>输入一个图，该图由一个有着N个节点 (节点值不重复<code>1, 2, ..., N</code>) 的树及一条附加的边构成。附加的边的两个顶点包含在1到N中间，这条附加的边不属于树中已存在的边。</p>
+<p>结果图是一个以边组成的二维数组。每一个边的元素是一对 <code>[u, v]</code> ，满足 <code>u &lt; v</code>，表示连接顶点 <code>u</code> 和 <code>v</code>的无向图的边。</p>
+<p>返回一条可以删去的边，使得结果图是一个有着<code>N</code>个节点的树。如果有多个答案，则返回二维数组中最后出现的边。答案边 <code>[u, v]</code> 应满足相同的格式 <code>u &lt; v</code>。</p>
 <a id="more"></a>
 <p><strong>示例1：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：[0,1,1]</span><br><span class="line">输出：[true,false,false]</span><br><span class="line">解释：</span><br><span class="line">输入数字为 0, 01, 011；也就是十进制中的 0, 1, 3 。只有第一个数可以被 5 整除，因此 answer[0] 为真。</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: [[1,2], [1,3], [2,3]]</span><br><span class="line">输出: [2,3]</span><br><span class="line">解释: 给定的无向图为:</span><br><span class="line">  1</span><br><span class="line"> &#x2F; \</span><br><span class="line">2 - 3</span><br></pre></td></tr></table></figure>
 <p><strong>示例2：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：[1,1,1]</span><br><span class="line">输出：[false,false,false]</span><br></pre></td></tr></table></figure>
-<p><strong>示例3：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：[0,1,1,1,1,1]</span><br><span class="line">输出：[true,false,false,false,true,false]</span><br></pre></td></tr></table></figure>
-<p><strong>示例4：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：[1,1,1,0,1]</span><br><span class="line">输出：[false,false,false,false,false]</span><br></pre></td></tr></table></figure>
-<p><strong>提示：</strong></p>
-<ol>
-<li><code>1 ≤ A.length ≤ 30000</code></li>
-<li><code>A[i]</code> 为 <code>0</code> 或 <code>1</code></li>
-</ol>
-<h3 id="二、题解"><a href="#二、题解" class="headerlink" title="二、题解"></a>二、题解</h3><h4 id="模拟法"><a href="#模拟法" class="headerlink" title="模拟法"></a>模拟法</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">题解：</span><br><span class="line"></span><br><span class="line">对数组 [A[0], A[1], A[2]] 模拟一下这个过程： </span><br><span class="line"></span><br><span class="line">    第一个数N1：A[0]，然后对 5 去余判断是否为0</span><br><span class="line">    第二个数N2：A[0] * 2 + A[1]，然后对 5 去余判断是否为0</span><br><span class="line">    第三个数N3：A[0] * 4 + A[1] * 2 + A[2]，然后对 5 去余判断是否为0</span><br><span class="line"></span><br><span class="line">我们可以发现 N(i) &#x3D; N(i-1) * 2 + A[i-1]</span><br><span class="line"></span><br><span class="line">考虑到数组 A 可能很长，如果每次都保留 N(i) 的值，则可能导致溢出。</span><br><span class="line"></span><br><span class="line">但是因为只需要知道 N(i) 是否可以被 5 整除，因而我们可以每一轮只更新 N(i) % 5，结果不会影响，即</span><br><span class="line"></span><br><span class="line">N(i) &#x3D; (N(i-1) * 2 + A[i-1]) % 5</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: [[1,2], [2,3], [3,4], [1,4], [1,5]]</span><br><span class="line">输出: [1,4]</span><br><span class="line">解释: 给定的无向图为:</span><br><span class="line">5 - 1 - 2</span><br><span class="line">    |   |</span><br><span class="line">    4 - 3</span><br></pre></td></tr></table></figure>
+<p><strong>注意：</strong></p>
 <ul>
-<li>时间复杂度：O($n$)，其中 n 是数组 A 的长度。</li>
-<li>空间复杂度：O(1)</li>
+<li>输入的二维数组大小在 3 到 1000。</li>
+<li>二维数组中的整数在1到N之间，其中N是输入数组的大小。</li>
 </ul>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> prefixesDivBy5 = <span class="function"><span class="keyword">function</span>(<span class="params">A</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> ret = [];</span><br><span class="line">    <span class="keyword">let</span> len = A.length;</span><br><span class="line">    <span class="keyword">let</span> prefix = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i=<span class="number">0</span>; i&lt;len; i++) &#123;</span><br><span class="line">        prefix = (prefix * <span class="number">2</span> + A[i]) % <span class="number">5</span>;</span><br><span class="line">        ret.push(prefix === <span class="number">0</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ret</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="二、题解"><a href="#二、题解" class="headerlink" title="二、题解"></a>二、题解</h3><h4 id="并查集"><a href="#并查集" class="headerlink" title="并查集"></a>并查集</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">题解：</span><br><span class="line"></span><br><span class="line">在一棵树中，边的数量比节点的数量少 1。如果一棵树有 N 个节点，则这棵树有 N−1 条边。这道题中的图在树的基础上多了一条附加的边，因此边的数量也是 N。</span><br><span class="line"></span><br><span class="line">树是一个连通且无环的无向图，在树中多了一条附加的边之后就会出现环，因此附加的边即为导致环出现的边。</span><br><span class="line"></span><br><span class="line">可以通过并查集寻找附加的边。初始时，每个节点都属于不同的连通分量。遍历每一条边，判断这条边连接的两个顶点是否属于相同的连通分量。</span><br><span class="line"></span><br><span class="line">    • 如果两个顶点属于不同的连通分量，则说明在遍历到当前的边之前，这两个顶点之间不连通，因此当前的边不会导致环出现，合并这两个顶点的连通分量。</span><br><span class="line"></span><br><span class="line">    • 如果两个顶点属于相同的连通分量，则说明在遍历到当前的边之前，这两个顶点之间已经连通，因此当前的边导致环出现，为附加的边，将当前的边作为答案返回。</span><br></pre></td></tr></table></figure>
+<ul>
+<li>时间复杂度：O(NlogN)，其中 N 是图中的节点个数。</li>
+<li>空间复杂度：O(N)</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> findRedundantConnection = <span class="function"><span class="keyword">function</span> (<span class="params">edges</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> nodesCount = edges.length;</span><br><span class="line">    <span class="keyword">const</span> parent = <span class="keyword">new</span> <span class="built_in">Array</span>(nodesCount + <span class="number">1</span>).fill(<span class="number">0</span>).map(<span class="function">(<span class="params">value, index</span>) =&gt;</span> index);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; nodesCount; i++) &#123;</span><br><span class="line">        <span class="keyword">const</span> [node1, node2] = edges[i];</span><br><span class="line">        <span class="keyword">if</span> (find(parent, node1) != find(parent, node2)) &#123;</span><br><span class="line">            union(parent, node1, node2);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> edges[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> [<span class="number">0</span>];</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> union = <span class="function">(<span class="params">parent, index1, index2</span>) =&gt;</span> &#123;</span><br><span class="line">    parent[find(parent, index1)] = find(parent, index2);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> find = <span class="function">(<span class="params">parent, index</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (parent[index] !== index) &#123;</span><br><span class="line">        parent[index] = find(parent, parent[index]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> parent[index];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>leetcode</category>
       </categories>
       <tags>
         <tag>leetcode每日一题</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo 搭建博客填坑</title>
+    <url>/2020/07/06/Hexo%20%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E5%A1%AB%E5%9D%91/</url>
+    <content><![CDATA[<h2 id="切换-Next-主题"><a href="#切换-Next-主题" class="headerlink" title="切换 Next 主题"></a>切换 Next 主题</h2><ol>
+<li>找到这个 next 主题的 <a href="https://github.com/theme-next/hexo-theme-next" target="_blank" rel="noopener">GitHub 网站</a></li>
+<li><p>进入你的博客本地路径，例如我的是放在 D 盘下，然后将主题 clone 到本地</p>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd D:\myblog\blog</span><br><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;theme-next&#x2F;hexo-theme-next themes&#x2F;next</span><br></pre></td></tr></table></figure>
+ <a id="more"></a></li>
+<li><p>修改配置文件<br>打开根目录下的·<code>_config.yml</code> 的站点配置文件，找到themes的配置项，修改为next</p>
+ <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">theme: next</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>调试、发布</p>
+<p> 输入调试指令，在浏览器中输入localhost:4000查看</p>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo server --debug</span><br></pre></td></tr></table></figure>
+<p> 在本地查看无误之后，输入生成和发布命令,就可已将新主题发布到自己的博客网站上了。</p>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+<p> 如出现缓存引起的异常，可以在生成命令前执行清除缓存命令</p>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<h2 id="Hexo-部署-Next-主题网页字体不生效"><a href="#Hexo-部署-Next-主题网页字体不生效" class="headerlink" title="Hexo 部署 Next 主题网页字体不生效"></a>Hexo 部署 Next 主题网页字体不生效</h2><p>说明：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">hexo 下的 _config.yml 称为站点配置文件</span><br><span class="line">themes/next 中的_config.yml 称为主题配置文件</span><br></pre></td></tr></table></figure>
+<ol>
+<li><p>按照hexo 的官方文档，在站点配置文件设置语言（第7行）</p>
+ <figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Site</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">Lee</span> <span class="string">的个人博客</span></span><br><span class="line"><span class="attr">subtitle:</span> <span class="string">'进击的技术客'</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">'Everything will be ok!'</span></span><br><span class="line"><span class="attr">keywords:</span> <span class="string">'努力一片天'</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">Lee</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">zh-Hans</span></span><br><span class="line"><span class="attr">timezone:</span> <span class="string">''</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>这样还是不起作用的话,请查看 <code>theme/next/languages/</code> 目录下是否有 <code>zh-Hans.yml</code> 文件.一般是有 <code>zh-CN.yml</code> ，所以要把 <code>zh-CN.yml</code> 文件改成名字为 <code>zh-Hans.yml</code> 就可以了</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo爬坑</tag>
       </tags>
   </entry>
   <entry>
@@ -289,6 +254,135 @@
 <li>空间复杂度：O(1)，除了用于输出的空间外，额外使用的空间为常数。</li>
 </ul>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> summaryRanges = <span class="function"><span class="keyword">function</span> (<span class="params">nums</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> ret = [];</span><br><span class="line">    <span class="keyword">const</span> n = nums.length;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; n;) &#123;</span><br><span class="line">        <span class="keyword">let</span> j = i;</span><br><span class="line">        <span class="keyword">if</span> (nums[j] + <span class="number">1</span> === nums[j + <span class="number">1</span>]) &#123;</span><br><span class="line">            <span class="keyword">while</span> (nums[j] + <span class="number">1</span> === nums[j + <span class="number">1</span>]) &#123;</span><br><span class="line">                j++;</span><br><span class="line">            &#125;</span><br><span class="line">            ret.push([nums[i], nums[j]].join(<span class="string">'-&gt;'</span>))</span><br><span class="line">            i = j + <span class="number">1</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            ret.push(<span class="string">''</span> + nums[i])</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ret</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>leetcode每日一题</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>leetcode每日一题2020.1.14</title>
+    <url>/2021/01/14/lc2021.1.14/</url>
+    <content><![CDATA[<h2 id="1018-可被-5-整除的二进制前缀"><a href="#1018-可被-5-整除的二进制前缀" class="headerlink" title="1018. 可被 5 整除的二进制前缀"></a><a href="https://leetcode-cn.com/problems/binary-prefix-divisible-by-5/" target="_blank" rel="noopener">1018. 可被 5 整除的二进制前缀</a></h2><h3 id="一、题目"><a href="#一、题目" class="headerlink" title="一、题目"></a>一、题目</h3><p>给定由若干 <code>0</code> 和 <code>1</code> 组成的数组 <code>A</code>。我们定义 <code>N_i</code>：从 <code>A[0]</code> 到 <code>A[i]</code> 的第 <code>i</code> 个子数组被解释为一个二进制数（从最高有效位到最低有效位）。</p>
+<p>返回布尔值列表 <code>answer</code>，只有当 <code>N_i</code> 可以被 <code>5</code> 整除时，答案 <code>answer[i]</code> 为 <code>true</code>，否则为 <code>false</code>。</p>
+<a id="more"></a>
+<p><strong>示例1：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：[0,1,1]</span><br><span class="line">输出：[true,false,false]</span><br><span class="line">解释：</span><br><span class="line">输入数字为 0, 01, 011；也就是十进制中的 0, 1, 3 。只有第一个数可以被 5 整除，因此 answer[0] 为真。</span><br></pre></td></tr></table></figure>
+<p><strong>示例2：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：[1,1,1]</span><br><span class="line">输出：[false,false,false]</span><br></pre></td></tr></table></figure>
+<p><strong>示例3：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：[0,1,1,1,1,1]</span><br><span class="line">输出：[true,false,false,false,true,false]</span><br></pre></td></tr></table></figure>
+<p><strong>示例4：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：[1,1,1,0,1]</span><br><span class="line">输出：[false,false,false,false,false]</span><br></pre></td></tr></table></figure>
+<p><strong>提示：</strong></p>
+<ol>
+<li><code>1 ≤ A.length ≤ 30000</code></li>
+<li><code>A[i]</code> 为 <code>0</code> 或 <code>1</code></li>
+</ol>
+<h3 id="二、题解"><a href="#二、题解" class="headerlink" title="二、题解"></a>二、题解</h3><h4 id="模拟法"><a href="#模拟法" class="headerlink" title="模拟法"></a>模拟法</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">题解：</span><br><span class="line"></span><br><span class="line">对数组 [A[0], A[1], A[2]] 模拟一下这个过程： </span><br><span class="line"></span><br><span class="line">    第一个数N1：A[0]，然后对 5 去余判断是否为0</span><br><span class="line">    第二个数N2：A[0] * 2 + A[1]，然后对 5 去余判断是否为0</span><br><span class="line">    第三个数N3：A[0] * 4 + A[1] * 2 + A[2]，然后对 5 去余判断是否为0</span><br><span class="line"></span><br><span class="line">我们可以发现 N(i) &#x3D; N(i-1) * 2 + A[i-1]</span><br><span class="line"></span><br><span class="line">考虑到数组 A 可能很长，如果每次都保留 N(i) 的值，则可能导致溢出。</span><br><span class="line"></span><br><span class="line">但是因为只需要知道 N(i) 是否可以被 5 整除，因而我们可以每一轮只更新 N(i) % 5，结果不会影响，即</span><br><span class="line"></span><br><span class="line">N(i) &#x3D; (N(i-1) * 2 + A[i-1]) % 5</span><br></pre></td></tr></table></figure>
+<ul>
+<li>时间复杂度：O($n$)，其中 n 是数组 A 的长度。</li>
+<li>空间复杂度：O(1)</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> prefixesDivBy5 = <span class="function"><span class="keyword">function</span>(<span class="params">A</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> ret = [];</span><br><span class="line">    <span class="keyword">let</span> len = A.length;</span><br><span class="line">    <span class="keyword">let</span> prefix = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i=<span class="number">0</span>; i&lt;len; i++) &#123;</span><br><span class="line">        prefix = (prefix * <span class="number">2</span> + A[i]) % <span class="number">5</span>;</span><br><span class="line">        ret.push(prefix === <span class="number">0</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ret</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>leetcode每日一题</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>解决Github上md文件[toc]无法创建目录的问题</title>
+    <url>/2020/07/04/github%E7%9B%AE%E5%BD%95%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<h2 id="解决GitHub上md文件-toc-无法创建目录的问题"><a href="#解决GitHub上md文件-toc-无法创建目录的问题" class="headerlink" title="解决GitHub上md文件[toc]无法创建目录的问题"></a>解决GitHub上md文件[toc]无法创建目录的问题</h2><p>熟悉markdown都知道可以使用<code>[TOC]</code>来自动生成markdown文件的标题目录，但是GitHub却不支持<code>[TOC]</code>标签</p>
+<p>因此这里介绍一种插件方法一键生成目录</p>
+<p><strong>注意</strong>：这里只是针对 VScode 用户</p>
+<a id="more"></a>
+<hr>
+<h2 id="步骤如下"><a href="#步骤如下" class="headerlink" title="步骤如下"></a>步骤如下</h2><ul>
+<li>1.安装<code>Markdown All in One</code>这个插件 (看下载量就知道好不好了😊)</li>
+</ul>
+<p><img data-src="/images/loading.gif" data-original="/images/markdown插件.png" alt="Markdown All in One"></p>
+<ul>
+<li>2.对于你要生成目录的md文件，使用VScode快捷键 ctrl + shift + p 打开界面如下：</li>
+</ul>
+<p><img data-src="/images/loading.gif" data-original="/images/生成目录.png" alt="Markdown all in one插件操作"></p>
+<ul>
+<li>3.然后输入 <code>Markdown All in One: Create Table of Contents</code> 回车即可生成目录，是不是很方便呢</li>
+</ul>
+<p>上传至GitHub上也亲测有效哦</p>
+<h2 id="总结步骤"><a href="#总结步骤" class="headerlink" title="总结步骤"></a>总结步骤</h2><ol>
+<li>安装vscode插件 Markdown All in One</li>
+<li>快捷键 ctrl + shift + p 打开后输入<code>Markdown All in One: Create Table of Contents</code></li>
+<li>over(●’◡’●)</li>
+</ol>
+]]></content>
+      <categories>
+        <category>GitHub</category>
+      </categories>
+      <tags>
+        <tag>GitHub</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>leetcode每日一题2020.1.22</title>
+    <url>/2021/01/22/lc2021.1.22/</url>
+    <content><![CDATA[<h2 id="989-数组形式的整数加法"><a href="#989-数组形式的整数加法" class="headerlink" title="989. 数组形式的整数加法"></a><a href="https://leetcode-cn.com/problems/add-to-array-form-of-integer/" target="_blank" rel="noopener">989. 数组形式的整数加法</a></h2><h3 id="一、题目"><a href="#一、题目" class="headerlink" title="一、题目"></a>一、题目</h3><p>对于非负整数 <code>X</code> 而言，<code>X</code> 的数组形式是每位数字按从左到右的顺序形成的数组。例如，如果 <code>X = 1231</code>，那么其数组形式为 <code>[1,2,3,1]</code>。</p>
+<p>给定非负整数 <code>X</code> 的数组形式 <code>A</code>，返回整数 <code>X+K</code> 的数组形式。</p>
+<a id="more"></a>
+<p><strong>示例1：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：A &#x3D; [1,2,0,0], K &#x3D; 34</span><br><span class="line">输出：[1,2,3,4]</span><br><span class="line">解释：1200 + 34 &#x3D; 1234</span><br></pre></td></tr></table></figure>
+<p><strong>示例2：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：A &#x3D; [2,7,4], K &#x3D; 181</span><br><span class="line">输出：[4,5,5]</span><br><span class="line">解释：274 + 181 &#x3D; 455</span><br></pre></td></tr></table></figure>
+<p><strong>示例 3：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：A &#x3D; [2,1,5], K &#x3D; 806</span><br><span class="line">输出：[1,0,2,1]</span><br><span class="line">解释：215 + 806 &#x3D; 1021</span><br></pre></td></tr></table></figure>
+<p><strong>示例 4：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：A &#x3D; [9,9,9,9,9,9,9,9,9,9], K &#x3D; 1</span><br><span class="line">输出：[1,0,0,0,0,0,0,0,0,0,0]</span><br><span class="line">解释：9999999999 + 1 &#x3D; 10000000000</span><br></pre></td></tr></table></figure>
+<p><strong>提示：</strong></p>
+<ol>
+<li><code>1 ≤ A.length ≤ 10000</code></li>
+<li><code>0 ≤ A[i] ≤ 9</code></li>
+<li><code>0 ≤ K ≤ 10000</code></li>
+<li><code>如果 A.length &gt; 1，那么 A[0] ≠ 0</code></li>
+</ol>
+<h3 id="二、题解"><a href="#二、题解" class="headerlink" title="二、题解"></a>二、题解</h3><h4 id="倒序逐位相加"><a href="#倒序逐位相加" class="headerlink" title="倒序逐位相加"></a>倒序逐位相加</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">题解：</span><br><span class="line"></span><br><span class="line">对数组 A 倒序遍历，每轮遍历的时候加上 K 对 10 取的余数，将和判断是否大于 10 后加入 ret 数组中，并对 K 进行更新。</span><br><span class="line"></span><br><span class="line">遍历完再对 K 做一个遍历直到 K &#x3D; 0 为止。</span><br><span class="line"></span><br><span class="line">例如：A &#x3D; [1, 2, 3]  K &#x3D; 912</span><br><span class="line">第一轮遍历： 3 + 2 &#x3D; 5，此时 K &#x3D; 91，ret &#x3D; [5]</span><br><span class="line">第二轮遍历： 2 + 1 &#x3D; 3，此时 K &#x3D; 9， ret &#x3D; [3, 5]</span><br><span class="line">第三轮遍历： 9 + 1 &#x3D; 10，此时 K &#x3D; 0 + 1 &#x3D; 1， ret &#x3D; [0, 3, 5]</span><br><span class="line">K &#x3D; 1，还要再向 ret 中加入 1，ret &#x3D; [1, 0, 3, 5]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>时间复杂度：O($max{m,n}$)，其中 m 是数组 A 的长度，n 是数字 K 的长度</li>
+<li>空间复杂度：O($max{m,n}$)。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> addToArrayForm = <span class="function"><span class="keyword">function</span> (<span class="params">A, K</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> ret = [];</span><br><span class="line">    <span class="keyword">const</span> n = A.length;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = n - <span class="number">1</span>; i &gt;= <span class="number">0</span>; --i) &#123;</span><br><span class="line">        <span class="keyword">let</span> sum = A[i] + K % <span class="number">10</span>;</span><br><span class="line">        K = <span class="built_in">Math</span>.floor(K / <span class="number">10</span>);</span><br><span class="line">        <span class="keyword">if</span> (sum &gt;= <span class="number">10</span>) &#123;</span><br><span class="line">            ret.unshift(sum % <span class="number">10</span>);</span><br><span class="line">            K++;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            ret.unshift(sum)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (; K &gt; <span class="number">0</span>; K = <span class="built_in">Math</span>.floor(K / <span class="number">10</span>)) &#123;</span><br><span class="line">        ret.unshift(K % <span class="number">10</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ret</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>leetcode每日一题</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>leetcode每日一题2020.1.20</title>
+    <url>/2021/01/20/lc2021.1.20/</url>
+    <content><![CDATA[<h2 id="628-三个数的最大乘积"><a href="#628-三个数的最大乘积" class="headerlink" title="628. 三个数的最大乘积"></a><a href="https://leetcode-cn.com/problems/maximum-product-of-three-numbers/" target="_blank" rel="noopener">628. 三个数的最大乘积</a></h2><h3 id="一、题目"><a href="#一、题目" class="headerlink" title="一、题目"></a>一、题目</h3><p>给定一个整型数组，在数组中找出由三个数组成的最大乘积，并输出这个乘积。</p>
+<a id="more"></a>
+<p><strong>示例1：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: [1,2,3]</span><br><span class="line">输出: 6</span><br></pre></td></tr></table></figure>
+<p><strong>示例2：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: [1,2,3,4]</span><br><span class="line">输出: 24</span><br></pre></td></tr></table></figure>
+<p><strong>提示：</strong></p>
+<ol>
+<li>给定的整型数组长度范围是 <code>[3,104]</code>，数组中所有的元素范围是 <code>[-1000, 1000]</code>。</li>
+<li>输入的数组中任意三个数的乘积不会超出 <code>32</code> 位有符号整数的范围。</li>
+</ol>
+<h3 id="二、题解"><a href="#二、题解" class="headerlink" title="二、题解"></a>二、题解</h3><h4 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">题解：</span><br><span class="line"></span><br><span class="line">先把数组按从小到大排个序,发现无非两种情况:</span><br><span class="line"></span><br><span class="line">1. 数组是纯负数,类似 [-4, -3, -2, -1]</span><br><span class="line">    最大乘积就应该是最大的几个数的乘积</span><br><span class="line"></span><br><span class="line">2. 数组不是纯负数,</span><br><span class="line">    (1)可能是纯正数,最大的乘积就是最大的几个数的乘积,类似于 [1, 2, 3, 4]</span><br><span class="line">    (2)可能是有正有负,那就判断一下最小的两个负数的乘积是不是要比次大的两个正数的乘积大,类似于[-5, -4, 1, 2, 3]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>时间复杂度:O(nlogn)</li>
+<li>空间复杂度:O(logn)</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> maximumProduct = <span class="function"><span class="keyword">function</span> (<span class="params">nums</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> n = nums.length;</span><br><span class="line">    nums.sort(<span class="function">(<span class="params">a, b</span>) =&gt;</span> a - b)</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Math</span>.max(nums[<span class="number">0</span>] * nums[<span class="number">1</span>] * nums[n - <span class="number">1</span>], nums[n - <span class="number">1</span>] * nums[n - <span class="number">2</span>] * nums[n - <span class="number">3</span>])</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>leetcode</category>
@@ -339,91 +433,32 @@
       </tags>
   </entry>
   <entry>
-    <title>leetcode每日一题2020.1.20</title>
-    <url>/2021/01/20/lc2021.1.20/</url>
-    <content><![CDATA[<h2 id="628-三个数的最大乘积"><a href="#628-三个数的最大乘积" class="headerlink" title="628. 三个数的最大乘积"></a><a href="https://leetcode-cn.com/problems/maximum-product-of-three-numbers/" target="_blank" rel="noopener">628. 三个数的最大乘积</a></h2><h3 id="一、题目"><a href="#一、题目" class="headerlink" title="一、题目"></a>一、题目</h3><p>给定一个整型数组，在数组中找出由三个数组成的最大乘积，并输出这个乘积。</p>
+    <title>leetcode每日一题2020.1.24</title>
+    <url>/2021/01/24/lc2021.1.24/</url>
+    <content><![CDATA[<h2 id="674-最长连续递增序列"><a href="#674-最长连续递增序列" class="headerlink" title="674. 最长连续递增序列"></a><a href="https://leetcode-cn.com/problems/longest-continuous-increasing-subsequence/" target="_blank" rel="noopener">674. 最长连续递增序列</a></h2><h3 id="一、题目"><a href="#一、题目" class="headerlink" title="一、题目"></a>一、题目</h3><p>给定一个未经排序的整数数组，找到最长且 <strong>连续递增的子序列</strong>，并返回该序列的长度。</p>
+<p><strong>连续递增的子序列</strong> 可以由两个下标 <code>l</code> 和 <code>r（l &lt; r）</code>确定，如果对于每个 <code>l &lt;= i &lt; r</code>，都有 <code>nums[i] &lt; nums[i + 1]</code> ，那么子序列 <code>[nums[l], nums[l + 1], ..., nums[r - 1], nums[r]]</code> 就是连续递增子序列。</p>
 <a id="more"></a>
 <p><strong>示例1：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: [1,2,3]</span><br><span class="line">输出: 6</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：nums &#x3D; [1,3,5,4,7]</span><br><span class="line">输出：3</span><br><span class="line">解释：最长连续递增序列是 [1,3,5], 长度为3。</span><br><span class="line">尽管 [1,3,5,7] 也是升序的子序列, 但它不是连续的，因为 5 和 7 在原数组里被 4 隔开。</span><br></pre></td></tr></table></figure>
 <p><strong>示例2：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: [1,2,3,4]</span><br><span class="line">输出: 24</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：nums &#x3D; [2,2,2,2,2]</span><br><span class="line">输出：1</span><br><span class="line">解释：最长连续递增序列是 [2], 长度为1。</span><br></pre></td></tr></table></figure>
 <p><strong>提示：</strong></p>
-<ol>
-<li>给定的整型数组长度范围是 <code>[3,104]</code>，数组中所有的元素范围是 <code>[-1000, 1000]</code>。</li>
-<li>输入的数组中任意三个数的乘积不会超出 <code>32</code> 位有符号整数的范围。</li>
-</ol>
-<h3 id="二、题解"><a href="#二、题解" class="headerlink" title="二、题解"></a>二、题解</h3><h4 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">题解：</span><br><span class="line"></span><br><span class="line">先把数组按从小到大排个序,发现无非两种情况:</span><br><span class="line"></span><br><span class="line">1. 数组是纯负数,类似 [-4, -3, -2, -1]</span><br><span class="line">    最大乘积就应该是最大的几个数的乘积</span><br><span class="line"></span><br><span class="line">2. 数组不是纯负数,</span><br><span class="line">    (1)可能是纯正数,最大的乘积就是最大的几个数的乘积,类似于 [1, 2, 3, 4]</span><br><span class="line">    (2)可能是有正有负,那就判断一下最小的两个负数的乘积是不是要比次大的两个正数的乘积大,类似于[-5, -4, 1, 2, 3]</span><br></pre></td></tr></table></figure>
 <ul>
-<li>时间复杂度:O(nlogn)</li>
-<li>空间复杂度:O(logn)</li>
+<li>0 ≤ nums.length ≤ $10^4$</li>
+<li>-$10^9$ ≤ nums[i] ≤ $10^9$</li>
 </ul>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> maximumProduct = <span class="function"><span class="keyword">function</span> (<span class="params">nums</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> n = nums.length;</span><br><span class="line">    nums.sort(<span class="function">(<span class="params">a, b</span>) =&gt;</span> a - b)</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Math</span>.max(nums[<span class="number">0</span>] * nums[<span class="number">1</span>] * nums[n - <span class="number">1</span>], nums[n - <span class="number">1</span>] * nums[n - <span class="number">2</span>] * nums[n - <span class="number">3</span>])</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>leetcode</category>
-      </categories>
-      <tags>
-        <tag>leetcode每日一题</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>leetcode每日一题2020.1.22</title>
-    <url>/2021/01/22/lc2021.1.22/</url>
-    <content><![CDATA[<h2 id="989-数组形式的整数加法"><a href="#989-数组形式的整数加法" class="headerlink" title="989. 数组形式的整数加法"></a><a href="https://leetcode-cn.com/problems/add-to-array-form-of-integer/" target="_blank" rel="noopener">989. 数组形式的整数加法</a></h2><h3 id="一、题目"><a href="#一、题目" class="headerlink" title="一、题目"></a>一、题目</h3><p>对于非负整数 <code>X</code> 而言，<code>X</code> 的数组形式是每位数字按从左到右的顺序形成的数组。例如，如果 <code>X = 1231</code>，那么其数组形式为 <code>[1,2,3,1]</code>。</p>
-<p>给定非负整数 <code>X</code> 的数组形式 <code>A</code>，返回整数 <code>X+K</code> 的数组形式。</p>
-<a id="more"></a>
-<p><strong>示例1：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：A &#x3D; [1,2,0,0], K &#x3D; 34</span><br><span class="line">输出：[1,2,3,4]</span><br><span class="line">解释：1200 + 34 &#x3D; 1234</span><br></pre></td></tr></table></figure>
-<p><strong>示例2：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：A &#x3D; [2,7,4], K &#x3D; 181</span><br><span class="line">输出：[4,5,5]</span><br><span class="line">解释：274 + 181 &#x3D; 455</span><br></pre></td></tr></table></figure>
-<p><strong>示例 3：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：A &#x3D; [2,1,5], K &#x3D; 806</span><br><span class="line">输出：[1,0,2,1]</span><br><span class="line">解释：215 + 806 &#x3D; 1021</span><br></pre></td></tr></table></figure>
-<p><strong>示例 4：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：A &#x3D; [9,9,9,9,9,9,9,9,9,9], K &#x3D; 1</span><br><span class="line">输出：[1,0,0,0,0,0,0,0,0,0,0]</span><br><span class="line">解释：9999999999 + 1 &#x3D; 10000000000</span><br></pre></td></tr></table></figure>
-<p><strong>提示：</strong></p>
-<ol>
-<li><code>1 ≤ A.length ≤ 10000</code></li>
-<li><code>0 ≤ A[i] ≤ 9</code></li>
-<li><code>0 ≤ K ≤ 10000</code></li>
-<li><code>如果 A.length &gt; 1，那么 A[0] ≠ 0</code></li>
-</ol>
-<h3 id="二、题解"><a href="#二、题解" class="headerlink" title="二、题解"></a>二、题解</h3><h4 id="倒序逐位相加"><a href="#倒序逐位相加" class="headerlink" title="倒序逐位相加"></a>倒序逐位相加</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">题解：</span><br><span class="line"></span><br><span class="line">对数组 A 倒序遍历，每轮遍历的时候加上 K 对 10 取的余数，将和判断是否大于 10 后加入 ret 数组中，并对 K 进行更新。</span><br><span class="line"></span><br><span class="line">遍历完再对 K 做一个遍历直到 K &#x3D; 0 为止。</span><br><span class="line"></span><br><span class="line">例如：A &#x3D; [1, 2, 3]  K &#x3D; 912</span><br><span class="line">第一轮遍历： 3 + 2 &#x3D; 5，此时 K &#x3D; 91，ret &#x3D; [5]</span><br><span class="line">第二轮遍历： 2 + 1 &#x3D; 3，此时 K &#x3D; 9， ret &#x3D; [3, 5]</span><br><span class="line">第三轮遍历： 9 + 1 &#x3D; 10，此时 K &#x3D; 0 + 1 &#x3D; 1， ret &#x3D; [0, 3, 5]</span><br><span class="line">K &#x3D; 1，还要再向 ret 中加入 1，ret &#x3D; [1, 0, 3, 5]</span><br></pre></td></tr></table></figure>
+<h3 id="二、题解"><a href="#二、题解" class="headerlink" title="二、题解"></a>二、题解</h3><h4 id="方法1：动态规划"><a href="#方法1：动态规划" class="headerlink" title="方法1：动态规划"></a>方法1：动态规划</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">dp矩阵的定义</span><br><span class="line">    dp[i] 定义为以 nums[i] 结尾的连续递增子序列的最大长度</span><br><span class="line"></span><br><span class="line">转移方程很好理解，dp[i-1] --&gt; dp[i]</span><br><span class="line">    如果 nums[i] &gt; nums[i-1]，那么 dp[i] &#x3D; dp[i-1] + 1，也就是与前面的组成连续递增子序列</span><br><span class="line">    否则的话，nums[i] 自成一组连续递增子序列，即 dp[i] &#x3D; 1</span><br></pre></td></tr></table></figure>
 <ul>
-<li>时间复杂度：O($max{m,n}$)，其中 m 是数组 A 的长度，n 是数字 K 的长度</li>
-<li>空间复杂度：O($max{m,n}$)。</li>
+<li>时间复杂度：O(n)，其中 n 是数组 nums 的长度。</li>
+<li>空间复杂度：O(n)</li>
 </ul>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> addToArrayForm = <span class="function"><span class="keyword">function</span> (<span class="params">A, K</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> ret = [];</span><br><span class="line">    <span class="keyword">const</span> n = A.length;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = n - <span class="number">1</span>; i &gt;= <span class="number">0</span>; --i) &#123;</span><br><span class="line">        <span class="keyword">let</span> sum = A[i] + K % <span class="number">10</span>;</span><br><span class="line">        K = <span class="built_in">Math</span>.floor(K / <span class="number">10</span>);</span><br><span class="line">        <span class="keyword">if</span> (sum &gt;= <span class="number">10</span>) &#123;</span><br><span class="line">            ret.unshift(sum % <span class="number">10</span>);</span><br><span class="line">            K++;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            ret.unshift(sum)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (; K &gt; <span class="number">0</span>; K = <span class="built_in">Math</span>.floor(K / <span class="number">10</span>)) &#123;</span><br><span class="line">        ret.unshift(K % <span class="number">10</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ret</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>leetcode</category>
-      </categories>
-      <tags>
-        <tag>leetcode每日一题</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>leetcode每日一题2020.1.13</title>
-    <url>/2021/01/13/lc2021.1.13/</url>
-    <content><![CDATA[<h2 id="684-冗余连接"><a href="#684-冗余连接" class="headerlink" title="684. 冗余连接"></a><a href="https://leetcode-cn.com/problems/redundant-connection/" target="_blank" rel="noopener">684. 冗余连接</a></h2><h3 id="一、题目"><a href="#一、题目" class="headerlink" title="一、题目"></a>一、题目</h3><p>在本问题中, 树指的是一个连通且无环的无向图。</p>
-<p>输入一个图，该图由一个有着N个节点 (节点值不重复<code>1, 2, ..., N</code>) 的树及一条附加的边构成。附加的边的两个顶点包含在1到N中间，这条附加的边不属于树中已存在的边。</p>
-<p>结果图是一个以边组成的二维数组。每一个边的元素是一对 <code>[u, v]</code> ，满足 <code>u &lt; v</code>，表示连接顶点 <code>u</code> 和 <code>v</code>的无向图的边。</p>
-<p>返回一条可以删去的边，使得结果图是一个有着<code>N</code>个节点的树。如果有多个答案，则返回二维数组中最后出现的边。答案边 <code>[u, v]</code> 应满足相同的格式 <code>u &lt; v</code>。</p>
-<a id="more"></a>
-<p><strong>示例1：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: [[1,2], [1,3], [2,3]]</span><br><span class="line">输出: [2,3]</span><br><span class="line">解释: 给定的无向图为:</span><br><span class="line">  1</span><br><span class="line"> &#x2F; \</span><br><span class="line">2 - 3</span><br></pre></td></tr></table></figure>
-<p><strong>示例2：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: [[1,2], [2,3], [3,4], [1,4], [1,5]]</span><br><span class="line">输出: [1,4]</span><br><span class="line">解释: 给定的无向图为:</span><br><span class="line">5 - 1 - 2</span><br><span class="line">    |   |</span><br><span class="line">    4 - 3</span><br></pre></td></tr></table></figure>
-<p><strong>注意：</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> findLengthOfLCIS = <span class="function"><span class="keyword">function</span>(<span class="params">nums</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!nums.length) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">const</span> n = nums.length;</span><br><span class="line">    <span class="keyword">let</span> dp = <span class="built_in">Array</span>(n).fill(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i=<span class="number">1</span>; i&lt;n; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (nums[i] &gt; nums[i<span class="number">-1</span>]) &#123;</span><br><span class="line">            dp[i] = dp[i<span class="number">-1</span>] + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Math</span>.max(...dp)</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h4 id="方法2：贪心"><a href="#方法2：贪心" class="headerlink" title="方法2：贪心"></a>方法2：贪心</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">用一个 start 指针记录连续递增子序列的头部位置，初始时 start &#x3D; 0，然后遍历数组进行如下操作：</span><br><span class="line"></span><br><span class="line">    1. 如果下标 nums[i] ≤ nums[i−1]，则说明当前元素小于或等于上一个元素，因此 nums[i−1] 和 nums[i] 不可能属于同一个连续递增序列，</span><br><span class="line">    必须从下标 i 处开始一个新的连续递增序列，因此令 start&#x3D;i。如果下标 i&#x3D;0 或 nums[i] &gt; nums[i−1]，则不更新 start 的值。</span><br><span class="line"></span><br><span class="line">    2.此时下标范围 [start,i] 的连续子序列是递增序列，其长度为 i−start+1，使用当前连续递增序列的长度更新最长连续递增序列的长度。</span><br></pre></td></tr></table></figure>
 <ul>
-<li>输入的二维数组大小在 3 到 1000。</li>
-<li>二维数组中的整数在1到N之间，其中N是输入数组的大小。</li>
+<li>时间复杂度：O(n)，其中 n 是数组 nums 的长度。</li>
+<li>空间复杂度：O(1)</li>
 </ul>
-<h3 id="二、题解"><a href="#二、题解" class="headerlink" title="二、题解"></a>二、题解</h3><h4 id="并查集"><a href="#并查集" class="headerlink" title="并查集"></a>并查集</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">题解：</span><br><span class="line"></span><br><span class="line">在一棵树中，边的数量比节点的数量少 1。如果一棵树有 N 个节点，则这棵树有 N−1 条边。这道题中的图在树的基础上多了一条附加的边，因此边的数量也是 N。</span><br><span class="line"></span><br><span class="line">树是一个连通且无环的无向图，在树中多了一条附加的边之后就会出现环，因此附加的边即为导致环出现的边。</span><br><span class="line"></span><br><span class="line">可以通过并查集寻找附加的边。初始时，每个节点都属于不同的连通分量。遍历每一条边，判断这条边连接的两个顶点是否属于相同的连通分量。</span><br><span class="line"></span><br><span class="line">    • 如果两个顶点属于不同的连通分量，则说明在遍历到当前的边之前，这两个顶点之间不连通，因此当前的边不会导致环出现，合并这两个顶点的连通分量。</span><br><span class="line"></span><br><span class="line">    • 如果两个顶点属于相同的连通分量，则说明在遍历到当前的边之前，这两个顶点之间已经连通，因此当前的边导致环出现，为附加的边，将当前的边作为答案返回。</span><br></pre></td></tr></table></figure>
-<ul>
-<li>时间复杂度：O(NlogN)，其中 N 是图中的节点个数。</li>
-<li>空间复杂度：O(N)</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> findRedundantConnection = <span class="function"><span class="keyword">function</span> (<span class="params">edges</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> nodesCount = edges.length;</span><br><span class="line">    <span class="keyword">const</span> parent = <span class="keyword">new</span> <span class="built_in">Array</span>(nodesCount + <span class="number">1</span>).fill(<span class="number">0</span>).map(<span class="function">(<span class="params">value, index</span>) =&gt;</span> index);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; nodesCount; i++) &#123;</span><br><span class="line">        <span class="keyword">const</span> [node1, node2] = edges[i];</span><br><span class="line">        <span class="keyword">if</span> (find(parent, node1) != find(parent, node2)) &#123;</span><br><span class="line">            union(parent, node1, node2);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> edges[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> [<span class="number">0</span>];</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> union = <span class="function">(<span class="params">parent, index1, index2</span>) =&gt;</span> &#123;</span><br><span class="line">    parent[find(parent, index1)] = find(parent, index2);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> find = <span class="function">(<span class="params">parent, index</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (parent[index] !== index) &#123;</span><br><span class="line">        parent[index] = find(parent, parent[index]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> parent[index];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> findLengthOfLCIS = <span class="function"><span class="keyword">function</span>(<span class="params">nums</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> start = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">let</span> ret = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i=<span class="number">0</span>; i&lt;nums.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (i &gt; <span class="number">0</span> &amp;&amp; nums[i] &lt;= nums[i<span class="number">-1</span>]) &#123;</span><br><span class="line">            start = i;</span><br><span class="line">        &#125;</span><br><span class="line">        ret = <span class="built_in">Math</span>.max(ret, i - start + <span class="number">1</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ret</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>leetcode</category>
@@ -468,32 +503,48 @@
       </tags>
   </entry>
   <entry>
-    <title>leetcode每日一题2020.1.24</title>
-    <url>/2021/01/24/lc2021.1.24/</url>
-    <content><![CDATA[<h2 id="674-最长连续递增序列"><a href="#674-最长连续递增序列" class="headerlink" title="674. 最长连续递增序列"></a><a href="https://leetcode-cn.com/problems/longest-continuous-increasing-subsequence/" target="_blank" rel="noopener">674. 最长连续递增序列</a></h2><h3 id="一、题目"><a href="#一、题目" class="headerlink" title="一、题目"></a>一、题目</h3><p>给定一个未经排序的整数数组，找到最长且 <strong>连续递增的子序列</strong>，并返回该序列的长度。</p>
-<p><strong>连续递增的子序列</strong> 可以由两个下标 <code>l</code> 和 <code>r（l &lt; r）</code>确定，如果对于每个 <code>l &lt;= i &lt; r</code>，都有 <code>nums[i] &lt; nums[i + 1]</code> ，那么子序列 <code>[nums[l], nums[l + 1], ..., nums[r - 1], nums[r]]</code> 就是连续递增子序列。</p>
+    <title>leetcode每日一题2020.1.3</title>
+    <url>/2021/01/03/lc2021.1.3/</url>
+    <content><![CDATA[<h2 id="86-分隔链表"><a href="#86-分隔链表" class="headerlink" title="86. 分隔链表"></a><a href="https://leetcode-cn.com/problems/partition-list/" target="_blank" rel="noopener">86. 分隔链表</a></h2><h3 id="一、题目"><a href="#一、题目" class="headerlink" title="一、题目"></a>一、题目</h3><p>给你一个链表和一个特定值 x ，请你对链表进行分隔，使得所有小于 x 的节点都出现在大于或等于 x 的节点之前。</p>
+<p>你应当保留两个分区中每个节点的初始相对位置。</p>
 <a id="more"></a>
-<p><strong>示例1：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：nums &#x3D; [1,3,5,4,7]</span><br><span class="line">输出：3</span><br><span class="line">解释：最长连续递增序列是 [1,3,5], 长度为3。</span><br><span class="line">尽管 [1,3,5,7] 也是升序的子序列, 但它不是连续的，因为 5 和 7 在原数组里被 4 隔开。</span><br></pre></td></tr></table></figure>
-<p><strong>示例2：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：nums &#x3D; [2,2,2,2,2]</span><br><span class="line">输出：1</span><br><span class="line">解释：最长连续递增序列是 [2], 长度为1。</span><br></pre></td></tr></table></figure>
-<p><strong>提示：</strong></p>
+<p><strong>示例：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：head &#x3D; 1-&gt;4-&gt;3-&gt;2-&gt;5-&gt;2, x &#x3D; 3</span><br><span class="line">输出：1-&gt;2-&gt;2-&gt;4-&gt;3-&gt;5</span><br></pre></td></tr></table></figure>
+<h3 id="二、题解"><a href="#二、题解" class="headerlink" title="二、题解"></a>二、题解</h3><h4 id="模拟法"><a href="#模拟法" class="headerlink" title="模拟法"></a>模拟法</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">题解</span><br><span class="line"></span><br><span class="line">模拟两个链表，small 表示比 x 小的，large 一个表示比 x 大的，</span><br><span class="line">然后遍历原链表，将值比 x 小的接到 small 后面，否则接到 large 后面，</span><br><span class="line">最后再把 small 链表的尾部和 large 链表的头部连起来。</span><br></pre></td></tr></table></figure>
 <ul>
-<li>0 ≤ nums.length ≤ $10^4$</li>
-<li>-$10^9$ ≤ nums[i] ≤ $10^9$</li>
-</ul>
-<h3 id="二、题解"><a href="#二、题解" class="headerlink" title="二、题解"></a>二、题解</h3><h4 id="方法1：动态规划"><a href="#方法1：动态规划" class="headerlink" title="方法1：动态规划"></a>方法1：动态规划</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">dp矩阵的定义</span><br><span class="line">    dp[i] 定义为以 nums[i] 结尾的连续递增子序列的最大长度</span><br><span class="line"></span><br><span class="line">转移方程很好理解，dp[i-1] --&gt; dp[i]</span><br><span class="line">    如果 nums[i] &gt; nums[i-1]，那么 dp[i] &#x3D; dp[i-1] + 1，也就是与前面的组成连续递增子序列</span><br><span class="line">    否则的话，nums[i] 自成一组连续递增子序列，即 dp[i] &#x3D; 1</span><br></pre></td></tr></table></figure>
-<ul>
-<li>时间复杂度：O(n)，其中 n 是数组 nums 的长度。</li>
-<li>空间复杂度：O(n)</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> findLengthOfLCIS = <span class="function"><span class="keyword">function</span>(<span class="params">nums</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!nums.length) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">const</span> n = nums.length;</span><br><span class="line">    <span class="keyword">let</span> dp = <span class="built_in">Array</span>(n).fill(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i=<span class="number">1</span>; i&lt;n; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (nums[i] &gt; nums[i<span class="number">-1</span>]) &#123;</span><br><span class="line">            dp[i] = dp[i<span class="number">-1</span>] + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Math</span>.max(...dp)</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h4 id="方法2：贪心"><a href="#方法2：贪心" class="headerlink" title="方法2：贪心"></a>方法2：贪心</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">用一个 start 指针记录连续递增子序列的头部位置，初始时 start &#x3D; 0，然后遍历数组进行如下操作：</span><br><span class="line"></span><br><span class="line">    1. 如果下标 nums[i] ≤ nums[i−1]，则说明当前元素小于或等于上一个元素，因此 nums[i−1] 和 nums[i] 不可能属于同一个连续递增序列，</span><br><span class="line">    必须从下标 i 处开始一个新的连续递增序列，因此令 start&#x3D;i。如果下标 i&#x3D;0 或 nums[i] &gt; nums[i−1]，则不更新 start 的值。</span><br><span class="line"></span><br><span class="line">    2.此时下标范围 [start,i] 的连续子序列是递增序列，其长度为 i−start+1，使用当前连续递增序列的长度更新最长连续递增序列的长度。</span><br></pre></td></tr></table></figure>
-<ul>
-<li>时间复杂度：O(n)，其中 n 是数组 nums 的长度。</li>
+<li>时间复杂度：O(n)，n 是原链表的长度。</li>
 <li>空间复杂度：O(1)</li>
 </ul>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> findLengthOfLCIS = <span class="function"><span class="keyword">function</span>(<span class="params">nums</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> start = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">let</span> ret = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i=<span class="number">0</span>; i&lt;nums.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (i &gt; <span class="number">0</span> &amp;&amp; nums[i] &lt;= nums[i<span class="number">-1</span>]) &#123;</span><br><span class="line">            start = i;</span><br><span class="line">        &#125;</span><br><span class="line">        ret = <span class="built_in">Math</span>.max(ret, i - start + <span class="number">1</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ret</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> partition = <span class="function"><span class="keyword">function</span>(<span class="params">head, x</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> small = <span class="keyword">new</span> ListNode(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">let</span> large = <span class="keyword">new</span> ListNode(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">let</span> smallHead = small, largeHead = large;</span><br><span class="line">    <span class="keyword">while</span> (head) &#123;</span><br><span class="line">        <span class="keyword">if</span> (head.val &lt; x) &#123;</span><br><span class="line">            small.next = head;</span><br><span class="line">            small = small.next</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            large.next = head;</span><br><span class="line">            large = large.next</span><br><span class="line">        &#125;</span><br><span class="line">        head = head.next;</span><br><span class="line">    &#125;</span><br><span class="line">    large.next = <span class="literal">null</span></span><br><span class="line">    small.next = largeHead.next</span><br><span class="line">    <span class="keyword">return</span> smallHead.next</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>leetcode每日一题</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>leetcode每日一题2020.1.28</title>
+    <url>/2021/01/28/lc2021.1.28/</url>
+    <content><![CDATA[<h2 id="724-寻找数组的中心索引"><a href="#724-寻找数组的中心索引" class="headerlink" title="724. 寻找数组的中心索引"></a><a href="https://leetcode-cn.com/problems/find-pivot-index/" target="_blank" rel="noopener">724. 寻找数组的中心索引</a></h2><h3 id="一、题目"><a href="#一、题目" class="headerlink" title="一、题目"></a>一、题目</h3><p>给定一个整数类型的数组 <code>nums</code>，请编写一个能够返回数组 “<strong>中心索引</strong>” 的方法。</p>
+<p>我们是这样定义数组 <strong>中心索引</strong> 的：数组中心索引的左侧所有元素相加的和等于右侧所有元素相加的和。</p>
+<p>如果数组不存在中心索引，那么我们应该返回 -1。如果数组有多个中心索引，那么我们应该返回最靠近左边的那一个。<br><a id="more"></a></p>
+<p><strong>示例1：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：</span><br><span class="line">nums &#x3D; [1, 7, 3, 6, 5, 6]</span><br><span class="line">输出：3</span><br><span class="line">解释：</span><br><span class="line">索引 3 (nums[3] &#x3D; 6) 的左侧数之和 (1 + 7 + 3 &#x3D; 11)，与右侧数之和 (5 + 6 &#x3D; 11) 相等。</span><br><span class="line">同时, 3 也是第一个符合要求的中心索引。</span><br></pre></td></tr></table></figure>
+<p><strong>示例2：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：</span><br><span class="line">nums &#x3D; [1, 2, 3]</span><br><span class="line">输出：-1</span><br><span class="line">解释：</span><br><span class="line">数组中不存在满足此条件的中心索引。</span><br></pre></td></tr></table></figure>
+<p><strong>提示：</strong></p>
+<ul>
+<li>nums 的长度范围为 <code>[0, 10000]</code>。</li>
+<li>任何一个 <code>nums[i]</code> 将会是一个范围在 <code>[-1000, 1000]</code> 的整数。</li>
+</ul>
+<h3 id="二、题解"><a href="#二、题解" class="headerlink" title="二、题解"></a>二、题解</h3><h4 id="前缀和"><a href="#前缀和" class="headerlink" title="前缀和"></a>前缀和</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">计算所有数字的和为 total，记录左侧元素的和 sum，每次判断 2 * sum 加上当前元素是不是等于 total</span><br><span class="line"></span><br><span class="line">    是就直接返回当前索引</span><br><span class="line">    </span><br><span class="line">    否则遍历结束都没有就返回 -1</span><br></pre></td></tr></table></figure>
+<ul>
+<li>时间复杂度：O(n)，n 为数组 nums 的长度。</li>
+<li>空间复杂度：O(1)</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> pivotIndex = <span class="function"><span class="keyword">function</span> (<span class="params">nums</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> total = nums.reduce(<span class="function">(<span class="params">t, v</span>) =&gt;</span> t + v, <span class="number">0</span>);</span><br><span class="line">    <span class="keyword">let</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="number">2</span> * sum + nums[i] === total) &#123;</span><br><span class="line">            <span class="keyword">return</span> i</span><br><span class="line">        &#125;</span><br><span class="line">        sum += nums[i]</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>leetcode</category>
@@ -562,133 +613,6 @@
       </tags>
   </entry>
   <entry>
-    <title>leetcode每日一题2020.1.28</title>
-    <url>/2021/01/28/lc2021.1.28/</url>
-    <content><![CDATA[<h2 id="724-寻找数组的中心索引"><a href="#724-寻找数组的中心索引" class="headerlink" title="724. 寻找数组的中心索引"></a><a href="https://leetcode-cn.com/problems/find-pivot-index/" target="_blank" rel="noopener">724. 寻找数组的中心索引</a></h2><h3 id="一、题目"><a href="#一、题目" class="headerlink" title="一、题目"></a>一、题目</h3><p>给定一个整数类型的数组 <code>nums</code>，请编写一个能够返回数组 “<strong>中心索引</strong>” 的方法。</p>
-<p>我们是这样定义数组 <strong>中心索引</strong> 的：数组中心索引的左侧所有元素相加的和等于右侧所有元素相加的和。</p>
-<p>如果数组不存在中心索引，那么我们应该返回 -1。如果数组有多个中心索引，那么我们应该返回最靠近左边的那一个。<br><a id="more"></a></p>
-<p><strong>示例1：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：</span><br><span class="line">nums &#x3D; [1, 7, 3, 6, 5, 6]</span><br><span class="line">输出：3</span><br><span class="line">解释：</span><br><span class="line">索引 3 (nums[3] &#x3D; 6) 的左侧数之和 (1 + 7 + 3 &#x3D; 11)，与右侧数之和 (5 + 6 &#x3D; 11) 相等。</span><br><span class="line">同时, 3 也是第一个符合要求的中心索引。</span><br></pre></td></tr></table></figure>
-<p><strong>示例2：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：</span><br><span class="line">nums &#x3D; [1, 2, 3]</span><br><span class="line">输出：-1</span><br><span class="line">解释：</span><br><span class="line">数组中不存在满足此条件的中心索引。</span><br></pre></td></tr></table></figure>
-<p><strong>提示：</strong></p>
-<ul>
-<li>nums 的长度范围为 <code>[0, 10000]</code>。</li>
-<li>任何一个 <code>nums[i]</code> 将会是一个范围在 <code>[-1000, 1000]</code> 的整数。</li>
-</ul>
-<h3 id="二、题解"><a href="#二、题解" class="headerlink" title="二、题解"></a>二、题解</h3><h4 id="前缀和"><a href="#前缀和" class="headerlink" title="前缀和"></a>前缀和</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">计算所有数字的和为 total，记录左侧元素的和 sum，每次判断 2 * sum 加上当前元素是不是等于 total</span><br><span class="line"></span><br><span class="line">    是就直接返回当前索引</span><br><span class="line">    </span><br><span class="line">    否则遍历结束都没有就返回 -1</span><br></pre></td></tr></table></figure>
-<ul>
-<li>时间复杂度：O(n)，n 为数组 nums 的长度。</li>
-<li>空间复杂度：O(1)</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> pivotIndex = <span class="function"><span class="keyword">function</span> (<span class="params">nums</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> total = nums.reduce(<span class="function">(<span class="params">t, v</span>) =&gt;</span> t + v, <span class="number">0</span>);</span><br><span class="line">    <span class="keyword">let</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="number">2</span> * sum + nums[i] === total) &#123;</span><br><span class="line">            <span class="keyword">return</span> i</span><br><span class="line">        &#125;</span><br><span class="line">        sum += nums[i]</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>leetcode</category>
-      </categories>
-      <tags>
-        <tag>leetcode每日一题</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>leetcode每日一题2020.1.5</title>
-    <url>/2021/01/05/lc2021.1.5/</url>
-    <content><![CDATA[<h2 id="830-较大分组的位置"><a href="#830-较大分组的位置" class="headerlink" title="830. 较大分组的位置"></a><a href="https://leetcode-cn.com/problems/positions-of-large-groups/" target="_blank" rel="noopener">830. 较大分组的位置</a></h2><h3 id="一、题目"><a href="#一、题目" class="headerlink" title="一、题目"></a>一、题目</h3><p>在一个由小写字母构成的字符串 s 中，包含由一些连续的相同字符所构成的分组。</p>
-<p>例如，在字符串 <code>s = &quot;abbxxxxzyy&quot;</code> 中，就含有 <code>&quot;a&quot;</code>, <code>&quot;bb&quot;</code>, <code>&quot;xxxx&quot;</code>, <code>&quot;z&quot;</code> 和 <code>&quot;yy&quot;</code> 这样的一些分组。</p>
-<p>分组可以用区间 <code>[start, end]</code> 表示，其中 <code>start</code> 和 <code>end</code> 分别表示该分组的起始和终止位置的下标。上例中的 <code>&quot;xxxx&quot;</code> 分组用区间表示为 <code>[3,6]</code> 。</p>
-<p>我们称所有包含大于或等于三个连续字符的分组为 <strong>较大分组</strong> 。</p>
-<p>找到每一个 <strong>较大分组</strong> 的区间，<strong>按起始位置下标递增顺序排序后</strong>，返回结果。</p>
-<a id="more"></a>
-<p><strong>示例1：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：s &#x3D; &quot;abbxxxxzzy&quot;</span><br><span class="line">输出：[[3,6]]</span><br><span class="line">解释：&quot;xxxx&quot; 是一个起始于 3 且终止于 6 的较大分组。</span><br></pre></td></tr></table></figure>
-<p><strong>示例2：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：s &#x3D; &quot;abc&quot;</span><br><span class="line">输出：[]</span><br><span class="line">解释：&quot;a&quot;,&quot;b&quot; 和 &quot;c&quot; 均不是符合要求的较大分组。</span><br></pre></td></tr></table></figure>
-<p><strong>示例3：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：s &#x3D; &quot;abcdddeeeeaabbbcd&quot;</span><br><span class="line">输出：[[3,5],[6,9],[12,14]]</span><br><span class="line">解释：较大分组为 &quot;ddd&quot;, &quot;eeee&quot; 和 &quot;bbb&quot;</span><br></pre></td></tr></table></figure>
-<p><strong>示例 4：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：s &#x3D; &quot;aba&quot;</span><br><span class="line">输出：[]</span><br></pre></td></tr></table></figure>
-<h3 id="二、题解"><a href="#二、题解" class="headerlink" title="二、题解"></a>二、题解</h3><h4 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">题解</span><br><span class="line"></span><br><span class="line">我们可以遍历该序列，并记录当前分组的长度。如果下一个字符与当前字符不同，或者已经枚举到字符串尾部，就说明当前字符为当前分组的尾部。</span><br><span class="line"></span><br><span class="line">每次找到当前分组的尾部时，如果该分组长度达到 3，我们就将其加入答案。</span><br></pre></td></tr></table></figure>
-<ul>
-<li>时间复杂度：O(n)，n 是 s 的长度。</li>
-<li>空间复杂度：O(1)</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> largeGroupPositions = <span class="function"><span class="keyword">function</span>(<span class="params">s</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> res = [];</span><br><span class="line">    <span class="keyword">const</span> n = s.length;</span><br><span class="line">    <span class="keyword">let</span> num = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i&lt;n; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (i === n<span class="number">-1</span> || s[i+<span class="number">1</span>] !== s[i]) &#123;</span><br><span class="line">            <span class="keyword">if</span> (num &gt;= <span class="number">3</span>) &#123;</span><br><span class="line">                res.push([i - num + <span class="number">1</span>, i])</span><br><span class="line">            &#125;</span><br><span class="line">            num = <span class="number">1</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            num++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>leetcode</category>
-      </categories>
-      <tags>
-        <tag>leetcode每日一题</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>leetcode每日一题2020.1.3</title>
-    <url>/2021/01/03/lc2021.1.3/</url>
-    <content><![CDATA[<h2 id="86-分隔链表"><a href="#86-分隔链表" class="headerlink" title="86. 分隔链表"></a><a href="https://leetcode-cn.com/problems/partition-list/" target="_blank" rel="noopener">86. 分隔链表</a></h2><h3 id="一、题目"><a href="#一、题目" class="headerlink" title="一、题目"></a>一、题目</h3><p>给你一个链表和一个特定值 x ，请你对链表进行分隔，使得所有小于 x 的节点都出现在大于或等于 x 的节点之前。</p>
-<p>你应当保留两个分区中每个节点的初始相对位置。</p>
-<a id="more"></a>
-<p><strong>示例：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：head &#x3D; 1-&gt;4-&gt;3-&gt;2-&gt;5-&gt;2, x &#x3D; 3</span><br><span class="line">输出：1-&gt;2-&gt;2-&gt;4-&gt;3-&gt;5</span><br></pre></td></tr></table></figure>
-<h3 id="二、题解"><a href="#二、题解" class="headerlink" title="二、题解"></a>二、题解</h3><h4 id="模拟法"><a href="#模拟法" class="headerlink" title="模拟法"></a>模拟法</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">题解</span><br><span class="line"></span><br><span class="line">模拟两个链表，small 表示比 x 小的，large 一个表示比 x 大的，</span><br><span class="line">然后遍历原链表，将值比 x 小的接到 small 后面，否则接到 large 后面，</span><br><span class="line">最后再把 small 链表的尾部和 large 链表的头部连起来。</span><br></pre></td></tr></table></figure>
-<ul>
-<li>时间复杂度：O(n)，n 是原链表的长度。</li>
-<li>空间复杂度：O(1)</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> partition = <span class="function"><span class="keyword">function</span>(<span class="params">head, x</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> small = <span class="keyword">new</span> ListNode(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">let</span> large = <span class="keyword">new</span> ListNode(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">let</span> smallHead = small, largeHead = large;</span><br><span class="line">    <span class="keyword">while</span> (head) &#123;</span><br><span class="line">        <span class="keyword">if</span> (head.val &lt; x) &#123;</span><br><span class="line">            small.next = head;</span><br><span class="line">            small = small.next</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            large.next = head;</span><br><span class="line">            large = large.next</span><br><span class="line">        &#125;</span><br><span class="line">        head = head.next;</span><br><span class="line">    &#125;</span><br><span class="line">    large.next = <span class="literal">null</span></span><br><span class="line">    small.next = largeHead.next</span><br><span class="line">    <span class="keyword">return</span> smallHead.next</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>leetcode</category>
-      </categories>
-      <tags>
-        <tag>leetcode每日一题</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>leetcode每日一题2020.1.7</title>
-    <url>/2021/01/07/lc2021.1.7/</url>
-    <content><![CDATA[<h2 id="547-省份数量"><a href="#547-省份数量" class="headerlink" title="547. 省份数量"></a><a href="https://leetcode-cn.com/problems/number-of-provinces/" target="_blank" rel="noopener">547. 省份数量</a></h2><h3 id="一、题目"><a href="#一、题目" class="headerlink" title="一、题目"></a>一、题目</h3><p>有 <code>n</code> 个城市，其中一些彼此相连，另一些没有相连。如果城市 <code>a</code> 与城市 <code>b</code> 直接相连，且城市 <code>b</code> 与城市 <code>c</code> 直接相连，那么城市 <code>a</code> 与城市 <code>c</code> 间接相连。</p>
-<p>省份 是一组直接或间接相连的城市，组内不含其他没有相连的城市。</p>
-<p>给你一个 <code>n x n</code> 的矩阵 <code>isConnected</code> ，其中 <code>isConnected[i][j] = 1</code> 表示第 <code>i</code> 个城市和第 <code>j</code> 个城市直接相连，而 <code>isConnected[i][j] = 0</code> 表示二者不直接相连。</p>
-<p>返回矩阵中 省份 的数量。</p>
-<a id="more"></a>
-<p><strong>示例1：</strong></p>
-<p><img data-src="/images/loading.gif" data-original="/images/202101071.jpg" alt="示例1"></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：isConnected &#x3D; [[1,1,0],[1,1,0],[0,0,1]]</span><br><span class="line">输出：2</span><br></pre></td></tr></table></figure>
-<p><strong>示例2：</strong></p>
-<p><img data-src="/images/loading.gif" data-original="/images/202101072.jpg" alt="示例1"></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：isConnected &#x3D; [[1,0,0],[0,1,0],[0,0,1]]</span><br><span class="line">输出：3</span><br></pre></td></tr></table></figure>
-<p><strong>提示：</strong></p>
-<ul>
-<li><code>1 ≤ n ≤ 200</code></li>
-<li><code>n = isConnected.length</code></li>
-<li><code>n = isConnected[i].length</code></li>
-<li><code>isConnected[i][j] 为 1 或 0</code></li>
-<li><code>isConnected[i][i] = 1</code></li>
-<li><code>isConnected[i][j] = isConnected[j][i]</code></li>
-</ul>
-<h3 id="二、题解"><a href="#二、题解" class="headerlink" title="二、题解"></a>二、题解</h3><p>可以把 n 个城市和它们之间的相连关系看成图，城市是图中的节点，相连关系是图中的边，给定的矩阵 isConnected 即为图的邻接矩阵，省份即为图中的连通分量。</p>
-<p>计算省份总数，等价于计算图中的连通分量数，可以通过深度优先搜索或广度优先搜索实现，也可以通过并查集实现。</p>
-<h4 id="深度优先搜索"><a href="#深度优先搜索" class="headerlink" title="深度优先搜索"></a>深度优先搜索</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">题解</span><br><span class="line"></span><br><span class="line">深度优先搜索的思路是很直观的。遍历所有城市，对于每个城市，如果该城市尚未被访问过，则从该城市开始深度优先搜索，</span><br><span class="line"></span><br><span class="line">通过矩阵 isConnected 得到与该城市直接相连的城市有哪些，这些城市和该城市属于同一个连通分量，然后对这些城市继续深度优先搜索，</span><br><span class="line"></span><br><span class="line">直到同一个连通分量的所有城市都被访问到，即可得到一个省份。遍历完全部城市以后，即可得到连通分量的总数，即省份的总数。</span><br></pre></td></tr></table></figure>
-<ul>
-<li>时间复杂度：O($n^2$)，n 是城市的个数。</li>
-<li>空间复杂度：O($n$)</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> findCircleNum = <span class="function"><span class="keyword">function</span> (<span class="params">isConnected</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> n = isConnected.length;</span><br><span class="line">    <span class="keyword">const</span> visited = <span class="keyword">new</span> <span class="built_in">Set</span>();</span><br><span class="line">    <span class="comment">// 深度优先搜索</span></span><br><span class="line">    <span class="keyword">const</span> dfs = <span class="function">(<span class="params">isConnected, visited, i</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">0</span>; j &lt; n; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (isConnected[i][j] === <span class="number">1</span> &amp;&amp; !visited.has(j)) &#123; <span class="comment">// 城市 i 和 j 相连，并且 j 没有并访问过</span></span><br><span class="line">                visited.add(j);</span><br><span class="line">                dfs(isConnected, visited, j) <span class="comment">// 继续遍历和城市j相连的城市，标记已访问过</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> count = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!visited.has(i)) &#123; <span class="comment">// 城市 i 没有被访问过</span></span><br><span class="line">            dfs(isConnected, visited, i);</span><br><span class="line">            count++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> count</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h4 id="广度优先搜索"><a href="#广度优先搜索" class="headerlink" title="广度优先搜索"></a>广度优先搜索</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">题解</span><br><span class="line"></span><br><span class="line">通过广度优先搜索的方法得到省份的总数。对于每个城市，如果该城市尚未被访问过，则从该城市开始广度优先搜索，</span><br><span class="line"></span><br><span class="line">直到同一个连通分量中的所有城市都被访问到，即可得到一个省份。</span><br></pre></td></tr></table></figure>
-<ul>
-<li>时间复杂度：O($n^2$)，n 是城市的个数。</li>
-<li>空间复杂度：O($n$)</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> findCircleNum = <span class="function"><span class="keyword">function</span> (<span class="params">isConnected</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> n = isConnected.length;</span><br><span class="line">    <span class="keyword">const</span> visited = <span class="keyword">new</span> <span class="built_in">Set</span>();</span><br><span class="line">    <span class="keyword">const</span> queue = [];</span><br><span class="line">    <span class="keyword">let</span> count = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!visited.has(i)) &#123;</span><br><span class="line">            queue.push(i)</span><br><span class="line">            <span class="keyword">while</span> (queue.length) &#123;</span><br><span class="line">                <span class="keyword">let</span> j = queue.shift();</span><br><span class="line">                visited.add(j)</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">let</span> k = <span class="number">0</span>; k &lt; n; k++) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (isConnected[j][k] === <span class="number">1</span> &amp;&amp; !visited.has(k)) &#123;</span><br><span class="line">                        queue.push(k)</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            count++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> count;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>leetcode</category>
-      </categories>
-      <tags>
-        <tag>leetcode每日一题</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>leetcode每日一题2020.1.6</title>
     <url>/2021/01/06/lc2021.1.6/</url>
     <content><![CDATA[<h2 id="399-除法求值"><a href="#399-除法求值" class="headerlink" title="399. 除法求值"></a><a href="https://leetcode-cn.com/problems/evaluate-division/" target="_blank" rel="noopener">399. 除法求值</a></h2><h3 id="一、题目"><a href="#一、题目" class="headerlink" title="一、题目"></a>一、题目</h3><p>给你一个变量对数组 <code>equations</code> 和一个实数值数组 <code>values</code> 作为已知条件，其中 <code>equations[i] = [Ai, Bi]</code> 和 <code>values[i]</code> 共同表示等式 <code>Ai / Bi = values[i]</code> 。每个 <code>Ai</code> 或 <code>Bi</code> 是一个表示单个变量的字符串。</p>
@@ -721,6 +645,37 @@
 <li>空间复杂度：O($n$)</li>
 </ul>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> calcEquation = <span class="function"><span class="keyword">function</span> (<span class="params">equations, values, queries</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> map = &#123;&#125;;</span><br><span class="line">    <span class="comment">// 定义一个对象，map[x][y] 表示 x/y 的值</span></span><br><span class="line">    equations.forEach(<span class="function">(<span class="params">e, i</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (!map[e[<span class="number">0</span>]]) map[e[<span class="number">0</span>]] = &#123;&#125;;</span><br><span class="line">        <span class="keyword">if</span> (!map[e[<span class="number">1</span>]]) map[e[<span class="number">1</span>]] = &#123;&#125;;</span><br><span class="line">        map[e[<span class="number">0</span>]][e[<span class="number">1</span>]] = values[i]</span><br><span class="line">        map[e[<span class="number">1</span>]][e[<span class="number">0</span>]] = <span class="number">1</span> / values[i]</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">const</span> keys = <span class="built_in">Object</span>.keys(map);</span><br><span class="line">    keys.forEach(<span class="function"><span class="params">x</span> =&gt;</span> &#123;</span><br><span class="line">        keys.forEach(<span class="function"><span class="params">y</span> =&gt;</span> &#123;</span><br><span class="line">            map[x][y] &amp;&amp; keys.forEach(<span class="function"><span class="params">z</span> =&gt;</span> &#123; <span class="comment">// 如果 x/y 有值 y/z 也有值，则 x/z 的值也可以求出</span></span><br><span class="line">                <span class="keyword">if</span> (map[y][z]) &#123;</span><br><span class="line">                    map[x][z] = map[x][y] * map[y][z]</span><br><span class="line">                    map[z][x] = <span class="number">1</span> / map[x][z] <span class="comment">// 这行不加会有一个测试案例通过不了</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">return</span> queries.map(<span class="function"><span class="params">e</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> map[e[<span class="number">0</span>]] &amp;&amp; map[e[<span class="number">0</span>]][e[<span class="number">1</span>]] ? map[e[<span class="number">0</span>]][e[<span class="number">1</span>]] : <span class="number">-1</span></span><br><span class="line">    &#125;)</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>leetcode每日一题</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>leetcode每日一题2020.1.5</title>
+    <url>/2021/01/05/lc2021.1.5/</url>
+    <content><![CDATA[<h2 id="830-较大分组的位置"><a href="#830-较大分组的位置" class="headerlink" title="830. 较大分组的位置"></a><a href="https://leetcode-cn.com/problems/positions-of-large-groups/" target="_blank" rel="noopener">830. 较大分组的位置</a></h2><h3 id="一、题目"><a href="#一、题目" class="headerlink" title="一、题目"></a>一、题目</h3><p>在一个由小写字母构成的字符串 s 中，包含由一些连续的相同字符所构成的分组。</p>
+<p>例如，在字符串 <code>s = &quot;abbxxxxzyy&quot;</code> 中，就含有 <code>&quot;a&quot;</code>, <code>&quot;bb&quot;</code>, <code>&quot;xxxx&quot;</code>, <code>&quot;z&quot;</code> 和 <code>&quot;yy&quot;</code> 这样的一些分组。</p>
+<p>分组可以用区间 <code>[start, end]</code> 表示，其中 <code>start</code> 和 <code>end</code> 分别表示该分组的起始和终止位置的下标。上例中的 <code>&quot;xxxx&quot;</code> 分组用区间表示为 <code>[3,6]</code> 。</p>
+<p>我们称所有包含大于或等于三个连续字符的分组为 <strong>较大分组</strong> 。</p>
+<p>找到每一个 <strong>较大分组</strong> 的区间，<strong>按起始位置下标递增顺序排序后</strong>，返回结果。</p>
+<a id="more"></a>
+<p><strong>示例1：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：s &#x3D; &quot;abbxxxxzzy&quot;</span><br><span class="line">输出：[[3,6]]</span><br><span class="line">解释：&quot;xxxx&quot; 是一个起始于 3 且终止于 6 的较大分组。</span><br></pre></td></tr></table></figure>
+<p><strong>示例2：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：s &#x3D; &quot;abc&quot;</span><br><span class="line">输出：[]</span><br><span class="line">解释：&quot;a&quot;,&quot;b&quot; 和 &quot;c&quot; 均不是符合要求的较大分组。</span><br></pre></td></tr></table></figure>
+<p><strong>示例3：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：s &#x3D; &quot;abcdddeeeeaabbbcd&quot;</span><br><span class="line">输出：[[3,5],[6,9],[12,14]]</span><br><span class="line">解释：较大分组为 &quot;ddd&quot;, &quot;eeee&quot; 和 &quot;bbb&quot;</span><br></pre></td></tr></table></figure>
+<p><strong>示例 4：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：s &#x3D; &quot;aba&quot;</span><br><span class="line">输出：[]</span><br></pre></td></tr></table></figure>
+<h3 id="二、题解"><a href="#二、题解" class="headerlink" title="二、题解"></a>二、题解</h3><h4 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">题解</span><br><span class="line"></span><br><span class="line">我们可以遍历该序列，并记录当前分组的长度。如果下一个字符与当前字符不同，或者已经枚举到字符串尾部，就说明当前字符为当前分组的尾部。</span><br><span class="line"></span><br><span class="line">每次找到当前分组的尾部时，如果该分组长度达到 3，我们就将其加入答案。</span><br></pre></td></tr></table></figure>
+<ul>
+<li>时间复杂度：O(n)，n 是 s 的长度。</li>
+<li>空间复杂度：O(1)</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> largeGroupPositions = <span class="function"><span class="keyword">function</span>(<span class="params">s</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> res = [];</span><br><span class="line">    <span class="keyword">const</span> n = s.length;</span><br><span class="line">    <span class="keyword">let</span> num = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i&lt;n; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (i === n<span class="number">-1</span> || s[i+<span class="number">1</span>] !== s[i]) &#123;</span><br><span class="line">            <span class="keyword">if</span> (num &gt;= <span class="number">3</span>) &#123;</span><br><span class="line">                res.push([i - num + <span class="number">1</span>, i])</span><br><span class="line">            &#125;</span><br><span class="line">            num = <span class="number">1</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            num++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>leetcode</category>
@@ -801,42 +756,75 @@
       </tags>
   </entry>
   <entry>
-    <title>leetcode每日一题2020.2.1</title>
-    <url>/2021/02/01/lc2021.2.1/</url>
-    <content><![CDATA[<h2 id="888-公平的糖果棒交换"><a href="#888-公平的糖果棒交换" class="headerlink" title="888. 公平的糖果棒交换"></a><a href="https://leetcode-cn.com/problems/fair-candy-swap/" target="_blank" rel="noopener">888. 公平的糖果棒交换</a></h2><h3 id="一、题目"><a href="#一、题目" class="headerlink" title="一、题目"></a>一、题目</h3><p>爱丽丝和鲍勃有不同大小的糖果棒：<code>A[i]</code> 是爱丽丝拥有的第 <code>i</code> 根糖果棒的大小，<code>B[j]</code> 是鲍勃拥有的第 <code>j</code> 根糖果棒的大小。</p>
-<p>因为他们是朋友，所以他们想交换一根糖果棒，这样交换后，他们都有相同的糖果总量。<em>（一个人拥有的糖果总量是他们拥有的糖果棒大小的总和。）</em></p>
-<p>返回一个整数数组 <code>ans</code>，其中 <code>ans[0]</code> 是爱丽丝必须交换的糖果棒的大小，<code>ans[1]</code> 是 Bob 必须交换的糖果棒的大小。</p>
-<p>如果有多个答案，你可以返回其中任何一个。保证答案存在。<br><a id="more"></a></p>
+    <title>leetcode每日一题2020.1.7</title>
+    <url>/2021/01/07/lc2021.1.7/</url>
+    <content><![CDATA[<h2 id="547-省份数量"><a href="#547-省份数量" class="headerlink" title="547. 省份数量"></a><a href="https://leetcode-cn.com/problems/number-of-provinces/" target="_blank" rel="noopener">547. 省份数量</a></h2><h3 id="一、题目"><a href="#一、题目" class="headerlink" title="一、题目"></a>一、题目</h3><p>有 <code>n</code> 个城市，其中一些彼此相连，另一些没有相连。如果城市 <code>a</code> 与城市 <code>b</code> 直接相连，且城市 <code>b</code> 与城市 <code>c</code> 直接相连，那么城市 <code>a</code> 与城市 <code>c</code> 间接相连。</p>
+<p>省份 是一组直接或间接相连的城市，组内不含其他没有相连的城市。</p>
+<p>给你一个 <code>n x n</code> 的矩阵 <code>isConnected</code> ，其中 <code>isConnected[i][j] = 1</code> 表示第 <code>i</code> 个城市和第 <code>j</code> 个城市直接相连，而 <code>isConnected[i][j] = 0</code> 表示二者不直接相连。</p>
+<p>返回矩阵中 省份 的数量。</p>
+<a id="more"></a>
 <p><strong>示例1：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：A &#x3D; [1,1], B &#x3D; [2,2]</span><br><span class="line">输出：[1,2]</span><br></pre></td></tr></table></figure>
+<p><img data-src="/images/loading.gif" data-original="/images/202101071.jpg" alt="示例1"></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：isConnected &#x3D; [[1,1,0],[1,1,0],[0,0,1]]</span><br><span class="line">输出：2</span><br></pre></td></tr></table></figure>
 <p><strong>示例2：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：A &#x3D; [1,2], B &#x3D; [2,3]</span><br><span class="line">输出：[1,2]</span><br></pre></td></tr></table></figure>
-<p><strong>示例3：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：A &#x3D; [2], B &#x3D; [1,3]</span><br><span class="line">输出：[2,3]</span><br></pre></td></tr></table></figure>
-<p><strong>示例4：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：A &#x3D; [1,2,5], B &#x3D; [2,4]</span><br><span class="line">输出：[5,4]</span><br></pre></td></tr></table></figure>
+<p><img data-src="/images/loading.gif" data-original="/images/202101072.jpg" alt="示例1"></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：isConnected &#x3D; [[1,0,0],[0,1,0],[0,0,1]]</span><br><span class="line">输出：3</span><br></pre></td></tr></table></figure>
 <p><strong>提示：</strong></p>
 <ul>
-<li><code>1 ≤ A.length ≤ 10000</code></li>
-<li><code>1 ≤ B.length ≤ 10000</code></li>
-<li><code>1 ≤ A[i] ≤ 100000</code></li>
-<li><code>1 ≤ B[i] ≤ 100000</code></li>
-<li>保证爱丽丝与鲍勃的糖果总量不同。</li>
-<li>答案肯定存在。</li>
+<li><code>1 ≤ n ≤ 200</code></li>
+<li><code>n = isConnected.length</code></li>
+<li><code>n = isConnected[i].length</code></li>
+<li><code>isConnected[i][j] 为 1 或 0</code></li>
+<li><code>isConnected[i][i] = 1</code></li>
+<li><code>isConnected[i][j] = isConnected[j][i]</code></li>
 </ul>
-<h3 id="二、题解"><a href="#二、题解" class="headerlink" title="二、题解"></a>二、题解</h3><h4 id="哈希表"><a href="#哈希表" class="headerlink" title="哈希表"></a>哈希表</h4><p>思路如下：</p>
-<hr>
-<p>这是一个纯数学问题，我们来把它数学化：</p>
-<p>假设我们最后得结果是 $[a, b]$，也就是 $a$ 是 $A$ 要交换得，$b$ 是 $B$ 要交换的</p>
-<p>我们可以计算分别得到 $A$ 和 $B$ 的和为 $aSum$ 和 $bSum$，那我们会有如下关系：</p>
-<script type="math/tex; mode=display">aSum - a + b = bSum - b + a</script><p>转化一下可以得到：</p>
-<script type="math/tex; mode=display">a = b + \frac{aSum - bSum}{2}</script><p>其实问题就是：对于 $B$ 中的任一数 $b$，在 $A$ 中存在一个数 $a$，满足上述关系式。</p>
-<hr>
+<h3 id="二、题解"><a href="#二、题解" class="headerlink" title="二、题解"></a>二、题解</h3><p>可以把 n 个城市和它们之间的相连关系看成图，城市是图中的节点，相连关系是图中的边，给定的矩阵 isConnected 即为图的邻接矩阵，省份即为图中的连通分量。</p>
+<p>计算省份总数，等价于计算图中的连通分量数，可以通过深度优先搜索或广度优先搜索实现，也可以通过并查集实现。</p>
+<h4 id="深度优先搜索"><a href="#深度优先搜索" class="headerlink" title="深度优先搜索"></a>深度优先搜索</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">题解</span><br><span class="line"></span><br><span class="line">深度优先搜索的思路是很直观的。遍历所有城市，对于每个城市，如果该城市尚未被访问过，则从该城市开始深度优先搜索，</span><br><span class="line"></span><br><span class="line">通过矩阵 isConnected 得到与该城市直接相连的城市有哪些，这些城市和该城市属于同一个连通分量，然后对这些城市继续深度优先搜索，</span><br><span class="line"></span><br><span class="line">直到同一个连通分量的所有城市都被访问到，即可得到一个省份。遍历完全部城市以后，即可得到连通分量的总数，即省份的总数。</span><br></pre></td></tr></table></figure>
 <ul>
-<li>时间复杂度：$O(n+m)$，$n$ 和 $m$ 分别为 $A$ 和 $B$ 的长度。</li>
-<li>空间复杂度：$O(n)$。</li>
+<li>时间复杂度：O($n^2$)，n 是城市的个数。</li>
+<li>空间复杂度：O($n$)</li>
 </ul>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> fairCandySwap = <span class="function"><span class="keyword">function</span> (<span class="params">A, B</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> aSum = A.reduce(<span class="function">(<span class="params">preValue, curValue</span>) =&gt;</span> preValue + curValue);</span><br><span class="line">    <span class="keyword">let</span> bSum = B.reduce(<span class="function">(<span class="params">preValue, curValue</span>) =&gt;</span> preValue + curValue);</span><br><span class="line">    <span class="keyword">let</span> diff = (aSum - bSum) / <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">set</span> = new Set(A);</span><br><span class="line">    let res = [];</span><br><span class="line">    for (const y of B) &#123;</span><br><span class="line">        <span class="keyword">let</span> x = y + diff;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">set</span>.has(x)) &#123;</span><br><span class="line">            res = [x, y]</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> findCircleNum = <span class="function"><span class="keyword">function</span> (<span class="params">isConnected</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> n = isConnected.length;</span><br><span class="line">    <span class="keyword">const</span> visited = <span class="keyword">new</span> <span class="built_in">Set</span>();</span><br><span class="line">    <span class="comment">// 深度优先搜索</span></span><br><span class="line">    <span class="keyword">const</span> dfs = <span class="function">(<span class="params">isConnected, visited, i</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">0</span>; j &lt; n; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (isConnected[i][j] === <span class="number">1</span> &amp;&amp; !visited.has(j)) &#123; <span class="comment">// 城市 i 和 j 相连，并且 j 没有并访问过</span></span><br><span class="line">                visited.add(j);</span><br><span class="line">                dfs(isConnected, visited, j) <span class="comment">// 继续遍历和城市j相连的城市，标记已访问过</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> count = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!visited.has(i)) &#123; <span class="comment">// 城市 i 没有被访问过</span></span><br><span class="line">            dfs(isConnected, visited, i);</span><br><span class="line">            count++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> count</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h4 id="广度优先搜索"><a href="#广度优先搜索" class="headerlink" title="广度优先搜索"></a>广度优先搜索</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">题解</span><br><span class="line"></span><br><span class="line">通过广度优先搜索的方法得到省份的总数。对于每个城市，如果该城市尚未被访问过，则从该城市开始广度优先搜索，</span><br><span class="line"></span><br><span class="line">直到同一个连通分量中的所有城市都被访问到，即可得到一个省份。</span><br></pre></td></tr></table></figure>
+<ul>
+<li>时间复杂度：O($n^2$)，n 是城市的个数。</li>
+<li>空间复杂度：O($n$)</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> findCircleNum = <span class="function"><span class="keyword">function</span> (<span class="params">isConnected</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> n = isConnected.length;</span><br><span class="line">    <span class="keyword">const</span> visited = <span class="keyword">new</span> <span class="built_in">Set</span>();</span><br><span class="line">    <span class="keyword">const</span> queue = [];</span><br><span class="line">    <span class="keyword">let</span> count = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!visited.has(i)) &#123;</span><br><span class="line">            queue.push(i)</span><br><span class="line">            <span class="keyword">while</span> (queue.length) &#123;</span><br><span class="line">                <span class="keyword">let</span> j = queue.shift();</span><br><span class="line">                visited.add(j)</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">let</span> k = <span class="number">0</span>; k &lt; n; k++) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (isConnected[j][k] === <span class="number">1</span> &amp;&amp; !visited.has(k)) &#123;</span><br><span class="line">                        queue.push(k)</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            count++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> count;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>leetcode每日一题</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>leetcode每日一题2020.2.22</title>
+    <url>/2021/02/22/lc2021.2.22/</url>
+    <content><![CDATA[<h2 id="766-托普利茨矩阵"><a href="#766-托普利茨矩阵" class="headerlink" title="766. 托普利茨矩阵"></a><a href="https://leetcode-cn.com/problems/toeplitz-matrix/" target="_blank" rel="noopener">766. 托普利茨矩阵</a></h2><h3 id="一、题目"><a href="#一、题目" class="headerlink" title="一、题目"></a>一、题目</h3><p>给你一个 <code>m x n</code> 的矩阵 <code>matrix</code> 。如果这个矩阵是托普利茨矩阵，返回 <code>true</code> ；否则，返回 <code>false</code> 。</p>
+<p>如果矩阵上每一条由左上到右下的对角线上的元素都相同，那么这个矩阵是 <strong>托普利茨矩阵</strong> 。</p>
+<a id="more"></a>
+<p><strong>示例1：</strong></p>
+<p><img data-src="/images/loading.gif" data-original="/images/2021022201.jpg" alt="示例1图"></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：matrix &#x3D; [[1,2,3,4],[5,1,2,3],[9,5,1,2]]</span><br><span class="line">输出：true</span><br><span class="line">解释：</span><br><span class="line">在上述矩阵中, 其对角线为: </span><br><span class="line">&quot;[9]&quot;, &quot;[5, 5]&quot;, &quot;[1, 1, 1]&quot;, &quot;[2, 2, 2]&quot;, &quot;[3, 3]&quot;, &quot;[4]&quot;。 </span><br><span class="line">各条对角线上的所有元素均相同, 因此答案是 True 。</span><br></pre></td></tr></table></figure>
+<p><strong>示例2：</strong></p>
+<p><img data-src="/images/loading.gif" data-original="/images/2021022202.jpg" alt="示例2图"></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：matrix &#x3D; [[1,2],[2,2]]</span><br><span class="line">输出：false</span><br><span class="line">解释：</span><br><span class="line">对角线 &quot;[1, 2]&quot; 上的元素不同。</span><br></pre></td></tr></table></figure>
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>m = matrix.length</code></li>
+<li><code>n = matrix[i].length</code></li>
+<li><code>1 ≤ m, n ≤ 20</code></li>
+<li><code>0 ≤ matrix[i][j] ≤ 99</code></li>
+</ul>
+<h3 id="二、题解"><a href="#二、题解" class="headerlink" title="二、题解"></a>二、题解</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">根据定义，当且仅当矩阵中每个元素都与其左上角相邻的元素（如果存在）相等时，该矩阵为托普利茨矩阵。</span><br><span class="line"></span><br><span class="line">因此，我们遍历该矩阵，将每一个元素和它左上角的元素相比对即可。</span><br></pre></td></tr></table></figure>
+<ul>
+<li>时间复杂度：$O(m * n)$，其中 $m$ 为矩阵的行数，$n$ 为矩阵的列数。</li>
+<li>空间复杂度：$O(1)$</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> isToeplitzMatrix = <span class="function"><span class="keyword">function</span>(<span class="params">matrix</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> m = matrix.length;</span><br><span class="line">    <span class="keyword">const</span> n = matrix[<span class="number">0</span>].length;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i=<span class="number">1</span>; i&lt;m; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> j=<span class="number">1</span>; j&lt;n; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (matrix[i][j] !== matrix[i<span class="number">-1</span>][j<span class="number">-1</span>]) <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>leetcode</category>
@@ -871,72 +859,6 @@
 <li>空间复杂度：O(1)</li>
 </ul>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> rotate = <span class="function"><span class="keyword">function</span> (<span class="params">nums, k</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> reverse = <span class="function">(<span class="params">nums, start, end</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">while</span> (start &lt; end) &#123;</span><br><span class="line">            [nums[start], nums[end]] = [nums[end], nums[start]]</span><br><span class="line">            start++;</span><br><span class="line">            end--;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">const</span> n = nums.length;</span><br><span class="line">    k = k % n;</span><br><span class="line">    reverse(nums, <span class="number">0</span>, n - <span class="number">1</span>)</span><br><span class="line">    reverse(nums, <span class="number">0</span>, k - <span class="number">1</span>)</span><br><span class="line">    reverse(nums, k, n - <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">return</span> nums</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>leetcode</category>
-      </categories>
-      <tags>
-        <tag>leetcode每日一题</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>leetcode每日一题2020.2.25</title>
-    <url>/2021/02/25/lc2021.2.25/</url>
-    <content><![CDATA[<h2 id="867-转置矩阵"><a href="#867-转置矩阵" class="headerlink" title="867. 转置矩阵"></a><a href="https://leetcode-cn.com/problems/transpose-matrix/" target="_blank" rel="noopener">867. 转置矩阵</a></h2><h3 id="一、题目"><a href="#一、题目" class="headerlink" title="一、题目"></a>一、题目</h3><p>给你一个二维整数数组 <code>matrix</code>， 返回 <code>matrix</code> 的 <strong>转置矩阵</strong> 。</p>
-<p>矩阵的 <strong>转置</strong> 是指将矩阵的主对角线翻转，交换矩阵的行索引与列索引。</p>
-<p><img data-src="/images/loading.gif" data-original="/images/20210225.png" alt="20210225"></p>
-<a id="more"></a>
-<p><strong>示例1：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：matrix &#x3D; [[1,2,3],[4,5,6],[7,8,9]]</span><br><span class="line">输出：[[1,4,7],[2,5,8],[3,6,9]]</span><br></pre></td></tr></table></figure>
-<p><strong>示例2：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：matrix &#x3D; [[1,2,3],[4,5,6]]</span><br><span class="line">输出：[[1,4],[2,5],[3,6]]</span><br></pre></td></tr></table></figure>
-<p><strong>提示：</strong></p>
-<ul>
-<li>$m = matrix.length$</li>
-<li>$n = matrix[i].length$</li>
-<li>$1 \le m, n \le 1000$</li>
-<li>$1 \le m * n \le 10^{5}$</li>
-<li>$-10^{9} ≤ matrix[i][j] ≤ 10^{9}$</li>
-</ul>
-<h3 id="二、题解"><a href="#二、题解" class="headerlink" title="二、题解"></a>二、题解</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">横纵坐标对换位置即可，很简单。</span><br></pre></td></tr></table></figure>
-<ul>
-<li>时间复杂度：$O(m * n)$，其中 $m$ 为矩阵的行数，$n$ 为矩阵的列数。</li>
-<li>空间复杂度：$O(1)$。除了返回值以外，额外使用的空间为常数。</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> transpose = <span class="function"><span class="keyword">function</span> (<span class="params">matrix</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> row = matrix.length;</span><br><span class="line">    <span class="keyword">const</span> col = matrix[<span class="number">0</span>].length;</span><br><span class="line">    <span class="keyword">const</span> res = <span class="built_in">Array</span>(col).fill(<span class="number">0</span>).map(<span class="function"><span class="params">e</span> =&gt;</span> <span class="built_in">Array</span>(row).fill(<span class="number">0</span>));</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; row; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">0</span>; j &lt; col; j++) &#123;</span><br><span class="line">            res[j][i] = matrix[i][j]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>leetcode</category>
-      </categories>
-      <tags>
-        <tag>leetcode每日一题</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>leetcode每日一题2020.2.22</title>
-    <url>/2021/02/22/lc2021.2.22/</url>
-    <content><![CDATA[<h2 id="766-托普利茨矩阵"><a href="#766-托普利茨矩阵" class="headerlink" title="766. 托普利茨矩阵"></a><a href="https://leetcode-cn.com/problems/toeplitz-matrix/" target="_blank" rel="noopener">766. 托普利茨矩阵</a></h2><h3 id="一、题目"><a href="#一、题目" class="headerlink" title="一、题目"></a>一、题目</h3><p>给你一个 <code>m x n</code> 的矩阵 <code>matrix</code> 。如果这个矩阵是托普利茨矩阵，返回 <code>true</code> ；否则，返回 <code>false</code> 。</p>
-<p>如果矩阵上每一条由左上到右下的对角线上的元素都相同，那么这个矩阵是 <strong>托普利茨矩阵</strong> 。</p>
-<a id="more"></a>
-<p><strong>示例1：</strong></p>
-<p><img data-src="/images/loading.gif" data-original="/images/2021022201.jpg" alt="示例1图"></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：matrix &#x3D; [[1,2,3,4],[5,1,2,3],[9,5,1,2]]</span><br><span class="line">输出：true</span><br><span class="line">解释：</span><br><span class="line">在上述矩阵中, 其对角线为: </span><br><span class="line">&quot;[9]&quot;, &quot;[5, 5]&quot;, &quot;[1, 1, 1]&quot;, &quot;[2, 2, 2]&quot;, &quot;[3, 3]&quot;, &quot;[4]&quot;。 </span><br><span class="line">各条对角线上的所有元素均相同, 因此答案是 True 。</span><br></pre></td></tr></table></figure>
-<p><strong>示例2：</strong></p>
-<p><img data-src="/images/loading.gif" data-original="/images/2021022202.jpg" alt="示例2图"></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：matrix &#x3D; [[1,2],[2,2]]</span><br><span class="line">输出：false</span><br><span class="line">解释：</span><br><span class="line">对角线 &quot;[1, 2]&quot; 上的元素不同。</span><br></pre></td></tr></table></figure>
-<p><strong>提示：</strong></p>
-<ul>
-<li><code>m = matrix.length</code></li>
-<li><code>n = matrix[i].length</code></li>
-<li><code>1 ≤ m, n ≤ 20</code></li>
-<li><code>0 ≤ matrix[i][j] ≤ 99</code></li>
-</ul>
-<h3 id="二、题解"><a href="#二、题解" class="headerlink" title="二、题解"></a>二、题解</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">根据定义，当且仅当矩阵中每个元素都与其左上角相邻的元素（如果存在）相等时，该矩阵为托普利茨矩阵。</span><br><span class="line"></span><br><span class="line">因此，我们遍历该矩阵，将每一个元素和它左上角的元素相比对即可。</span><br></pre></td></tr></table></figure>
-<ul>
-<li>时间复杂度：$O(m * n)$，其中 $m$ 为矩阵的行数，$n$ 为矩阵的列数。</li>
-<li>空间复杂度：$O(1)$</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> isToeplitzMatrix = <span class="function"><span class="keyword">function</span>(<span class="params">matrix</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> m = matrix.length;</span><br><span class="line">    <span class="keyword">const</span> n = matrix[<span class="number">0</span>].length;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i=<span class="number">1</span>; i&lt;m; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> j=<span class="number">1</span>; j&lt;n; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (matrix[i][j] !== matrix[i<span class="number">-1</span>][j<span class="number">-1</span>]) <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>leetcode</category>
@@ -988,25 +910,97 @@
       </tags>
   </entry>
   <entry>
-    <title>webpack打包之后index.html缺少引号的问题</title>
-    <url>/2020/07/06/webpack%E6%89%93%E5%8C%85%E7%BC%BA%E5%B0%91%E5%BC%95%E5%8F%B7/</url>
-    <content><![CDATA[<h2 id="webpack打包之后index-html缺少引号的问题"><a href="#webpack打包之后index-html缺少引号的问题" class="headerlink" title="webpack打包之后index.html缺少引号的问题"></a>webpack打包之后index.html缺少引号的问题</h2><p>下面是通过webpack <code>npm run build</code>打包之后生成的index.html文件，可以看到缺少引号</p>
-<p><img data-src="/images/loading.gif" data-original="/images/出错.png" alt="报错问题"></p>
-<a id="more"></a>
-<h2 id="这里给出解决方案，亲测有效"><a href="#这里给出解决方案，亲测有效" class="headerlink" title="这里给出解决方案，亲测有效"></a>这里给出解决方案，亲测有效</h2><ol>
-<li><p>找到<code>webpack.prod.conf.js</code>，在<code>webpack.prod.conf.js</code>找到minify（可以ctrl+F搜索minify），直接将整块(也就是以下这块儿)删除</p>
- <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">minify: &#123;</span><br><span class="line">    removeComments: <span class="literal">true</span>,</span><br><span class="line">    collapseWhitespace: <span class="literal">true</span>,</span><br><span class="line">    removeAttributeQuotes: <span class="literal">true</span></span><br><span class="line">    <span class="comment">// more options:</span></span><br><span class="line">    <span class="comment">// https://github.com/kangax/html-minifier#options-quick-reference</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>重新打包<code>npm run build</code> 即解决问题，重新打包的index.html文件如下</p>
-<p> <img data-src="/images/loading.gif" data-original="/images/解决方法.png" alt="效果图"></p>
-</li>
-</ol>
+    <title>leetcode每日一题2020.2.1</title>
+    <url>/2021/02/01/lc2021.2.1/</url>
+    <content><![CDATA[<h2 id="888-公平的糖果棒交换"><a href="#888-公平的糖果棒交换" class="headerlink" title="888. 公平的糖果棒交换"></a><a href="https://leetcode-cn.com/problems/fair-candy-swap/" target="_blank" rel="noopener">888. 公平的糖果棒交换</a></h2><h3 id="一、题目"><a href="#一、题目" class="headerlink" title="一、题目"></a>一、题目</h3><p>爱丽丝和鲍勃有不同大小的糖果棒：<code>A[i]</code> 是爱丽丝拥有的第 <code>i</code> 根糖果棒的大小，<code>B[j]</code> 是鲍勃拥有的第 <code>j</code> 根糖果棒的大小。</p>
+<p>因为他们是朋友，所以他们想交换一根糖果棒，这样交换后，他们都有相同的糖果总量。<em>（一个人拥有的糖果总量是他们拥有的糖果棒大小的总和。）</em></p>
+<p>返回一个整数数组 <code>ans</code>，其中 <code>ans[0]</code> 是爱丽丝必须交换的糖果棒的大小，<code>ans[1]</code> 是 Bob 必须交换的糖果棒的大小。</p>
+<p>如果有多个答案，你可以返回其中任何一个。保证答案存在。<br><a id="more"></a></p>
+<p><strong>示例1：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：A &#x3D; [1,1], B &#x3D; [2,2]</span><br><span class="line">输出：[1,2]</span><br></pre></td></tr></table></figure>
+<p><strong>示例2：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：A &#x3D; [1,2], B &#x3D; [2,3]</span><br><span class="line">输出：[1,2]</span><br></pre></td></tr></table></figure>
+<p><strong>示例3：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：A &#x3D; [2], B &#x3D; [1,3]</span><br><span class="line">输出：[2,3]</span><br></pre></td></tr></table></figure>
+<p><strong>示例4：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：A &#x3D; [1,2,5], B &#x3D; [2,4]</span><br><span class="line">输出：[5,4]</span><br></pre></td></tr></table></figure>
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>1 ≤ A.length ≤ 10000</code></li>
+<li><code>1 ≤ B.length ≤ 10000</code></li>
+<li><code>1 ≤ A[i] ≤ 100000</code></li>
+<li><code>1 ≤ B[i] ≤ 100000</code></li>
+<li>保证爱丽丝与鲍勃的糖果总量不同。</li>
+<li>答案肯定存在。</li>
+</ul>
+<h3 id="二、题解"><a href="#二、题解" class="headerlink" title="二、题解"></a>二、题解</h3><h4 id="哈希表"><a href="#哈希表" class="headerlink" title="哈希表"></a>哈希表</h4><p>思路如下：</p>
+<hr>
+<p>这是一个纯数学问题，我们来把它数学化：</p>
+<p>假设我们最后得结果是 $[a, b]$，也就是 $a$ 是 $A$ 要交换得，$b$ 是 $B$ 要交换的</p>
+<p>我们可以计算分别得到 $A$ 和 $B$ 的和为 $aSum$ 和 $bSum$，那我们会有如下关系：</p>
+<script type="math/tex; mode=display">aSum - a + b = bSum - b + a</script><p>转化一下可以得到：</p>
+<script type="math/tex; mode=display">a = b + \frac{aSum - bSum}{2}</script><p>其实问题就是：对于 $B$ 中的任一数 $b$，在 $A$ 中存在一个数 $a$，满足上述关系式。</p>
+<hr>
+<ul>
+<li>时间复杂度：$O(n+m)$，$n$ 和 $m$ 分别为 $A$ 和 $B$ 的长度。</li>
+<li>空间复杂度：$O(n)$。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> fairCandySwap = <span class="function"><span class="keyword">function</span> (<span class="params">A, B</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> aSum = A.reduce(<span class="function">(<span class="params">preValue, curValue</span>) =&gt;</span> preValue + curValue);</span><br><span class="line">    <span class="keyword">let</span> bSum = B.reduce(<span class="function">(<span class="params">preValue, curValue</span>) =&gt;</span> preValue + curValue);</span><br><span class="line">    <span class="keyword">let</span> diff = (aSum - bSum) / <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">set</span> = new Set(A);</span><br><span class="line">    let res = [];</span><br><span class="line">    for (const y of B) &#123;</span><br><span class="line">        <span class="keyword">let</span> x = y + diff;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">set</span>.has(x)) &#123;</span><br><span class="line">            res = [x, y]</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>Webpack</category>
+        <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Webpack</tag>
+        <tag>leetcode每日一题</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>leetcode每日一题2020.2.25</title>
+    <url>/2021/02/25/lc2021.2.25/</url>
+    <content><![CDATA[<h2 id="867-转置矩阵"><a href="#867-转置矩阵" class="headerlink" title="867. 转置矩阵"></a><a href="https://leetcode-cn.com/problems/transpose-matrix/" target="_blank" rel="noopener">867. 转置矩阵</a></h2><h3 id="一、题目"><a href="#一、题目" class="headerlink" title="一、题目"></a>一、题目</h3><p>给你一个二维整数数组 <code>matrix</code>， 返回 <code>matrix</code> 的 <strong>转置矩阵</strong> 。</p>
+<p>矩阵的 <strong>转置</strong> 是指将矩阵的主对角线翻转，交换矩阵的行索引与列索引。</p>
+<p><img data-src="/images/loading.gif" data-original="/images/20210225.png" alt="20210225"></p>
+<a id="more"></a>
+<p><strong>示例1：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：matrix &#x3D; [[1,2,3],[4,5,6],[7,8,9]]</span><br><span class="line">输出：[[1,4,7],[2,5,8],[3,6,9]]</span><br></pre></td></tr></table></figure>
+<p><strong>示例2：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：matrix &#x3D; [[1,2,3],[4,5,6]]</span><br><span class="line">输出：[[1,4],[2,5],[3,6]]</span><br></pre></td></tr></table></figure>
+<p><strong>提示：</strong></p>
+<ul>
+<li>$m = matrix.length$</li>
+<li>$n = matrix[i].length$</li>
+<li>$1 \le m, n \le 1000$</li>
+<li>$1 \le m * n \le 10^{5}$</li>
+<li>$-10^{9} ≤ matrix[i][j] ≤ 10^{9}$</li>
+</ul>
+<h3 id="二、题解"><a href="#二、题解" class="headerlink" title="二、题解"></a>二、题解</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">横纵坐标对换位置即可，很简单。</span><br></pre></td></tr></table></figure>
+<ul>
+<li>时间复杂度：$O(m * n)$，其中 $m$ 为矩阵的行数，$n$ 为矩阵的列数。</li>
+<li>空间复杂度：$O(1)$。除了返回值以外，额外使用的空间为常数。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> transpose = <span class="function"><span class="keyword">function</span> (<span class="params">matrix</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> row = matrix.length;</span><br><span class="line">    <span class="keyword">const</span> col = matrix[<span class="number">0</span>].length;</span><br><span class="line">    <span class="keyword">const</span> res = <span class="built_in">Array</span>(col).fill(<span class="number">0</span>).map(<span class="function"><span class="params">e</span> =&gt;</span> <span class="built_in">Array</span>(row).fill(<span class="number">0</span>));</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; row; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">0</span>; j &lt; col; j++) &#123;</span><br><span class="line">            res[j][i] = matrix[i][j]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>leetcode每日一题</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>浏览器console控制台不显示编译错误/警告</title>
+    <url>/2020/07/06/%E6%8E%A7%E5%88%B6%E5%8F%B0%E4%B8%8D%E6%98%BE%E7%A4%BA%E8%AD%A6%E5%91%8A/</url>
+    <content><![CDATA[<h2 id="浏览器console控制台误关了编译错误-警告（不显示了）"><a href="#浏览器console控制台误关了编译错误-警告（不显示了）" class="headerlink" title="浏览器console控制台误关了编译错误/警告（不显示了）"></a>浏览器console控制台误关了编译错误/警告（不显示了）</h2><a id="more"></a>
+<p>浏览器正常显示报错应该是这样的<br><img data-src="/images/loading.gif" data-original="/images/控制台报错.jpeg" alt="控制台报错"></p>
+<p>但是我一不小心右键给Hide message from…了，红色报错字体就没了，解决方法如下：</p>
+<p><img data-src="/images/loading.gif" data-original="/images/控制台报错解决方法.jpeg" alt="控制台报错解决方法"></p>
+<p>直接将红色框内的内容叉掉，恢复成filter就OK了</p>
+]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
       </tags>
   </entry>
   <entry>
@@ -1031,19 +1025,25 @@
       </tags>
   </entry>
   <entry>
-    <title>浏览器console控制台不显示编译错误/警告</title>
-    <url>/2020/07/06/%E6%8E%A7%E5%88%B6%E5%8F%B0%E4%B8%8D%E6%98%BE%E7%A4%BA%E8%AD%A6%E5%91%8A/</url>
-    <content><![CDATA[<h2 id="浏览器console控制台误关了编译错误-警告（不显示了）"><a href="#浏览器console控制台误关了编译错误-警告（不显示了）" class="headerlink" title="浏览器console控制台误关了编译错误/警告（不显示了）"></a>浏览器console控制台误关了编译错误/警告（不显示了）</h2><a id="more"></a>
-<p>浏览器正常显示报错应该是这样的<br><img data-src="/images/loading.gif" data-original="/images/控制台报错.jpeg" alt="控制台报错"></p>
-<p>但是我一不小心右键给Hide message from…了，红色报错字体就没了，解决方法如下：</p>
-<p><img data-src="/images/loading.gif" data-original="/images/控制台报错解决方法.jpeg" alt="控制台报错解决方法"></p>
-<p>直接将红色框内的内容叉掉，恢复成filter就OK了</p>
+    <title>webpack打包之后index.html缺少引号的问题</title>
+    <url>/2020/07/06/webpack%E6%89%93%E5%8C%85%E7%BC%BA%E5%B0%91%E5%BC%95%E5%8F%B7/</url>
+    <content><![CDATA[<h2 id="webpack打包之后index-html缺少引号的问题"><a href="#webpack打包之后index-html缺少引号的问题" class="headerlink" title="webpack打包之后index.html缺少引号的问题"></a>webpack打包之后index.html缺少引号的问题</h2><p>下面是通过webpack <code>npm run build</code>打包之后生成的index.html文件，可以看到缺少引号</p>
+<p><img data-src="/images/loading.gif" data-original="/images/出错.png" alt="报错问题"></p>
+<a id="more"></a>
+<h2 id="这里给出解决方案，亲测有效"><a href="#这里给出解决方案，亲测有效" class="headerlink" title="这里给出解决方案，亲测有效"></a>这里给出解决方案，亲测有效</h2><ol>
+<li><p>找到<code>webpack.prod.conf.js</code>，在<code>webpack.prod.conf.js</code>找到minify（可以ctrl+F搜索minify），直接将整块(也就是以下这块儿)删除</p>
+ <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">minify: &#123;</span><br><span class="line">    removeComments: <span class="literal">true</span>,</span><br><span class="line">    collapseWhitespace: <span class="literal">true</span>,</span><br><span class="line">    removeAttributeQuotes: <span class="literal">true</span></span><br><span class="line">    <span class="comment">// more options:</span></span><br><span class="line">    <span class="comment">// https://github.com/kangax/html-minifier#options-quick-reference</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>重新打包<code>npm run build</code> 即解决问题，重新打包的index.html文件如下</p>
+<p> <img data-src="/images/loading.gif" data-original="/images/解决方法.png" alt="效果图"></p>
+</li>
+</ol>
 ]]></content>
       <categories>
-        <category>JavaScript</category>
+        <category>Webpack</category>
       </categories>
       <tags>
-        <tag>JavaScript</tag>
+        <tag>Webpack</tag>
       </tags>
   </entry>
 </search>
