@@ -37,6 +37,30 @@
   </entry>
   
   <entry>
+    <title>Hexo 搭建博客填坑</title>
+    <link href="https://wzt2022.github.io/2021/11/11/Hexo%20%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E5%A1%AB%E5%9D%91/"/>
+    <id>https://wzt2022.github.io/2021/11/11/Hexo%20%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E5%A1%AB%E5%9D%91/</id>
+    <published>2021-11-10T16:00:00.000Z</published>
+    <updated>2021-11-10T16:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="切换-Next-主题"><a href="#切换-Next-主题" class="headerlink" title="切换 Next 主题"></a>切换 Next 主题</h2><ol><li>找到这个 next 主题的 <a href="https://github.com/theme-next/hexo-theme-next" target="_blank" rel="noopener">GitHub 网站</a></li><li><p>进入你的博客本地路径，例如我的是放在 D 盘下，然后将主题 clone 到本地</p> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd D:\myblog\blog</span><br><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;theme-next&#x2F;hexo-theme-next themes&#x2F;next</span><br></pre></td></tr></table></figure> <a id="more"></a></li><li><p>修改配置文件<br>打开根目录下的·<code>_config.yml</code> 的站点配置文件，找到themes的配置项，修改为next</p> <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme: next</span><br></pre></td></tr></table></figure></li><li><p>调试、发布</p><p> 输入调试指令，在浏览器中输入localhost:4000查看</p> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server --debug</span><br></pre></td></tr></table></figure><p> 在本地查看无误之后，输入生成和发布命令,就可已将新主题发布到自己的博客网站上了。</p> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure><p> 如出现缓存引起的异常，可以在生成命令前执行清除缓存命令</p> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure></li></ol><hr><h2 id="Hexo-部署-Next-主题网页字体不生效"><a href="#Hexo-部署-Next-主题网页字体不生效" class="headerlink" title="Hexo 部署 Next 主题网页字体不生效"></a>Hexo 部署 Next 主题网页字体不生效</h2><p>说明：</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo 下的 _config.yml 称为站点配置文件</span><br><span class="line">themes/next 中的_config.yml 称为主题配置文件</span><br></pre></td></tr></table></figure><ol><li><p>按照hexo 的官方文档，在站点配置文件设置语言（第7行）</p> <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Site</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">Lee</span> <span class="string">的个人博客</span></span><br><span class="line"><span class="attr">subtitle:</span> <span class="string">'进击的技术客'</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">'Everything will be ok!'</span></span><br><span class="line"><span class="attr">keywords:</span> <span class="string">'努力一片天'</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">Lee</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">zh-Hans</span></span><br><span class="line"><span class="attr">timezone:</span> <span class="string">''</span></span><br></pre></td></tr></table></figure></li><li><p>这样还是不起作用的话,请查看 <code>theme/next/languages/</code> 目录下是否有 <code>zh-Hans.yml</code> 文件.一般是有 <code>zh-CN.yml</code> ，所以要把 <code>zh-CN.yml</code> 文件改成名字为 <code>zh-Hans.yml</code> 就可以了</p></li></ol>]]></content>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;切换-Next-主题&quot;&gt;&lt;a href=&quot;#切换-Next-主题&quot; class=&quot;headerlink&quot; title=&quot;切换 Next 主题&quot;&gt;&lt;/a&gt;切换 Next 主题&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;找到这个 next 主题的 &lt;a href=&quot;https://github.com/theme-next/hexo-theme-next&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;GitHub 网站&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;进入你的博客本地路径，例如我的是放在 D 盘下，然后将主题 clone 到本地&lt;/p&gt;
+ &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;cd D:\myblog\blog&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git clone https:&amp;#x2F;&amp;#x2F;github.com&amp;#x2F;theme-next&amp;#x2F;hexo-theme-next themes&amp;#x2F;next&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    <category term="Hexo" scheme="https://wzt2022.github.io/categories/Hexo/"/>
+    
+    
+    <category term="Hexo爬坑" scheme="https://wzt2022.github.io/tags/Hexo%E7%88%AC%E5%9D%91/"/>
+    
+  </entry>
+  
+  <entry>
     <title>React自定义主题配置</title>
     <link href="https://wzt2022.github.io/2021/11/11/2021.3.7React%E8%87%AA%E5%AE%9A%E4%B9%89%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/"/>
     <id>https://wzt2022.github.io/2021/11/11/2021.3.7React%E8%87%AA%E5%AE%9A%E4%B9%89%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/</id>
@@ -60,30 +84,6 @@
     
     
     <category term="React" scheme="https://wzt2022.github.io/tags/React/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo 搭建博客填坑</title>
-    <link href="https://wzt2022.github.io/2021/11/11/Hexo%20%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E5%A1%AB%E5%9D%91/"/>
-    <id>https://wzt2022.github.io/2021/11/11/Hexo%20%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E5%A1%AB%E5%9D%91/</id>
-    <published>2021-11-10T16:00:00.000Z</published>
-    <updated>2021-11-10T16:00:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="切换-Next-主题"><a href="#切换-Next-主题" class="headerlink" title="切换 Next 主题"></a>切换 Next 主题</h2><ol><li>找到这个 next 主题的 <a href="https://github.com/theme-next/hexo-theme-next" target="_blank" rel="noopener">GitHub 网站</a></li><li><p>进入你的博客本地路径，例如我的是放在 D 盘下，然后将主题 clone 到本地</p> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd D:\myblog\blog</span><br><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;theme-next&#x2F;hexo-theme-next themes&#x2F;next</span><br></pre></td></tr></table></figure> <a id="more"></a></li><li><p>修改配置文件<br>打开根目录下的·<code>_config.yml</code> 的站点配置文件，找到themes的配置项，修改为next</p> <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme: next</span><br></pre></td></tr></table></figure></li><li><p>调试、发布</p><p> 输入调试指令，在浏览器中输入localhost:4000查看</p> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server --debug</span><br></pre></td></tr></table></figure><p> 在本地查看无误之后，输入生成和发布命令,就可已将新主题发布到自己的博客网站上了。</p> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure><p> 如出现缓存引起的异常，可以在生成命令前执行清除缓存命令</p> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure></li></ol><hr><h2 id="Hexo-部署-Next-主题网页字体不生效"><a href="#Hexo-部署-Next-主题网页字体不生效" class="headerlink" title="Hexo 部署 Next 主题网页字体不生效"></a>Hexo 部署 Next 主题网页字体不生效</h2><p>说明：</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo 下的 _config.yml 称为站点配置文件</span><br><span class="line">themes/next 中的_config.yml 称为主题配置文件</span><br></pre></td></tr></table></figure><ol><li><p>按照hexo 的官方文档，在站点配置文件设置语言（第7行）</p> <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Site</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">Lee</span> <span class="string">的个人博客</span></span><br><span class="line"><span class="attr">subtitle:</span> <span class="string">'进击的技术客'</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">'Everything will be ok!'</span></span><br><span class="line"><span class="attr">keywords:</span> <span class="string">'努力一片天'</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">Lee</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">zh-Hans</span></span><br><span class="line"><span class="attr">timezone:</span> <span class="string">''</span></span><br></pre></td></tr></table></figure></li><li><p>这样还是不起作用的话,请查看 <code>theme/next/languages/</code> 目录下是否有 <code>zh-Hans.yml</code> 文件.一般是有 <code>zh-CN.yml</code> ，所以要把 <code>zh-CN.yml</code> 文件改成名字为 <code>zh-Hans.yml</code> 就可以了</p></li></ol>]]></content>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;切换-Next-主题&quot;&gt;&lt;a href=&quot;#切换-Next-主题&quot; class=&quot;headerlink&quot; title=&quot;切换 Next 主题&quot;&gt;&lt;/a&gt;切换 Next 主题&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;找到这个 next 主题的 &lt;a href=&quot;https://github.com/theme-next/hexo-theme-next&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;GitHub 网站&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;进入你的博客本地路径，例如我的是放在 D 盘下，然后将主题 clone 到本地&lt;/p&gt;
- &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;cd D:\myblog\blog&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git clone https:&amp;#x2F;&amp;#x2F;github.com&amp;#x2F;theme-next&amp;#x2F;hexo-theme-next themes&amp;#x2F;next&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
-    
-    
-    
-    <category term="Hexo" scheme="https://wzt2022.github.io/categories/Hexo/"/>
-    
-    
-    <category term="Hexo爬坑" scheme="https://wzt2022.github.io/tags/Hexo%E7%88%AC%E5%9D%91/"/>
     
   </entry>
   

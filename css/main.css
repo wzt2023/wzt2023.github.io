@@ -1291,7 +1291,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #fa2567;
+  background: #8a60e2;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2808,9 +2808,21 @@ mjx-container + br {
   }
 }
 body {
-  background: url("https://th.bing.com/th/id/R.cdbcab0dee809da39eef1c3df9237be2?rik=mIGIM7toWg3LYw&riu=http%3a%2f%2fwww.west999.com%2finfo%2fupload%2f20191016%2fi43cvswzz3z.png&ehk=a6xZLOQhTNMFy115T4HIIvlaQqwRB8Cyj2qbDOu1JnQ%3d&risl=&pid=ImgRaw&r=0");
+  background: url("/images/R.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
   background-position: 50% 50%;
+}
+.content-wrap {
+  opacity: 0.9;
+}
+.sidebar {
+  opacity: 0.9;
+}
+.header-inner {
+  background: rgba(255,255,255,0.9);
+}
+.popup {
+  opacity: 0.9;
 }
