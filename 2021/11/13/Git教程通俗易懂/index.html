@@ -21,30 +21,41 @@
     var CONFIG = {"hostname":"wzt2022.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":18,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideLeftBigIn","post_body":"slideRightBigIn","coll_header":"slideLeftIn","sidebar":"slideLeftBigIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="stay hungry stay foolish！">
-<meta property="og:type" content="website">
-<meta property="og:title" content="TT の 博客">
-<meta property="og:url" content="https://wzt2022.github.io/index.html">
+  <meta name="description" content="版本控制 什么是版本控制  版本控制（Revision control）是一种在开发的过程中用于管理我们对文件、目录或工程等内容的修改历史，方便查看更改历史记录，备份以便恢复以前的版本的软件工程技术。  Github 和 Git区别。  Git是版本控制系统，Github是在线的基于Git的代码托管服务。GitHub是2008年由Ruby on Rails编写而成。 GitHub同时提供付费账户和">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git教程">
+<meta property="og:url" content="https://wzt2022.github.io/2021/11/13/Git%E6%95%99%E7%A8%8B%E9%80%9A%E4%BF%97%E6%98%93%E6%87%82/index.html">
 <meta property="og:site_name" content="TT の 博客">
-<meta property="og:description" content="stay hungry stay foolish！">
+<meta property="og:description" content="版本控制 什么是版本控制  版本控制（Revision control）是一种在开发的过程中用于管理我们对文件、目录或工程等内容的修改历史，方便查看更改历史记录，备份以便恢复以前的版本的软件工程技术。  Github 和 Git区别。  Git是版本控制系统，Github是在线的基于Git的代码托管服务。GitHub是2008年由Ruby on Rails编写而成。 GitHub同时提供付费账户和">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="article:published_time" content="2021-11-12T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-11-12T16:00:00.000Z">
 <meta property="article:author" content="Jony J">
-<meta property="article:tag" content="while true { code() }">
+<meta property="article:tag" content="Git">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://wzt2022.github.io/images/loading.gif">
 
-<link rel="canonical" href="https://wzt2022.github.io/">
+<link rel="canonical" href="https://wzt2022.github.io/2021/11/13/Git%E6%95%99%E7%A8%8B%E9%80%9A%E4%BF%97%E6%98%93%E6%87%82/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-Hans'
   };
 </script>
 
-  <title>TT の 博客</title>
+  <title>Git教程 | TT の 博客</title>
   
 
 
@@ -210,119 +221,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://wzt2022.github.io/2021/11/11/Hexo%20%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E5%A1%AB%E5%9D%91/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Jony J">
-      <meta itemprop="description" content="stay hungry stay foolish！">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="TT の 博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/11/11/Hexo%20%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E5%A1%AB%E5%9D%91/" class="post-title-link" itemprop="url">Hexo 搭建博客填坑</a>
-        </h2>
-
-        <div class="post-meta">
-          
-              <i class="fa fa-thumb-tack"></i>
-              <font color=7D26CD>置顶</font>
-              <span class="post-meta-divider">|</span>
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-11-11 00:00:00" itemprop="dateCreated datePublished" datetime="2021-11-11T00:00:00+08:00">2021-11-11</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2021/11/11/Hexo%20%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E5%A1%AB%E5%9D%91/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2021/11/11/Hexo%20%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E5%A1%AB%E5%9D%91/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>730</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
 
     
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="切换-Next-主题"><a href="#切换-Next-主题" class="headerlink" title="切换 Next 主题"></a>切换 Next 主题</h2><ol>
-<li>找到这个 next 主题的 <a href="https://github.com/theme-next/hexo-theme-next" target="_blank" rel="noopener">GitHub 网站</a></li>
-<li><p>进入你的博客本地路径，例如我的是放在 D 盘下，然后将主题 clone 到本地</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd D:\myblog\blog</span><br><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;theme-next&#x2F;hexo-theme-next themes&#x2F;next</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/11/11/Hexo%20%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E5%A1%AB%E5%9D%91/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
@@ -338,10 +240,9 @@
       <meta itemprop="name" content="TT の 博客">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/11/13/Git%E6%95%99%E7%A8%8B%E9%80%9A%E4%BF%97%E6%98%93%E6%87%82/" class="post-title-link" itemprop="url">Git教程</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          Git教程
+        </h1>
 
         <div class="post-meta">
           
@@ -364,6 +265,13 @@
             </span>
 
           
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
   
   <span class="post-meta-item">
     
@@ -402,7 +310,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="版本控制"><a href="#版本控制" class="headerlink" title="版本控制"></a>版本控制</h2><blockquote>
+        <h2 id="版本控制"><a href="#版本控制" class="headerlink" title="版本控制"></a>版本控制</h2><blockquote>
 <p>什么是版本控制</p>
 </blockquote>
 <p>版本控制（Revision control）是一种在开发的过程中用于管理我们对文件、目录或工程等内容的修改历史，方便查看更改历史记录，备份以便恢复以前的版本的软件工程技术。</p>
@@ -419,325 +327,261 @@
 <li>CVS</li>
 <li>VSS</li>
 <li><p>TFS<br>版本控制的产品非常多，现在影响力最大且使用最广泛的是Git与SVN</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/11/13/Git%E6%95%99%E7%A8%8B%E9%80%9A%E4%BF%97%E6%98%93%E6%87%82/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://wzt2022.github.io/2021/11/12/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Jony J">
-      <meta itemprop="description" content="stay hungry stay foolish！">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="TT の 博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/11/12/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta">
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-11-12 10:07:22" itemprop="dateCreated datePublished" datetime="2021-11-12T10:07:22+08:00">2021-11-12</time>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2021/11/12/hello-world/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2021/11/12/hello-world/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>357</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://wzt2022.github.io/2021/11/11/2021.3.7React%E8%87%AA%E5%AE%9A%E4%B9%89%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Jony J">
-      <meta itemprop="description" content="stay hungry stay foolish！">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="TT の 博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/11/11/2021.3.7React%E8%87%AA%E5%AE%9A%E4%B9%89%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/" class="post-title-link" itemprop="url">React自定义主题配置</a>
-        </h2>
-
-        <div class="post-meta">
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-11-11 00:00:00" itemprop="dateCreated datePublished" datetime="2021-11-11T00:00:00+08:00">2021-11-11</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/React/" itemprop="url" rel="index"><span itemprop="name">React</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2021/11/11/2021.3.7React%E8%87%AA%E5%AE%9A%E4%B9%89%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2021/11/11/2021.3.7React%E8%87%AA%E5%AE%9A%E4%B9%89%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.2k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="React-自定义-antd-主题方法编译失败与解决办法"><a href="#React-自定义-antd-主题方法编译失败与解决办法" class="headerlink" title="React 自定义 antd 主题方法编译失败与解决办法"></a>React 自定义 antd 主题方法编译失败与解决办法</h2><h3 id="一、按照官网操作"><a href="#一、按照官网操作" class="headerlink" title="一、按照官网操作"></a>一、按照官网操作</h3><p>首先我是按照<a href="https://3x.ant.design/docs/react/use-with-create-react-app-cn" target="_blank" rel="noopener"><strong>官网的步骤</strong></a>一步一步操作下来的：</p>
-<ol>
-<li><p>安装 <code>less</code> 和 <code>less-loader</code></p>
- <figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install less less-loader</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<blockquote>
+<p>版本控制分类</p>
+</blockquote>
 </li>
-<li><p>引入 <code>customize-cra</code> 中提供的 <code>less</code> 相关的函数 <code>addLessLoader</code> 来帮助加载 <code>less</code> 样式，同时修改 <code>config-overrides.js</code> 文件如下:</p>
- <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//配置具体的修改规则</span></span><br><span class="line"><span class="keyword">const</span> &#123; override, fixBabelImports,addLessLoader&#125; = <span class="built_in">require</span>(<span class="string">'customize-cra'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = override(</span><br><span class="line">  fixBabelImports(<span class="string">'import'</span>, &#123;</span><br><span class="line">    libraryName: <span class="string">'antd'</span>,</span><br><span class="line">    libraryDirectory: <span class="string">'es'</span>,</span><br><span class="line">    style: <span class="literal">true</span>,</span><br><span class="line">  &#125;),</span><br><span class="line">  addLessLoader(&#123;</span><br><span class="line">    javascriptEnabled: <span class="literal">true</span>,</span><br><span class="line">    modifyVars: &#123; <span class="string">'@primary-color'</span>: <span class="string">'green'</span> &#125;,</span><br><span class="line">  &#125;),</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/11/11/2021.3.7React%E8%87%AA%E5%AE%9A%E4%B9%89%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
+<li><p>本地版本控制:记录文件每次的更新,适合个人用。</p>
+</li>
+<li><p>集中版本控制 SVN:所有的版本数据都保存在服务器上。</p>
+</li>
+<li><p>分布式版本控制 Git: 每个人都拥有全部的代码，不会因为服务器或者网络问题，造成不能工作的情况，但是存在安全隐患就是跑路的时候可以将公司所有代码带走。</p>
+</li>
+</ul>
+<blockquote>
+<p>Git与SVN的主要区别</p>
+</blockquote>
+<p>SVN是集中式版本控制系统，版本库是集中放在中央服务器的，而工作的时候，用的都是自己的电脑，所以首先要从中央服务器得到最新的版本，然后工作，完成工作后，需要把自己做完的活推送到中央服务器。集中式版本控制系统是必须联网才能工作，对网络带宽要求较高。</p>
+<p>Git是分布式版本控制系统，没有中央服务器，每个人的电脑就是一个完整的版本库，工作的时候不需要联网了，因为版本都在自己电脑上。协同的方法是这样的：比如说自己在电脑上改了文件A，其他人也在电脑上改了文件A，这时，你们两之间只需把各自的修改推送给对方，就可以互相看到对方的修改了。Git可以直接看到更新了哪些代码和文件！</p>
+<h2 id="聊聊Git的历史"><a href="#聊聊Git的历史" class="headerlink" title="聊聊Git的历史"></a>聊聊Git的历史</h2><p>同生活中的许多伟大事物一样，Git 诞生于一个极富纷争大举创新的年代。</p>
+<p>Linux 内核开源项目有着为数众广的参与者。绝大多数的 Linux 内核维护工作都花在了提交补丁和保存归档的繁琐事务上(1991－2002年间)。到 2002 年，整个项目组开始启用一个专有的分布式版本控制系统 BitKeeper 来管理和维护代码。</p>
+<p>Linux社区中存在很多的大佬！破解研究 BitKeeper ！</p>
+<p>到了 2005 年，开发 BitKeeper 的商业公司同 Linux 内核开源社区的合作关系结束，他们收回了 Linux 内核社区免费使用 BitKeeper 的权力。这就迫使 Linux 开源社区(特别是 Linux 的缔造者 Linus Torvalds)基于使用 BitKeeper 时的经验教训，开发出自己的版本系统。（2周左右！） 也就是后来的 Git！</p>
+<p><strong><em>Git是目前世界上最先进的分布式版本控制系统</em></strong></p>
+<p>Git是免费、开源的，最初Git是为辅助 Linux 内核开发的，来替代 BitKeeper！</p>
+<h2 id="Git的环境配置"><a href="#Git的环境配置" class="headerlink" title="Git的环境配置"></a>Git的环境配置</h2><ol>
+<li><p>首先打开git官网[git官网]  <a href="https://git-scm.com/" target="_blank" rel="noopener">https://git-scm.com/</a> 下载Git对应操作系统的版本</p>
+<p> <img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202111131426896.png" alt="image-20211113142605414"><br> 安装过程无脑下一步即可，安装完毕就可以使用了</p>
+</li>
+<li><p>安装成功后右击桌面就会有相应的图标显示</p>
+<p> <img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202111131431838.png" alt="image-20211113143120394"></p>
+</li>
+<li><p>如果要卸载就要先将环境变量有关Git的pash删除了再进行卸载<br>win10的环境变量: 右击鼠标-&gt;显示设置-&gt;最后一项关于<br> <img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202111131435734.png" alt="image-20211113143514018"></p>
+</li>
+</ol>
+<blockquote>
+<p>常用的Linux命令</p>
+</blockquote>
+<ul>
+<li><p>cd : 改变目录。</p>
+</li>
+<li><p>cd . . 回退到上一个目录，直接cd进入默认目录</p>
+</li>
+<li><p>pwd : 显示当前所在的目录路径。</p>
+</li>
+<li><p>ls(ll):  都是列出当前目录中的所有文件，只不过ll(两个ll)列出的内容更为详细。</p>
+</li>
+<li><p>touch : 新建一个文件 如 touch index.js 就会在当前目录下新建一个index.js文件。</p>
+</li>
+<li><p>rm:  删除一个文件, rm index.js 就会把index.js文件删除。</p>
+</li>
+<li><p>mkdir:  新建一个目录,就是新建一个文件夹。</p>
+</li>
+<li><p>rm -r :  删除一个文件夹, rm -r src 删除src目录，<br>rm -rf / 切勿在Linux中尝试！删除电脑中全部文件！</p>
+</li>
+<li><p>mv 移动文件, mv index.html src ，index.html 是我们要移动的文件, src 是目标文件夹,当然, 这样写,必须保证文件和目标文件夹在同一目录下。</p>
+</li>
+<li><p>reset 重新初始化终端/清屏。</p>
+</li>
+<li><p>clear 清屏。</p>
+</li>
+<li><p>history 查看命令历史。</p>
+</li>
+<li><p>help 帮助。</p>
+</li>
+<li><p>exit 退出。</p>
+</li>
+<li><p>表示注释</p>
+</li>
+</ul>
+<blockquote>
+<p>Git 配置</p>
+</blockquote>
+<ol>
+<li><p>所有的配置文件，其实都保存在本地！查看配置 git config -l</p>
+</li>
+<li><p>查看不同级别的配置文件：</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">查看当前系统配置 : git config --system --list  </span><br><span class="line">查看当前用户配置 : git config --global --list</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>设置用户名与邮箱</p>
+<p> 当你安装Git后首先要做的事情是设置你的用户名称和e-mail地址。这是非常重要的，因为每次Git提交都会使用该信息。它被永远的嵌入到了你的提交中</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;XXX&quot;  #名称</span><br><span class="line">git config --global user.email 邮箱@qq.com 邮箱</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="Git基本原理"><a href="#Git基本原理" class="headerlink" title="Git基本原理"></a>Git基本原理</h2><blockquote>
+<p>Git本地有三个工作区域：工作目录（Working Directory）、暂存区(Stage/Index)、资源库(Repository或Git Directory)。如果在加上远程的git仓库(Remote Directory)就可以分为四个工作区域。文件在这四个区域之间的转换关系如下：</p>
+</blockquote>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202111131511624.png" alt="image-20211113151110294"></p>
+<ul>
+<li><p>Workspace：工作区，就是你平时存放项目代码的地方</p>
+</li>
+<li><p>Index / Stage：暂存区，用于临时存放你的改动，事实上它只是一个文件，保存即将提交到文件列表信息</p>
+</li>
+<li><p>Repository：仓库区（或本地仓库），就是安全存放数据的位置，这里面有你提交到所有版本的数据。其中HEAD指向最新放入仓库的版本</p>
+</li>
+<li><p>Remote：远程仓库，托管代码的服务器，可以简单的认为是你项目组中的一台电脑用于远程数据交换</p>
+</li>
+</ul>
+<blockquote>
+<p>本地的三个区域确切的说应该是git仓库中HEAD指向的版本</p>
+</blockquote>
+<ul>
+<li><p>Directory：使用Git管理的一个目录，也就是一个仓库，包含我们的工作空间和Git的管理空间。</p>
+</li>
+<li><p>WorkSpace：需要通过Git进行版本控制的目录和文件，这些目录和文件组成了工作空间。</p>
+</li>
+<li><p>.git：存放Git管理信息的目录，初始化仓库的时候自动创建。</p>
+</li>
+<li><p>Index/Stage：暂存区，或者叫待提交更新区，在提交进入repo之前，我们可以把所有的更新放在暂存区。</p>
+</li>
+<li><p>Local Repo：本地仓库，一个存放在本地的版本库；HEAD会只是当前的开发分支（branch）。</p>
+</li>
+<li><p>Stash：隐藏，是一个工作状态保存栈，用于保存/恢复WorkSpace中的临时状态。</p>
+</li>
+</ul>
+<blockquote>
+<p>工作流程</p>
+</blockquote>
+<p>git的工作流程一般是这样的：</p>
+<p>１、在工作目录中添加、修改文件；</p>
+<p>２、将需要进行版本管理的文件放入暂存区域；</p>
+<p>３、将暂存区域的文件提交到git仓库。</p>
+<p>因此，git管理的文件有三种状态：已修改（modified）,已暂存（staged）,已提交(committed)</p>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202111131515371.png" alt="image-20211113151502567"></p>
+<h2 id="Git-项目搭建"><a href="#Git-项目搭建" class="headerlink" title="Git 项目搭建"></a>Git 项目搭建</h2><ol>
+<li><p>创建工作目录与常用指令<br> 工作目录（WorkSpace)一般就是你希望Git帮助你管理的文件夹，可以是你项目的目录，也可以是一个空目录，建议不要有中文。</p>
+</li>
+<li><p>本地仓库搭建<br> 创建本地仓库的方法有两种：一种是创建全新的仓库，另一种是克隆远程仓库。</p>
+<ul>
+<li><p>创建全新的仓库，需要用GIT管理的项目的根目录执行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#在当前目录新建一个Git代码库</span><br><span class="line">$ git init</span><br></pre></td></tr></table></figure>
+<ul>
+<li>执行后可以看到，仅仅在项目目录多出了一个.git目录，关于版本等的所有信息都在这个目录里面。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>克隆远程仓库</p>
+<ul>
+<li><p>另一种方式是克隆远程目录，由于是将远程服务器上的仓库完全镜像一份至本地！</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">克隆一个项目和它的整个代码历史(版本信息)</span><br><span class="line">$ git clone [url]https:&#x2F;&#x2F;gitee.com&#x2F;kuangstudy&#x2F;openclass.git</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="Git-文件"><a href="#Git-文件" class="headerlink" title="Git 文件"></a>Git 文件</h2><blockquote>
+<p>文件的四种状态</p>
+</blockquote>
+<p>版本控制就是对文件的版本控制，要对文件进行修改、提交等操作，首先要知道文件当前在什么状态，不然可能会提交了现在还不想提交的文件，或者要提交的文件没提交上。</p>
+<ul>
+<li><p>Untracked: 未跟踪, 此文件在文件夹中, 但并没有加入到git库, 不参与版本控制. 通过git add 状态变为Staged.</p>
+</li>
+<li><p>Unmodify: 文件已经入库, 未修改, 即版本库中的文件快照内容与文件夹中完全一致. 这种类型的文件有两种去处, 如果它被修改, 而变为Modified. 如果使用git rm移出版本库, 则成为Untracked文件</p>
+</li>
+<li><p>Modified: 文件已修改, 仅仅是修改, 并没有进行其他的操作. 这个文件也有两个去处, 通过git add可进入暂存staged状态, 使用git checkout 则丢弃修改过, 返回到unmodify状态, 这个git checkout即从库中取出文件, 覆盖当前修改 !</p>
+</li>
+<li><p>Staged: 暂存状态. 执行git commit则将修改同步到库中, 这时库中的文件和本地文件又变为一致, 文件为Unmodify状态. 执行git reset HEAD filename取消暂存, 文件状态为Modified</p>
+</li>
+</ul>
+<blockquote>
+<p>查看文件状态</p>
+</blockquote>
+<p>上面说文件有4种状态，通过如下命令可以查看到文件的状态：</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#查看指定文件状态</span><br><span class="line">git status [filename]</span><br><span class="line"></span><br><span class="line">#查看所有文件状态</span><br><span class="line">git status</span><br><span class="line"># git add .                  添加所有文件到暂存区</span><br><span class="line"># git commit -m &quot;消息内容&quot;    提交暂存区中的内容到本地仓库 -m 提交信息</span><br></pre></td></tr></table></figure>
+</code></pre><blockquote>
+<p>忽略文件</p>
+</blockquote>
+<p>有些时候我们不想把某些文件纳入版本控制中，比如数据库文件，临时文件，设计文件等</p>
+<p>在主目录下建立”.gitignore”文件，此文件有如下规则：</p>
+<ol>
+<li><p>忽略文件中的空行或以井号（#）开始的行将会被忽略。</p>
+</li>
+<li><p>可以使用Linux通配符。例如：星号（*）代表任意多个字符，问号（？）代表一个字符，方括号（[abc]）代表可选字符范围，大括号（{string1,string2,…}）代表可选的字符串等。</p>
+</li>
+<li><p>如果名称的最前面有一个感叹号（!），表示例外规则，将不被忽略。</p>
+</li>
+<li><p>如果名称的最前面是一个路径分隔符（/），表示要忽略的文件在此目录下，而子目录中的文件不忽略。</p>
+</li>
+<li><p>如果名称的最后面是一个路径分隔符（/），表示要忽略的是此目录下该名称的子目录，而非文件（默认文件或目录都忽略）</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">*.txt        #忽略所有 .txt结尾的文件,这样的话上传就不会被选中！</span><br><span class="line">!lib.txt     #但lib.txt除外</span><br><span class="line">&#x2F;temp        #仅忽略项目根目录下的TODO文件,不包括其它目录temp</span><br><span class="line">build&#x2F;       #忽略build&#x2F;目录下的所有文件</span><br><span class="line">doc&#x2F;*.txt    #会忽略 doc&#x2F;notes.txt 但不包括 doc&#x2F;server&#x2F;arch.txt</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<blockquote>
+<p>使用码云或者github作为仓库</p>
+</blockquote>
+<h2 id="VScode集成Git"><a href="#VScode集成Git" class="headerlink" title="VScode集成Git"></a>VScode集成Git</h2><blockquote>
+<p>实例</p>
+</blockquote>
+<ol>
+<li><p>假设你从github或者gitee下载一个开源项目，当然我们也可以使用git 的clone命令，从远程克隆一个项目，然后直接用vscode打开文件夹， VSCode会自动识别各项配置。</p>
+<p> 举个例子:<br> <img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202111131836665.png" alt="image-20211113183633639"><br> 这里复制的地址最好是采用SSH协议的地址,因为在vscode集成的git在经过修改push到仓库的时候都会要求设置输入密码才能上传至仓库因此这里需要做一个免密登陆的操作</p>
+</li>
+<li><p>免密登陆操作如下</p>
+<p> 设置本机绑定SSH公钥，实现免密码登录！（免密码登录，这一步挺重要的，码云是远程仓库，我们是平时工作在本地仓库！)</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 进入 C:\Users\Administrator\.ssh 目录</span><br><span class="line"># 生成公钥</span><br><span class="line">ssh-keygen</span><br></pre></td></tr></table></figure>
+<p> 随即打开 <code>C:\Users\Administrator\.ssh</code> 该目录下的id_rsa.pub文件，将里面的内容复制粘贴至空白处 粘贴完随即标题也就产生，公钥也就产生了。</p>
+<p> <img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202111131847183.png" alt="image-20211113184659623"></p>
+</li>
+<li><p>将上述克隆下来的文件用vscode打开对文件进行修改的操作相应的源代码管理也会显示更改的次数 随即就是上传暂存区-&gt;仓库区-&gt;远程仓库</p>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202111131858622.png" alt="image-20211113185840209"></p>
+</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div>万一真有土豪呢！！！</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/loading.gif" data-original="/images/wechatpay.jpg" alt="Jony J 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/loading.gif" data-original="/images/alipay.png" alt="Jony J 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Git/" rel="tag"># Git</a>
+          </div>
+
         
-      
-    </div>
 
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/11/12/hello-world/" rel="prev" title="Hello World">
+      <i class="fa fa-chevron-left"></i> Hello World
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
       </footer>
+    
   </article>
   
   
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://wzt2022.github.io/2021/11/08/title/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Jony J">
-      <meta itemprop="description" content="stay hungry stay foolish！">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="TT の 博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/11/08/title/" class="post-title-link" itemprop="url">title</a>
-        </h2>
-
-        <div class="post-meta">
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-11-08 23:11:25" itemprop="dateCreated datePublished" datetime="2021-11-08T23:11:25+08:00">2021-11-08</time>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2021/11/08/title/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2021/11/08/title/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>0</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
   
 
 
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -784,6 +628,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#版本控制"><span class="nav-text">版本控制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#聊聊Git的历史"><span class="nav-text">聊聊Git的历史</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git的环境配置"><span class="nav-text">Git的环境配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git基本原理"><span class="nav-text">Git基本原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git-项目搭建"><span class="nav-text">Git 项目搭建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git-文件"><span class="nav-text">Git 文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VScode集成Git"><span class="nav-text">VScode集成Git</span></a></li></ol></div>
       </div>
       <br/>
       <!--/noindex-->
