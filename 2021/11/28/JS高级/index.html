@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon32X32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon16X16.png">
+  <link rel="mask-icon" href="/images/mylogo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.loli.net/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Hack:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"wzt2022.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":18,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideLeftBigIn","post_body":"slideRightBigIn","coll_header":"slideLeftIn","sidebar":"slideLeftBigIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="JavaScript高级基础总结深入数据类型的分类和判断 基本(值)类型 Number ——- 任意数值 ———— typeof String ——- 任意字符串 ——— typeof Boolean —— true&#x2F;false ——- typeof undefined —- undefined ——- typeof&#x2F;&#x3D;&#x3D;&#x3D; null ———— null ————— &#x3D;&#x3D;&#x3D;   对象(引用)类型">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Javscript强化">
+<meta property="og:url" content="https://wzt2022.github.io/2021/11/28/JS%E9%AB%98%E7%BA%A7/index.html">
+<meta property="og:site_name" content="TT の 博客">
+<meta property="og:description" content="JavaScript高级基础总结深入数据类型的分类和判断 基本(值)类型 Number ——- 任意数值 ———— typeof String ——- 任意字符串 ——— typeof Boolean —— true&#x2F;false ——- typeof undefined —- undefined ——- typeof&#x2F;&#x3D;&#x3D;&#x3D; null ———— null ————— &#x3D;&#x3D;&#x3D;   对象(引用)类型">
+<meta property="article:published_time" content="2021-11-27T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-11-27T16:00:00.000Z">
+<meta property="article:author" content="Jony J">
+<meta property="article:tag" content="前端知识">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://wzt2022.github.io/2021/11/28/JS%E9%AB%98%E7%BA%A7/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
+  };
+</script>
+
+  <title>Javscript强化 | TT の 博客</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?6f41e725d94bfbcea62c56e046b8a37a";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="TT の 博客" type="application/atom+xml">
+</head>
+<!-- 页面点击小红心 -->
+ <script async src="/js/fireworks.js"></script>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">TT の 博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">远方除了遥远，一无所有。</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-life">
+
+    <a href="/life/" rel="section"><i class="fa fa-heart fa-fw"></i>生活中的美好</a>
+
+  </li>
+        <li class="menu-item menu-item-photo">
+
+    <a href="/photo/" rel="section"><i class="fa fa-image fa-fw"></i>照片</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/lf2021" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://wzt2022.github.io/2021/11/28/JS%E9%AB%98%E7%BA%A7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Jony J">
+      <meta itemprop="description" content="stay hungry stay foolish！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TT の 博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Javscript强化
+        </h1>
+
+        <div class="post-meta">
+          
+              <i class="fa fa-thumb-tack"></i>
+              <font color=7D26CD>置顶</font>
+              <span class="post-meta-divider">|</span>
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-11-28 00:00:00" itemprop="dateCreated datePublished" datetime="2021-11-28T00:00:00+08:00">2021-11-28</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%BF%85%E5%A4%87%E7%9F%A5%E8%AF%86/" itemprop="url" rel="index"><span itemprop="name">必备知识</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2021/11/28/JS%E9%AB%98%E7%BA%A7/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/11/28/JS%E9%AB%98%E7%BA%A7/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4.9k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="JavaScript高级"><a href="#JavaScript高级" class="headerlink" title="JavaScript高级"></a>JavaScript高级</h1><h1 id="基础总结深入"><a href="#基础总结深入" class="headerlink" title="基础总结深入"></a>基础总结深入</h1><h2 id="数据类型的分类和判断"><a href="#数据类型的分类和判断" class="headerlink" title="数据类型的分类和判断"></a>数据类型的分类和判断</h2><ul>
+<li>基本(值)类型<ul>
+<li>Number ——- 任意数值 ———— typeof</li>
+<li>String ——- 任意字符串 ——— typeof</li>
+<li>Boolean —— true/false ——- typeof</li>
+<li>undefined —- undefined ——- typeof/===</li>
+<li>null ———— null ————— ===</li>
+</ul>
+</li>
+<li>对象(引用)类型<ul>
+<li>Object ——- typeof/instanceof</li>
+<li>Array ——— instanceof</li>
+<li>Function —— typeof</li>
+</ul>
+</li>
+</ul>
+<h2 id="数据-变量-内存的理解"><a href="#数据-变量-内存的理解" class="headerlink" title="数据,变量, 内存的理解"></a>数据,变量, 内存的理解</h2><ul>
+<li>什么是数据?<ul>
+<li>在内存中可读的, 可传递的保存了特定信息的’东东’</li>
+<li>一切皆数据, 函数也是数据</li>
+<li>在内存中的所有操作的目标: 数据</li>
+</ul>
+</li>
+<li>什么是变量?<ul>
+<li>在程序运行过程中它的值是允许改变的量</li>
+<li>一个变量对应一块小内存, 它的值保存在此内存中  </li>
+</ul>
+</li>
+<li>什么是内存?<ul>
+<li>内存条通电后产生的存储空间(临时的)</li>
+<li>一块内存包含2个方面的数据<ul>
+<li>内部存储的数据</li>
+<li>地址值数据</li>
+</ul>
+</li>
+<li>内存空间的分类<ul>
+<li>栈空间: 全局变量和局部变量</li>
+<li>堆空间: 对象 </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>内存,数据, 变量三者之间的关系<ul>
+<li>内存是容器, 用来存储不同数据</li>
+<li>变量是内存的标识, 通过变量我们可以操作(读/写)内存中的数据  </li>
+</ul>
+</li>
+</ul>
+<h2 id="对象的理解和使用"><a href="#对象的理解和使用" class="headerlink" title="对象的理解和使用"></a>对象的理解和使用</h2><ul>
+<li>什么是对象?<ul>
+<li>多个数据(属性)的集合</li>
+<li>用来保存多个数据(属性)的容器</li>
+</ul>
+</li>
+<li>属性组成:<ul>
+<li>属性名 : 字符串(标识)</li>
+<li>属性值 : 任意类型</li>
+</ul>
+</li>
+<li>属性的分类:<ul>
+<li>一般 : 属性值不是function  描述对象的状态</li>
+<li>方法 : 属性值为function的属性  描述对象的行为</li>
+</ul>
+</li>
+<li>特别的对象<ul>
+<li>数组: 属性名是0,1,2,3之类的索引</li>
+<li>函数: 可以执行的</li>
+</ul>
+</li>
+<li>如何操作内部属性(方法)<ul>
+<li>.属性名</li>
+<li>[‘属性名’]: 属性名有特殊字符/属性名是一个变量</li>
+</ul>
+</li>
+</ul>
+<h2 id="函数的理解和使用"><a href="#函数的理解和使用" class="headerlink" title="函数的理解和使用"></a>函数的理解和使用</h2><ul>
+<li>什么是函数?<ul>
+<li>用来实现特定功能的, n条语句的封装体</li>
+<li>只有函数类型的数据是可以执行的, 其它的都不可以</li>
+</ul>
+</li>
+<li>为什么要用函数?<ul>
+<li>提高复用性</li>
+<li>便于阅读交流</li>
+</ul>
+</li>
+<li>函数也是对象<ul>
+<li>instanceof Object===true</li>
+<li>函数有属性: prototype</li>
+<li>函数有方法: call()/apply()</li>
+<li>可以添加新的属性/方法</li>
+</ul>
+</li>
+<li>函数的3种不同角色<ul>
+<li>一般函数 : 直接调用</li>
+<li>构造函数 : 通过new调用</li>
+<li>对象 : 通过.调用内部的属性/方法</li>
+</ul>
+</li>
+<li>函数中的this<ul>
+<li>显式指定谁: obj.xxx()</li>
+<li>通过call/apply指定谁调用: xxx.call(obj)</li>
+<li>不指定谁调用: xxx()  : window</li>
+<li>回调函数: 看背后是通过谁来调用的: window/其它</li>
+</ul>
+</li>
+<li>匿名函数自调用:<figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">function</span>(<span class="name">w</span>, obj)&#123;</span><br><span class="line">  //实现代码</span><br><span class="line">&#125;)(<span class="name">window</span>, obj)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>专业术语为: IIFE (Immediately Invoked Function Expression) 立即调用函数表达式                          </li>
+</ul>
+</li>
+<li>回调函数的理解<ul>
+<li>什么函数才是回调函数?<ul>
+<li>你定义的</li>
+<li>你没有调用</li>
+<li>但它最终执行了(在一定条件下或某个时刻)</li>
+</ul>
+</li>
+<li>常用的回调函数<ul>
+<li>dom事件回调函数</li>
+<li>定时器回调函数</li>
+<li>ajax请求回调函数(后面讲解)</li>
+<li>生命周期回调函数(后面讲解)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="函数高级"><a href="#函数高级" class="headerlink" title="函数高级"></a>函数高级</h1><h2 id="原型与原型链"><a href="#原型与原型链" class="headerlink" title="原型与原型链"></a>原型与原型链</h2><ul>
+<li>所有函数都有一个特别的属性:<ul>
+<li><code>prototype</code> : 显式原型属性</li>
+</ul>
+</li>
+<li>所有实例对象都有一个特别的属性:<ul>
+<li><code>__proto__</code> : 隐式原型属性</li>
+</ul>
+</li>
+<li>显式原型与隐式原型的关系<ul>
+<li>函数的prototype: 定义函数时被自动赋值, 值默认为{}, 即用为原型对象</li>
+<li>实例对象的<strong>proto</strong>: 在创建实例对象时被自动添加, 并赋值为构造函数的prototype值</li>
+<li>原型对象即为当前实例对象的父对象</li>
+</ul>
+</li>
+<li>原型链<ul>
+<li>所有的实例对象都有<strong>proto</strong>属性, 它指向的就是原型对象</li>
+<li>这样通过<strong>proto</strong>属性就形成了一个链的结构——&gt;原型链</li>
+<li>当查找对象内部的属性/方法时, js引擎自动沿着这个原型链查找</li>
+<li>当给对象属性赋值时不会使用原型链, 而只是在当前对象中进行操作</li>
+</ul>
+</li>
+</ul>
+<h2 id="执行上下文与执行上下文栈"><a href="#执行上下文与执行上下文栈" class="headerlink" title="执行上下文与执行上下文栈"></a>执行上下文与执行上下文栈</h2><ul>
+<li>变量提升与函数提升<ul>
+<li>变量提升: 在变量定义语句之前, 就可以访问到这个变量(undefined)</li>
+<li>函数提升: 在函数定义语句之前, 就执行该函数</li>
+<li>先有变量提升, 再有函数提升</li>
+</ul>
+</li>
+<li>理解<ul>
+<li>执行上下文: 由js引擎自动创建的对象, 包含对应作用域中的所有变量属性</li>
+<li>执行上下文栈: 用来管理产生的多个执行上下文</li>
+</ul>
+</li>
+<li>分类:<ul>
+<li>全局: window</li>
+<li>函数: 对程序员来说是透明的</li>
+</ul>
+</li>
+<li>生命周期<ul>
+<li>全局 : 准备执行全局代码前产生, 当页面刷新/关闭页面时死亡</li>
+<li>函数 : 调用函数时产生, 函数执行完时死亡</li>
+</ul>
+</li>
+<li>包含哪些属性:<ul>
+<li>全局 : <ul>
+<li>用var定义的全局变量  ==&gt;undefined</li>
+<li>使用function声明的函数   ===&gt;function</li>
+<li>this   ===&gt;window</li>
+</ul>
+</li>
+<li>函数<ul>
+<li>用var定义的局部变量  ==&gt;undefined</li>
+<li>使用function声明的函数   ===&gt;function</li>
+<li>this   ===&gt; 调用函数的对象, 如果没有指定就是window </li>
+<li>形参变量   ===&gt;对应实参值</li>
+<li>arguments ===&gt;实参列表的伪数组</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>执行上下文创建和初始化的过程<ul>
+<li>全局:<ul>
+<li>在全局代码执行前最先创建一个全局执行上下文(window)</li>
+<li>收集一些全局变量, 并初始化</li>
+<li>将这些变量设置为window的属性</li>
+</ul>
+</li>
+<li>函数:<ul>
+<li>在调用函数时, 在执行函数体之前先创建一个函数执行上下文</li>
+<li>收集一些局部变量, 并初始化</li>
+<li>将这些变量设置为执行上下文的属性</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="作用域与作用域链"><a href="#作用域与作用域链" class="headerlink" title="作用域与作用域链"></a>作用域与作用域链</h2><ul>
+<li>理解:<ul>
+<li>作用域: 一块代码区域, 在编码时就确定了, 不会再变化</li>
+<li>作用域链: 多个嵌套的作用域形成的由内向外的结构, 用于查找变量</li>
+</ul>
+</li>
+<li>分类:<ul>
+<li>全局</li>
+<li>函数</li>
+<li>js没有块作用域(在ES6之前)</li>
+</ul>
+</li>
+<li>作用<ul>
+<li>作用域: 隔离变量, 可以在不同作用域定义同名的变量不冲突</li>
+<li>作用域链: 查找变量</li>
+</ul>
+</li>
+<li>区别作用域与执行上下文<ul>
+<li>作用域: 静态的, 编码时就确定了(不是在运行时), 一旦确定就不会变化了</li>
+<li>执行上下文: 动态的, 执行代码时动态创建, 当执行结束消失</li>
+<li>联系: 执行上下文环境是在对应的作用域中的</li>
+</ul>
+</li>
+</ul>
+<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><ul>
+<li><p>理解:</p>
+<ul>
+<li>当嵌套的内部函数引用了外部函数的变量时就产生了闭包</li>
+<li>通过chrome工具得知: 闭包本质是内部函数中的一个对象, 这个对象中包含引用的变量属性</li>
+</ul>
+</li>
+<li><p>作用:</p>
+<ul>
+<li>延长局部变量的生命周期</li>
+<li>让函数外部能操作内部的局部变量</li>
+</ul>
+</li>
+<li><p>写一个闭包程序</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">2</span>;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">fn2</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    a++;</span><br><span class="line">    <span class="built_in">console</span>.log(a);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> fn2;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> f = fn1();</span><br><span class="line">f();</span><br><span class="line">f();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>闭包应用:</p>
+<ul>
+<li>模块化: 封装一些数据以及操作数据的函数, 向外暴露一些行为</li>
+<li>循环遍历加监听</li>
+<li>JS框架(jQuery)大量使用了闭包</li>
+</ul>
+</li>
+<li><p>缺点:</p>
+<ul>
+<li>变量占用内存的时间可能会过长</li>
+<li>可能导致内存泄露</li>
+<li>解决:<ul>
+<li>及时释放 : f = null; //让内部函数对象成为垃圾对象</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="内存溢出与内存泄露"><a href="#内存溢出与内存泄露" class="headerlink" title="内存溢出与内存泄露"></a>内存溢出与内存泄露</h2><ol>
+<li><p>内存溢出</p>
+<ul>
+<li>一种程序运行出现的错误</li>
+<li>当程序运行需要的内存超过了剩余的内存时, 就出抛出内存溢出的错误</li>
+</ul>
+</li>
+<li><p>内存泄露</p>
+<ul>
+<li>占用的内存没有及时释放</li>
+<li>内存泄露积累多了就容易导致内存溢出</li>
+<li>常见的内存泄露:<ul>
+<li>意外的全局变量</li>
+<li>没有及时清理的计时器或回调函数</li>
+<li>闭包</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h1 id="对象高级"><a href="#对象高级" class="headerlink" title="对象高级"></a>对象高级</h1><h2 id="对象的创建模式"><a href="#对象的创建模式" class="headerlink" title="对象的创建模式"></a>对象的创建模式</h2><ul>
+<li><p>Object构造函数模式</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line">obj.name = <span class="string">'Tom'</span></span><br><span class="line">obj.setName = <span class="function"><span class="keyword">function</span><span class="params">(name)</span></span>&#123;<span class="keyword">this</span>.name=name&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>对象字面量模式</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  name : <span class="string">'Tom'</span>,</span><br><span class="line">  setName : <span class="function"><span class="keyword">function</span><span class="params">(name)</span></span>&#123;<span class="keyword">this</span>.name = name&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>构造函数模式</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span><span class="params">(name, age)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">  <span class="keyword">this</span>.age = age;</span><br><span class="line">  <span class="keyword">this</span>.setName = <span class="function"><span class="keyword">function</span><span class="params">(name)</span></span>&#123;<span class="keyword">this</span>.name=name;&#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">new</span> Person(<span class="string">'tom'</span>, <span class="number">12</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>构造函数+原型的组合模式</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span><span class="params">(name, age)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">  <span class="keyword">this</span>.age = age;</span><br><span class="line">&#125;</span><br><span class="line">Person.prototype.setName = <span class="function"><span class="keyword">function</span><span class="params">(name)</span></span>&#123;<span class="keyword">this</span>.name=name;&#125;;</span><br><span class="line"><span class="keyword">new</span> Person(<span class="string">'tom'</span>, <span class="number">12</span>);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="继承模式"><a href="#继承模式" class="headerlink" title="继承模式"></a>继承模式</h2><ul>
+<li><p>原型链继承 : 得到方法</p>
+<figure class="highlight delphi"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Parent</span><span class="params">()</span><span class="comment">&#123;&#125;</span></span></span><br><span class="line"><span class="function"><span class="title">Parent</span>.<span class="title">prototype</span>.<span class="title">test</span> = <span class="title">function</span><span class="params">()</span><span class="comment">&#123;&#125;</span>;</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Child</span><span class="params">()</span><span class="comment">&#123;&#125;</span></span></span><br><span class="line"><span class="function"><span class="title">Child</span>.<span class="title">prototype</span> = <span class="title">new</span> <span class="title">Parent</span><span class="params">()</span>;</span> <span class="comment">// 子类型的原型指向父类型实例</span></span><br><span class="line">Child.prototype<span class="function">.<span class="keyword">constructor</span> = <span class="title">Child</span></span></span><br><span class="line"><span class="function"><span class="title">var</span> <span class="title">child</span> = <span class="title">new</span> <span class="title">Child</span><span class="params">()</span>;</span> <span class="comment">//有test()</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>借用构造函数 : 得到属性</p>
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="constructor">Parent(<span class="params">xxx</span>)</span>&#123;this.xxx = xxx&#125;</span><br><span class="line"><span class="module-access"><span class="module"><span class="identifier">Parent</span>.</span></span>prototype.test = <span class="keyword">function</span><span class="literal">()</span>&#123;&#125;;</span><br><span class="line"><span class="keyword">function</span> <span class="constructor">Child(<span class="params">xxx</span>,<span class="params">yyy</span>)</span>&#123;</span><br><span class="line">    <span class="module-access"><span class="module"><span class="identifier">Parent</span>.</span></span>call(this, xxx);<span class="comment">//借用构造函数   this.Parent(xxx)</span></span><br><span class="line">&#125;</span><br><span class="line">var child = <span class="keyword">new</span> <span class="constructor">Child('<span class="params">a</span>', '<span class="params">b</span>')</span>;  <span class="comment">//child.xxx为'a', 但child没有test()</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>组合</p>
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="constructor">Parent(<span class="params">xxx</span>)</span>&#123;this.xxx = xxx&#125;</span><br><span class="line"><span class="module-access"><span class="module"><span class="identifier">Parent</span>.</span></span>prototype.test = <span class="keyword">function</span><span class="literal">()</span>&#123;&#125;;</span><br><span class="line"><span class="keyword">function</span> <span class="constructor">Child(<span class="params">xxx</span>,<span class="params">yyy</span>)</span>&#123;</span><br><span class="line">    <span class="module-access"><span class="module"><span class="identifier">Parent</span>.</span></span>call(this, xxx);<span class="comment">//借用构造函数   this.Parent(xxx)</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="module-access"><span class="module"><span class="identifier">Child</span>.</span></span>prototype = <span class="keyword">new</span> <span class="constructor">Parent()</span>; <span class="comment">//得到test()</span></span><br><span class="line">var child = <span class="keyword">new</span> <span class="constructor">Child()</span>; <span class="comment">//child.xxx为'a', 也有test()</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>new一个对象背后做了些什么?</p>
+<ul>
+<li>创建一个空对象</li>
+<li>给对象设置<strong>proto</strong>, 值为构造函数对象的prototype属性值   this.<strong>proto</strong> = Fn.prototype</li>
+<li>执行构造函数体(给对象添加属性/方法)</li>
+</ul>
+</li>
+</ul>
+<h1 id="线性机制和事件机制"><a href="#线性机制和事件机制" class="headerlink" title="线性机制和事件机制"></a>线性机制和事件机制</h1><h2 id="线程与进程"><a href="#线程与进程" class="headerlink" title="线程与进程"></a>线程与进程</h2><ul>
+<li>进程:<ul>
+<li>程序的一次执行, 它占有一片独有的内存空间</li>
+<li>可以通过windows任务管理器查看进程</li>
+</ul>
+</li>
+<li>线程:<ul>
+<li>是进程内的一个独立执行单元</li>
+<li>是程序执行的一个完整流程</li>
+<li>是CPU的最小的调度单元</li>
+</ul>
+</li>
+<li>关系<ul>
+<li>一个进程至少有一个线程(主)</li>
+<li>程序是在某个进程中的某个线程执行的</li>
+</ul>
+</li>
+</ul>
+<h2 id="浏览器内核模块组成"><a href="#浏览器内核模块组成" class="headerlink" title="浏览器内核模块组成"></a>浏览器内核模块组成</h2><ul>
+<li>主线程<ul>
+<li>js引擎模块 : 负责js程序的编译与运行</li>
+<li>html,css文档解析模块 : 负责页面文本的解析</li>
+<li>DOM/CSS模块 : 负责dom/css在内存中的相关处理 </li>
+<li>布局和渲染模块 : 负责页面的布局和效果的绘制(内存中的对象)</li>
+</ul>
+</li>
+<li>分线程<ul>
+<li>定时器模块 : 负责定时器的管理</li>
+<li>DOM事件模块 : 负责事件的管理</li>
+<li>网络请求模块 : 负责Ajax请求</li>
+</ul>
+</li>
+</ul>
+<h2 id="js线程"><a href="#js线程" class="headerlink" title="js线程"></a>js线程</h2><ul>
+<li>js是单线程执行的(回调函数也是在主线程)</li>
+<li>H5提出了实现多线程的方案: Web Workers</li>
+<li>只能是主线程更新界面</li>
+</ul>
+<h2 id="定时器问题"><a href="#定时器问题" class="headerlink" title="定时器问题:"></a>定时器问题:</h2><ul>
+<li>定时器并不真正完全定时</li>
+<li>如果在主线程执行了一个长时间的操作, 可能导致延时才处理</li>
+</ul>
+<h2 id="事件处理机制-图"><a href="#事件处理机制-图" class="headerlink" title="事件处理机制(图)"></a>事件处理机制(图)</h2><ul>
+<li>代码分类<ul>
+<li>初始化执行代码: 包含绑定dom事件监听, 设置定时器, 发送ajax请求的代码</li>
+<li>回调执行代码: 处理回调逻辑</li>
+</ul>
+</li>
+<li>js引擎执行代码的基本流程: <ul>
+<li>初始化代码===&gt;回调代码</li>
+</ul>
+</li>
+<li>模型的2个重要组成部分:<ul>
+<li>事件管理模块</li>
+<li>回调队列</li>
+</ul>
+</li>
+<li>模型的运转流程<ul>
+<li>执行初始化代码, 将事件回调函数交给对应模块管理</li>
+<li>当事件发生时, 管理模块会将回调函数及其数据添加到回调列队中</li>
+<li>只有当初始化代码执行完后(可能要一定时间), 才会遍历读取回调队列中的回调函数执行</li>
+</ul>
+</li>
+</ul>
+<h2 id="H5-Web-Workers"><a href="#H5-Web-Workers" class="headerlink" title="H5 Web Workers"></a>H5 Web Workers</h2><ul>
+<li><p>可以让js在分线程执行</p>
+</li>
+<li><p>Worker</p>
+<figure class="highlight oxygene"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> worker = <span class="keyword">new</span> Worker(<span class="string">'worker.js'</span>);</span><br><span class="line">worker.onMessage = <span class="function"><span class="keyword">function</span><span class="params">(<span class="keyword">event</span>)</span><span class="comment">&#123;event.data&#125;</span> :</span> 用来接收另一个线程发送过来的数据的回调</span><br><span class="line">worker.postMessage(data1) : 向另一个线程发送数据</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>问题:</p>
+<ul>
+<li>worker内代码不能操作DOM更新UI</li>
+<li>不是每个浏览器都支持这个新特性</li>
+<li>不能跨域加载JS</li>
+</ul>
+</li>
+<li><p>svn版本控制</p>
+</li>
+<li><p>svn server</p>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div>万一真有土豪呢！！！</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/loading.gif" data-original="/images/wechatpay.jpg" alt="Jony J 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/loading.gif" data-original="/images/alipay.png" alt="Jony J 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86/" rel="tag"># 前端知识</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/11/15/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98%EF%BC%88%E6%AF%8F%E6%97%A510%E9%81%93%EF%BC%89/" rel="prev" title="前端面试题总结">
+      <i class="fa fa-chevron-left"></i> 前端面试题总结
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/12/01/react%E7%AE%80%E4%B9%A6%E5%AE%9E%E6%88%98/" rel="next" title="React 简书实战">
+      React 简书实战 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript高级"><span class="nav-text">JavaScript高级</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基础总结深入"><span class="nav-text">基础总结深入</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型的分类和判断"><span class="nav-text">数据类型的分类和判断</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据-变量-内存的理解"><span class="nav-text">数据,变量, 内存的理解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对象的理解和使用"><span class="nav-text">对象的理解和使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数的理解和使用"><span class="nav-text">函数的理解和使用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#函数高级"><span class="nav-text">函数高级</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#原型与原型链"><span class="nav-text">原型与原型链</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#执行上下文与执行上下文栈"><span class="nav-text">执行上下文与执行上下文栈</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#作用域与作用域链"><span class="nav-text">作用域与作用域链</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#闭包"><span class="nav-text">闭包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内存溢出与内存泄露"><span class="nav-text">内存溢出与内存泄露</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#对象高级"><span class="nav-text">对象高级</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#对象的创建模式"><span class="nav-text">对象的创建模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#继承模式"><span class="nav-text">继承模式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#线性机制和事件机制"><span class="nav-text">线性机制和事件机制</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#线程与进程"><span class="nav-text">线程与进程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#浏览器内核模块组成"><span class="nav-text">浏览器内核模块组成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#js线程"><span class="nav-text">js线程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#定时器问题"><span class="nav-text">定时器问题:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事件处理机制-图"><span class="nav-text">事件处理机制(图)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#H5-Web-Workers"><span class="nav-text">H5 Web Workers</span></a></li></ol></li></ol></div>
+      </div>
+      <br/>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Jony J"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Jony J</p>
+  <div class="site-description" itemprop="description">stay hungry stay foolish！</div>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/wzt2023" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;wzt2023" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/images/wechat.jpg" title="WeChat → &#x2F;images&#x2F;wechat.jpg"><i class="fab fa-weixin fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/images/qq.png" title="QQ → &#x2F;images&#x2F;qq.png"><i class="fab fa-qq fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:710471807@qq.com" title="E-Mail → mailto:710471807@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      友链
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://leetcode-cn.com/problemset/all/" title="https:&#x2F;&#x2F;leetcode-cn.com&#x2F;problemset&#x2F;all&#x2F;" rel="noopener" target="_blank">leetcode</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+      <div id="music163player">
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=441491828&auto=0&height=66"></iframe>
+     
+      </div>
+    </div> 
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">TT 版权所有</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">146k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">2:12</span>
+</div>
+
+
+ <div class="powered-by">
+  <i class="fa fa-user-md"></i>
+  <span id="busuanzi_container_site_uv">
+    本站总访客数:<span id="busuanzi_value_site_uv"></span>&nbsp;&nbsp;| 
+  </span>
+  <span id="busuanzi_container_site_pv">
+      &nbsp;本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  </span>
+</div>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/velocity-animate@1/velocity.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/velocity-animate@1/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  <script defer src="//cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three.min.js"></script>
+    <script defer src="//cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/canvas_lines.min.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : '8YHV7splQK9asMA21ILvvuFe-gzGzoHsz',
+      appKey     : 'DwFfLh2EMujmRQp3tkcWjOJI',
+      placeholder: "分享你的想法",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+
+  <script async src="/js/cursor/fireworks.js"></script>
+
+
+
+
+  <script src="/js/activate-power-mode.min.js"></script>
+  <script>
+    POWERMODE.colorful = true;
+    POWERMODE.shake = false;
+    document.body.addEventListener('input', POWERMODE);
+  </script>
+
+  
+<script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=i;var e=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}i(),n.addEventListener("scroll",function(){var t,e;t=i,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+</html>

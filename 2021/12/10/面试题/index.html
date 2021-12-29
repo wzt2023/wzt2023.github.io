@@ -1,0 +1,1426 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon32X32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon16X16.png">
+  <link rel="mask-icon" href="/images/mylogo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.loli.net/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Hack:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"wzt2022.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":18,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideLeftBigIn","post_body":"slideRightBigIn","coll_header":"slideLeftIn","sidebar":"slideLeftBigIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="面试题HTML CSS 面试题1、如何理解HTML 语义化？ 让人更容易读懂（增加代码可读性）  让搜索引擎更容易读懂（SEO 搜索引擎优化）   2、默认情况下，哪些HTML 标签是块级元素、哪些是内联元素？ 块级元素：display: block&#x2F;table; 有div h1 h2 table ul ol p 等  内联元素：display: inline&#x2F;inline-block; 有spa">
+<meta property="og:type" content="article">
+<meta property="og:title" content="常规面试题">
+<meta property="og:url" content="https://wzt2022.github.io/2021/12/10/%E9%9D%A2%E8%AF%95%E9%A2%98/index.html">
+<meta property="og:site_name" content="TT の 博客">
+<meta property="og:description" content="面试题HTML CSS 面试题1、如何理解HTML 语义化？ 让人更容易读懂（增加代码可读性）  让搜索引擎更容易读懂（SEO 搜索引擎优化）   2、默认情况下，哪些HTML 标签是块级元素、哪些是内联元素？ 块级元素：display: block&#x2F;table; 有div h1 h2 table ul ol p 等  内联元素：display: inline&#x2F;inline-block; 有spa">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="article:published_time" content="2021-12-09T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-12-09T16:00:00.000Z">
+<meta property="article:author" content="Jony J">
+<meta property="article:tag" content="前端基础知识强化">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://wzt2022.github.io/images/loading.gif">
+
+<link rel="canonical" href="https://wzt2022.github.io/2021/12/10/%E9%9D%A2%E8%AF%95%E9%A2%98/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
+  };
+</script>
+
+  <title>常规面试题 | TT の 博客</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?6f41e725d94bfbcea62c56e046b8a37a";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="TT の 博客" type="application/atom+xml">
+</head>
+<!-- 页面点击小红心 -->
+ <script async src="/js/fireworks.js"></script>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">TT の 博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">远方除了遥远，一无所有。</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-life">
+
+    <a href="/life/" rel="section"><i class="fa fa-heart fa-fw"></i>生活中的美好</a>
+
+  </li>
+        <li class="menu-item menu-item-photo">
+
+    <a href="/photo/" rel="section"><i class="fa fa-image fa-fw"></i>照片</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/lf2021" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://wzt2022.github.io/2021/12/10/%E9%9D%A2%E8%AF%95%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Jony J">
+      <meta itemprop="description" content="stay hungry stay foolish！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TT の 博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          常规面试题
+        </h1>
+
+        <div class="post-meta">
+          
+              <i class="fa fa-thumb-tack"></i>
+              <font color=7D26CD>置顶</font>
+              <span class="post-meta-divider">|</span>
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-12-10 00:00:00" itemprop="dateCreated datePublished" datetime="2021-12-10T00:00:00+08:00">2021-12-10</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%9D%A2%E8%AF%95/" itemprop="url" rel="index"><span itemprop="name">面试</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2021/12/10/%E9%9D%A2%E8%AF%95%E9%A2%98/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/12/10/%E9%9D%A2%E8%AF%95%E9%A2%98/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>23k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>21 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="面试题"><a href="#面试题" class="headerlink" title="面试题"></a>面试题</h1><h2 id="HTML-CSS-面试题"><a href="#HTML-CSS-面试题" class="headerlink" title="HTML CSS 面试题"></a>HTML CSS 面试题</h2><h3 id="1、如何理解HTML-语义化？"><a href="#1、如何理解HTML-语义化？" class="headerlink" title="1、如何理解HTML 语义化？"></a>1、如何理解HTML 语义化？</h3><ul>
+<li><p>让人更容易读懂（增加代码可读性）</p>
+</li>
+<li><p>让搜索引擎更容易读懂（SEO 搜索引擎优化）</p>
+</li>
+</ul>
+<h3 id="2、默认情况下，哪些HTML-标签是块级元素、哪些是内联元素？"><a href="#2、默认情况下，哪些HTML-标签是块级元素、哪些是内联元素？" class="headerlink" title="2、默认情况下，哪些HTML 标签是块级元素、哪些是内联元素？"></a>2、默认情况下，哪些HTML 标签是块级元素、哪些是内联元素？</h3><ul>
+<li><p>块级元素：display: block/table; 有div h1 h2 table ul ol p 等</p>
+</li>
+<li><p>内联元素：display: inline/inline-block; 有span img input button 等</p>
+</li>
+</ul>
+<h3 id="3、盒子模型的宽度如何计算？"><a href="#3、盒子模型的宽度如何计算？" class="headerlink" title="3、盒子模型的宽度如何计算？"></a>3、盒子模型的宽度如何计算？</h3><p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112101219090.png" alt="image-20211210121939411"></p>
+<ul>
+<li><p>offsetWidth = ( 内容宽度+ 内边距+ 边框)，无外边距</p>
+</li>
+<li><p>因此，答案是122px</p>
+</li>
+<li><p>补充：如果让offsetWidth 等于100px ，该如何做？  在div1样式做设置盒子模型为：IE盒子模型（box-sizing: border-box;）</p>
+<blockquote>
+<p>设置了box-sizing: border-box之后;宽度其实变成了78 加上内边距20 边框2 加起来就100了。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="4、argin-纵向重叠的问题"><a href="#4、argin-纵向重叠的问题" class="headerlink" title="4、argin 纵向重叠的问题"></a>4、argin 纵向重叠的问题</h3><p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112101231157.png" alt="image-20211210123149043"></p>
+<ul>
+<li><p>相邻元素的margin-top 和margin-bottom 会发生重叠</p>
+</li>
+<li><p>空白内容的<p></p> 也会重叠   —&gt;空白内容重叠可忽略</p>
+</li>
+<li><p>答案：15px</p>
+</li>
+</ul>
+<h3 id="5、margin-负值的问题"><a href="#5、margin-负值的问题" class="headerlink" title="5、margin 负值的问题"></a>5、margin 负值的问题</h3><blockquote>
+<p>对margin 的top left right bottom 设置负值，有何效果？</p>
+</blockquote>
+<ul>
+<li><p>margin-top 和margin-left 负值，元素向上、向左移动</p>
+</li>
+<li><p>margin-right 负值，右侧元素左移，自身不受影响</p>
+</li>
+<li><p>margin-bottom 负值，下方元素上移，自身不受影响</p>
+</li>
+</ul>
+<h3 id="6-float-布局"><a href="#6-float-布局" class="headerlink" title="6.float 布局"></a>6.float 布局</h3><blockquote>
+<p>如何实现圣杯布局和双飞翼布局? 手写clearfix</p>
+</blockquote>
+<p>圣杯布局和双飞翼布局的目的：</p>
+<ul>
+<li>三栏布局，中间一栏最先加载和渲染（内容最重要)</li>
+<li>两侧内容固定，中间内容随着宽度自适应</li>
+<li>一般用于PC网页</li>
+</ul>
+<p>圣杯布局例子:</p>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112101320431.png" alt="image-20211210132014561"></p>
+<p>三者都设置浮动且center宽度设置为百分百加上容器本身设置内边距</p>
+<p>使得right的宽度无法在left的右侧排列被挤下来了</p>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112101322479.png" alt="image-20211210132236216"></p>
+<p>若要使得left移动至上图样式 设置margin-left：-100% ，设置这个实则就是父元素宽度的百分之百。也就是center（container）的宽度</p>
+<p>（可以看成浮动元素它是别挤下来的 实际上是紧靠灰色部分的右侧。所以设置了这个就到了上图的位置） </p>
+<p>之后在设置相对定位 （right：200px即可）因为设置了相对定位是相对于自身移动，对其他元素没有影响。（可以看到定位的坐标为灰色的左上顶点处）</p>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112101331666.png" alt="image-20211210133101515"></p>
+<p>给margin-right设置负150即可成为下图</p>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112101332848.png" alt="image-20211210133244236"></p>
+<p><strong>注意：不好理解！！！ 就是给自身元素设置的margin-right：自身宽度。就会使自身宽度不占位置从而上移</strong></p>
+<blockquote>
+<p>上述的布局就是圣杯布局  圣杯布局两边留白是通过padding设置的 而双飞翼布局是通过margin来进行两边留白的</p>
+</blockquote>
+<p>双飞翼布局:</p>
+<ol>
+<li>双飞翼布局是通过margin来进行两边留白。</li>
+<li>left直接设置margin-left：-100%即可。</li>
+</ol>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112101343886.png" alt="image-20211210134341275"></p>
+<p>right：也设置margin-left：-190px。</p>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112101343263.png" alt="image-20211210134356122"></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">手写clearfix  BFC解决清除浮动的问题</span><br><span class="line">	.clearfix:after&#123;</span><br><span class="line">        content:<span class="string">''</span>;</span><br><span class="line">        display:table;</span><br><span class="line">        clear:both;</span><br><span class="line">    &#125;</span><br><span class="line">将clearfix属性添加到容器的<span class="class"><span class="keyword">class</span>内。 因为是浮动元素，高度塌陷了。为了防止不塌陷所以在<span class="title">container</span>内设置该样式</span></span><br></pre></td></tr></table></figure>
+<h3 id="7、flex-布局"><a href="#7、flex-布局" class="headerlink" title="7、flex 布局"></a>7、flex 布局</h3><blockquote>
+<p> flex 实现一个三点的色子</p>
+</blockquote>
+<ul>
+<li>flex-direction :主轴方向（横向或者纵向）</li>
+<li>justify-content：主轴对齐方式（开始对齐，居中对齐，结束对齐）</li>
+<li>align-items：交叉轴的对齐方式（开始对齐，居中对齐，结束对齐）</li>
+<li>flex-wrap：换行</li>
+<li>align-self：子元素在交叉轴的对齐方式（开始对齐，居中对齐，结束对齐）</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">&lt;style type=<span class="string">"text/css"</span>&gt;</span><br><span class="line">    .box &#123;</span><br><span class="line">        width: <span class="number">200</span>px;</span><br><span class="line">        height: <span class="number">200</span>px;</span><br><span class="line">        border: 2px solid #ccc;</span><br><span class="line">        border-radius: <span class="number">10</span>px;</span><br><span class="line">        padding: <span class="number">20</span>px;</span><br><span class="line"></span><br><span class="line">        display: flex;</span><br><span class="line">        justify-content: space-between;<span class="comment">/*对齐方式：两边对齐*/</span></span><br><span class="line">    &#125;</span><br><span class="line">    .item &#123;</span><br><span class="line">        display: block;</span><br><span class="line">        width: <span class="number">40</span>px;</span><br><span class="line">        height: <span class="number">40</span>px;</span><br><span class="line">        border-radius: <span class="number">50</span>%;</span><br><span class="line">        background-color: #666;</span><br><span class="line">    &#125;</span><br><span class="line">    .item:nth-child(<span class="number">2</span>) &#123;</span><br><span class="line">        align-self: center; <span class="comment">/*第二个子元素垂直居中*/</span></span><br><span class="line">    &#125;</span><br><span class="line">    .item:nth-child(<span class="number">3</span>) &#123;</span><br><span class="line">        align-self: flex-end;<span class="comment">/*第三个子元素垂直方向尾对齐*/</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&lt;<span class="regexp">/style&gt;</span></span><br><span class="line"><span class="regexp">body&gt;</span></span><br><span class="line"><span class="regexp">    &lt;div class="box"&gt;</span></span><br><span class="line"><span class="regexp">        &lt;span class="item"&gt;&lt;/</span>span&gt;</span><br><span class="line">        &lt;span <span class="class"><span class="keyword">class</span></span>=<span class="string">"item"</span>&gt;&lt;<span class="regexp">/span&gt;</span></span><br><span class="line"><span class="regexp">        &lt;span class="item"&gt;&lt;/</span>span&gt;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>body&gt;</span><br></pre></td></tr></table></figure>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112101458568.png" alt="image-20211210145834952"></p>
+<h3 id="8、absolute-和relative-分别依据什么定位？"><a href="#8、absolute-和relative-分别依据什么定位？" class="headerlink" title="8、absolute 和relative 分别依据什么定位？"></a>8、absolute 和relative 分别依据什么定位？</h3><blockquote>
+<p>relative 依据自身定位</p>
+<p>absolute 依据最近一层的定位元素定位（定位元素有：absolute relative fixed  body）</p>
+</blockquote>
+<h3 id="9、居中对齐有哪些实现方式？"><a href="#9、居中对齐有哪些实现方式？" class="headerlink" title="9、居中对齐有哪些实现方式？"></a>9、居中对齐有哪些实现方式？</h3><blockquote>
+<p>水平居中</p>
+<p>垂直居中</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">水平居中:</span><br><span class="line">    inline 元素：text-align: center</span><br><span class="line">    block 元素：margin: auto</span><br><span class="line">    absolute 元素：left: <span class="number">50</span>% + margin-left 负值</span><br><span class="line">垂直居中:</span><br><span class="line">	inline 元素：line-height的值等于height 值</span><br><span class="line">    absolute 元素：top: <span class="number">50</span>% + margin-top 负值  **必须知道子元素的尺寸</span><br><span class="line">    absolute 元素：transform(<span class="number">-50</span>%, <span class="number">-50</span>%)  </span><br><span class="line"> 	absolute 元素：top, left, bottom, right = <span class="number">0</span> + margin: auto</span><br></pre></td></tr></table></figure>
+<h3 id="10、CSS-图文样式"><a href="#10、CSS-图文样式" class="headerlink" title="10、CSS -图文样式"></a>10、CSS -图文样式</h3><blockquote>
+<p>line-height 如何继承</p>
+</blockquote>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112101431321.png" alt="image-20211210143133796"></p>
+<ul>
+<li>写具体数值，如30px ，则继承该值（比较好理解）<ul>
+<li>就直接继承30px</li>
+</ul>
+</li>
+<li>写比例，如2 / 1.5 ，则继承该比例（比较好理解）<ul>
+<li>直接比例乘以p标签的font-size 2*16=32px</li>
+</ul>
+</li>
+<li>写百分比，如200% ，则继承计算出来的值（考点）<ul>
+<li>直接body里的font-size的比例乘200%就是20*2=40px</li>
+</ul>
+</li>
+</ul>
+<h3 id="11、CSS-响应式"><a href="#11、CSS-响应式" class="headerlink" title="11、CSS -响应式"></a>11、CSS -响应式</h3><blockquote>
+<p>rem 是什么？</p>
+<p>响应式布局的常见方案？</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">rem 是什么？</span><br><span class="line">	rem 是一个长度单位</span><br><span class="line">    	px ，绝对长度单位，最常用</span><br><span class="line">        em ，相对长度单位，相对于父元素，不常用</span><br><span class="line">        rem ，相对长度单位，相对于根元素，常用于响应式布局</span><br><span class="line">          html &#123;</span><br><span class="line">            font-size: <span class="number">100</span>px;  <span class="comment">//等于1rem</span></span><br><span class="line">        &#125;</span><br><span class="line">		**任何使用长度的地方都可以用rem  例如宽度高度都可以</span><br><span class="line">响应式布局的常见方案？</span><br><span class="line">	media-query，根据不同的屏幕宽度设置根元素font-size</span><br><span class="line"> 	body &#123;</span><br><span class="line">            font-size: <span class="number">0.16</span>rem;  <span class="comment">/*在iphone6/7 就是16px*/</span></span><br><span class="line">        &#125;</span><br><span class="line">	rem，基于根元素的相对单位</span><br></pre></td></tr></table></figure>
+<h2 id="JavaScript面试题"><a href="#JavaScript面试题" class="headerlink" title="JavaScript面试题"></a>JavaScript面试题</h2><h3 id="1、typeof-能判断的类型"><a href="#1、typeof-能判断的类型" class="headerlink" title="1、typeof 能判断的类型?"></a>1、typeof 能判断的类型?</h3><blockquote>
+<p>考点：JS变量类型</p>
+</blockquote>
+<h3 id="2、何时使用-何时使用"><a href="#2、何时使用-何时使用" class="headerlink" title="2、何时使用===何时使用=="></a>2、何时使用===何时使用==</h3><blockquote>
+<p>考点：强制类型转换</p>
+</blockquote>
+<h3 id="3、window-onload和-DOMContentLoaded区别"><a href="#3、window-onload和-DOMContentLoaded区别" class="headerlink" title="3、window.onload和 DOMContentLoaded区别"></a>3、window.onload和 DOMContentLoaded区别</h3><blockquote>
+<p>考点:页面加载过程，（页面渲染过程）</p>
+</blockquote>
+<h3 id="4、JS创建10个标签，点击弹出对应的序号"><a href="#4、JS创建10个标签，点击弹出对应的序号" class="headerlink" title="4、JS创建10个标签，点击弹出对应的序号"></a>4、JS创建10个<a>标签，点击弹出对应的序号</h3><blockquote>
+<p>考点:JS作用域</p>
+</blockquote>
+<h3 id="5、手写节流throttle和防抖debounce"><a href="#5、手写节流throttle和防抖debounce" class="headerlink" title="5、手写节流throttle和防抖debounce"></a>5、手写节流throttle和防抖debounce</h3><blockquote>
+<p>考点:性能、体验优化</p>
+</blockquote>
+<h3 id="6、Promise解决什么问题"><a href="#6、Promise解决什么问题" class="headerlink" title="6、Promise解决什么问题?"></a>6、Promise解决什么问题?</h3><blockquote>
+<p>考点:JS异步 </p>
+</blockquote>
+<h3 id="7、值类型和引用类型的区别"><a href="#7、值类型和引用类型的区别" class="headerlink" title="7、值类型和引用类型的区别"></a>7、值类型和引用类型的区别</h3><blockquote>
+<p>值类型各用各的，不会相互干扰。而引用类型一旦赋值了 b改变了 a也改变了</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">**值类型</span><br><span class="line"><span class="keyword">let</span> a = <span class="number">100</span></span><br><span class="line"><span class="keyword">let</span> b = a</span><br><span class="line">a=<span class="number">200</span></span><br><span class="line">log(b)<span class="comment">//100</span></span><br><span class="line">**引用数据类型</span><br><span class="line"><span class="keyword">let</span> a=&#123;<span class="attr">age</span>:<span class="number">20</span>&#125;</span><br><span class="line"><span class="keyword">let</span> b=a</span><br><span class="line">b.age=<span class="number">21</span></span><br><span class="line">log(a.age)<span class="comment">//21</span></span><br></pre></td></tr></table></figure>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112101608311.png" alt="image-20211210160818584"></p>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112101608586.png" alt="image-20211210160828452"></p>
+<h3 id="8、typeof-运算符"><a href="#8、typeof-运算符" class="headerlink" title="8、typeof 运算符"></a>8、typeof 运算符</h3><ul>
+<li><p>识别所有值类型</p>
+</li>
+<li><p>识别函数</p>
+</li>
+<li><p>判断是否是引用类型（不可再细分)</p>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112101845522.png" alt="image-20211210184526582"></p>
+</li>
+</ul>
+<h3 id="9、深拷贝"><a href="#9、深拷贝" class="headerlink" title="9、深拷贝"></a>9、深拷贝</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj1 = &#123;</span><br><span class="line">	age: <span class="number">20</span>,</span><br><span class="line">    name: <span class="string">'xx×'</span>,</span><br><span class="line">    address: &#123;</span><br><span class="line">	city: <span class="string">'beijing'</span></span><br><span class="line">	&#125;,</span><br><span class="line">	arr:[ <span class="string">'a'</span>,<span class="string">'b'</span>, <span class="string">'c'</span>]</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//const obj2 = obj1</span></span><br><span class="line"><span class="keyword">const</span> obj2 = deepClone(obj1)  <span class="comment">//这边就是进行了深拷贝</span></span><br><span class="line"></span><br><span class="line">obj2.address.city = <span class="string">'shanghai'</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(obj1.address.city) <span class="comment">//这是浅拷贝</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//深拷贝就是obj2改了 obj1不会变</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">deepClone</span>(<span class="params">obj=&#123;&#125;</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> obj !== <span class="string">'object'</span>||obj ==<span class="literal">null</span>) &#123;</span><br><span class="line">	<span class="comment">//obj是null,或者不是对象或者不是数组,直接返回</span></span><br><span class="line">        <span class="keyword">return</span> obj                                       *****************</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//初始化返回结果  obj是对象和数组</span></span><br><span class="line">    <span class="keyword">let</span> result</span><br><span class="line">	<span class="keyword">if</span> （obj <span class="keyword">instanceof</span> <span class="built_in">Array</span>) &#123;</span><br><span class="line">        result = []</span><br><span class="line">	&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">		result = &#123;&#125;</span><br><span class="line">	&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> ( <span class="keyword">let</span> key <span class="keyword">in</span> obj)&#123;  <span class="comment">//是数组和对象就可以遍历</span></span><br><span class="line">    	<span class="comment">//保证key（age,name...） 是自己的属性，而不是原型的属性 因为这里没有考虑到原型上的东西可忽略，但是面试的时候不可忽略</span></span><br><span class="line">    	<span class="keyword">if</span> (obj.hasOwnProperty(key)) &#123;</span><br><span class="line">    	<span class="comment">//递归调用!!!</span></span><br><span class="line">    		result[key] = deepclone(obj[key])<span class="comment">//obj[key]就是key对应的值  首先20进来在*****返回了</span></span><br><span class="line">    	&#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">***<span class="keyword">let</span> result = &#123;</span><br><span class="line">	age: <span class="number">20</span>,</span><br><span class="line">    name: <span class="string">'xx×'</span>,</span><br><span class="line">    address: &#123;</span><br><span class="line">		city: <span class="string">'beijing'</span></span><br><span class="line">	&#125;,</span><br><span class="line">	arr:[ <span class="string">'a'</span>,<span class="string">'b'</span>, <span class="string">'c'</span>]</span><br><span class="line">&#125;   <span class="comment">//深拷贝的结果。</span></span><br></pre></td></tr></table></figure>
+<h3 id="10、变量计算-类型转换"><a href="#10、变量计算-类型转换" class="headerlink" title="10、变量计算-类型转换"></a>10、变量计算-类型转换</h3><p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112101836320.png" alt="image-20211210183556963"></p>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112101903385.png" alt="image-20211210190327229"></p>
+<blockquote>
+<p>let x1=obj1.x 是干扰人的</p>
+</blockquote>
+<h3 id="11、原型和原型链"><a href="#11、原型和原型链" class="headerlink" title="11、原型和原型链"></a>11、原型和原型链</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">**两种写的方式**</span><br><span class="line"><span class="built_in">console</span>. log(</span><br><span class="line"><span class="string">`姓名<span class="subst">$&#123;<span class="keyword">this</span>.name&#125;</span> ，学号<span class="subst">$&#123;<span class="keyword">this</span>.number&#125;</span></span></span><br><span class="line"><span class="string">)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">console.log(</span></span><br><span class="line"><span class="string">'姓名'+ this.name + '，学号'+this.number</span></span><br><span class="line"><span class="string">)</span></span><br></pre></td></tr></table></figure>
+<p><strong>class</strong></p>
+<ul>
+<li><p>constructor</p>
+</li>
+<li><p>属性</p>
+</li>
+<li><p>方法</p>
+</li>
+</ul>
+<p><strong>继承</strong></p>
+<ul>
+<li>extends</li>
+<li>super</li>
+<li>扩展或重写方法</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//父类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">People</span> </span>&#123;</span><br><span class="line">	<span class="keyword">constructor</span>( name) &#123;</span><br><span class="line">	<span class="keyword">this</span>.name = name</span><br><span class="line">	&#125;	</span><br><span class="line">	eat() &#123;</span><br><span class="line">	<span class="built_in">console</span>. log(<span class="string">`$ithis.name&#125; eat something`</span>)</span><br><span class="line">	&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//子类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span> <span class="keyword">extends</span> <span class="title">People</span> </span>&#123;</span><br><span class="line">	<span class="keyword">constructor</span>(name, number) &#123;</span><br><span class="line">	<span class="keyword">super</span>(name) <span class="comment">//继承父类的name</span></span><br><span class="line">	<span class="keyword">this</span>.number = number</span><br><span class="line">	&#125;</span><br><span class="line">	sayHi()&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">`姓名 <span class="subst">$&#123;<span class="keyword">this</span>.name&#125;</span>学号<span class="subst">$&#123;<span class="keyword">this</span>.number&#125;</span>`</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> xialuo = <span class="keyword">new</span> Student(<span class="string">'夏洛'</span>,<span class="number">100</span>)</span><br><span class="line">log(xialuo.name)</span><br><span class="line">log(xialuo.number)</span><br><span class="line">xialuo.sayHi()</span><br><span class="line">xialuo.eat()</span><br></pre></td></tr></table></figure>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112101928446.png" alt="image-20211210192840339"></p>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112101931965.png" alt="image-20211210193103817"></p>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112101950046.png" alt="image-20211210195041939"></p>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112101951660.png" alt="image-20211210195103225"></p>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112101955937.png" alt="image-20211210195508425"></p>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112102018741.png" alt="image-20211210201830160"></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>、如何准确判断一个变量是不是数组?</span><br><span class="line">    a <span class="keyword">instanceof</span> <span class="built_in">Array</span></span><br></pre></td></tr></table></figure>
+<h3 id="12、作用域和闭包"><a href="#12、作用域和闭包" class="headerlink" title="12、作用域和闭包"></a>12、作用域和闭包</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>、<span class="keyword">this</span>的不同应用场景，如何取值?</span><br><span class="line"><span class="number">2</span>、手写bind 函数</span><br><span class="line"><span class="number">3</span>、实际开发中闭包的应用场景，举例说明</span><br></pre></td></tr></table></figure>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112102030318.png" alt="image-20211210203042511"></p>
+<p><strong>作用域</strong></p>
+<ul>
+<li>全局作用域</li>
+<li>函数作用域</li>
+<li>块级作用域(ES6新增)</li>
+</ul>
+<blockquote>
+<p>if for {} 就是块级作用域</p>
+</blockquote>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112102044389.png" alt="image-20211210204400524"></p>
+<p><strong>自由变量</strong></p>
+<ul>
+<li><p>一个变量在当前作用域没有定义，但被使用了</p>
+</li>
+<li><p>向上级作用域,一层一层依次寻找，直至找到为止</p>
+</li>
+<li><p>如果到全局作用域都没找到，则报错xx is not defined</p>
+</li>
+</ul>
+<p><strong>闭包</strong></p>
+<p>作用域应用的特殊情况，有两种表现:</p>
+<ul>
+<li>函数作为参数被传递</li>
+<li>函数作为返回值被返回</li>
+</ul>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112102047593.png" alt="image-20211210204753650"></p>
+<blockquote>
+<p>答案为100</p>
+</blockquote>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112102048254.png" alt="image-20211210204829747"></p>
+<blockquote>
+<p>答案为100</p>
+</blockquote>
+<p><strong>闭包:自由变量的查找，是在函数定义的地方，向上级作用域查找。不是在执行的地方!!!</strong></p>
+<h3 id="13、this"><a href="#13、this" class="headerlink" title="13、this"></a>13、this</h3><blockquote>
+<p>应用场景</p>
+</blockquote>
+<ul>
+<li>作为普通函数被调用  -&gt;window</li>
+<li>使用call apply bind- &gt;传入什么就是绑定什么</li>
+<li>作为对象方法被调用 -&gt;返回对象本身</li>
+<li>在class方法中调用 -&gt;当前实例本身</li>
+<li>箭头函数 -&gt;上级作用域的this的值来决定</li>
+</ul>
+<p><strong>注意：this取什么值，是在函数执行的时候确认的，不是在函数定义的时候确认的</strong></p>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112102056796.png" alt="image-20211210205632681"></p>
+<blockquote>
+<p>bind和call的区别是  bind会返回一个新的函数再去执行</p>
+</blockquote>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112102057499.png" alt="image-20211210205745060"></p>
+<blockquote>
+<p>this===window是因为function这个函数执行本身是setTimeout触发的执行，它并不是zhangsan.方法触发的执行。</p>
+</blockquote>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112102100839.png" alt="image-20211210210004770"></p>
+<blockquote>
+<p>特点：箭头函数本身没有this都是取它上级作用域的this</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">手写bind函数</span><br><span class="line">由于fun1的隐式原型===<span class="built_in">Function</span>的显示原型</span><br><span class="line">bind方法只有在<span class="built_in">Function</span>.prototype</span><br><span class="line"></span><br><span class="line"><span class="comment">//模板</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params">a,b,c</span>)</span>&#123;</span><br><span class="line">    log(<span class="string">'this'</span>,<span class="keyword">this</span>)</span><br><span class="line">    log(a,b,c)</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'this is fn1'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> fn2 =fn1.bind(&#123;<span class="attr">x</span>:<span class="number">100</span>&#125;,<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>)</span><br><span class="line"><span class="keyword">const</span> res = fn2()</span><br><span class="line">log(res)</span><br><span class="line"></span><br><span class="line"><span class="comment">//模拟bind</span></span><br><span class="line"><span class="built_in">Function</span>.prototype.bind1=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">//把参数列表变成数组</span></span><br><span class="line">    <span class="keyword">const</span> args = <span class="built_in">Array</span>.prototypes.slice.call(<span class="built_in">arguments</span>)<span class="comment">//slice是Array.prototypes上的API</span></span><br><span class="line">    <span class="comment">//获取this(数组的第一项)</span></span><br><span class="line">    <span class="keyword">const</span> t =args.shift()</span><br><span class="line">    <span class="comment">//fn1.bidn(...)中的fn1</span></span><br><span class="line">    <span class="keyword">const</span> self = <span class="keyword">this</span>  </span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  <span class="comment">//因为上面fn1.bind返回的是一个函数 函数是要执行的</span></span><br><span class="line">        <span class="keyword">return</span> self.apply(t,args)<span class="comment">//这里的args已经为20,30,40 因为上面做了shift的操作会改变原数组</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> i a</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">            a = <span class="built_in">document</span>.createElement(<span class="string">'a'</span>)</span><br><span class="line">            a.innerHTML = i + <span class="string">'&lt;br&gt;'</span></span><br><span class="line">            a.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">                e.preventDefault()</span><br><span class="line">                alert(i)</span><br><span class="line">            &#125;)</span><br><span class="line">            <span class="built_in">document</span>.body.appendChild(a)</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">如果是上述代码 无论点哪个标签都是显示<span class="number">10</span>，因为此时i是全局作用域，只有当点击的时候才会去执行回调函数，而回调函数的alert(i)是一个自由变量所以会去全局找（循环都结束了），因为都是<span class="number">10</span>  （js引擎在退出循环的时候，迭代变量i保存的是导致循环退出的值）</span><br><span class="line">    <span class="keyword">let</span> a</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">            a = <span class="built_in">document</span>.createElement(<span class="string">'a'</span>)</span><br><span class="line">            a.innerHTML = i + <span class="string">'&lt;br&gt;'</span></span><br><span class="line">            a.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;<span class="comment">//不会立马执行</span></span><br><span class="line">                e.preventDefault()</span><br><span class="line">                alert(i)</span><br><span class="line">            &#125;)</span><br><span class="line">            <span class="built_in">document</span>.body.appendChild(a)</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">如果是上述代码就可以避免这个问题，因为此时i为块级作用域，（js引擎在后台会为每个迭代循环声明一个新的迭代变量），自由变量i就会在块中去找，因此就可以实现点击什么显示什么。</span><br></pre></td></tr></table></figure>
+<h3 id="14、异步和单线程"><a href="#14、异步和单线程" class="headerlink" title="14、异步和单线程"></a>14、异步和单线程</h3><p><strong>JS本质是单线程的。</strong>也就是说，它并不能像JAVA语言那样，两个线程并发执行。但我们平时看到的JS，分明是可以同时运作很多任务的，这又是怎么回事呢？</p>
+<p>首先，JS的代码，大致分为两类，<strong><a href="https://www.zhihu.com/search?q=同步代码&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra={&quot;sourceType&quot;%3A&quot;article&quot;%2C&quot;sourceId&quot;%3A265349066}" target="_blank" rel="noopener">同步代码</a></strong>和<strong>异步代码</strong>。JS引擎的主线程负责执行代码，由于只有这一个线程，执行当然是同步的，即按照顺序来。另外，还有一个叫做<strong><a href="https://www.zhihu.com/search?q=任务队列&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra={&quot;sourceType&quot;%3A&quot;article&quot;%2C&quot;sourceId&quot;%3A265349066}" target="_blank" rel="noopener">任务队列</a></strong>的东西，所有的异步代码都是从队列当中来。</p>
+<p>所以实际上我们会发现，JS根本不可能同时执行两个任务，本质上还是单线程。</p>
+<blockquote>
+<p> 因为这些任务的发生都不是在当下，而是过段时间以后再执行。因此时间不可控，你不能因为5秒后要执行一个函数，就让主线程闲置5秒什么都不干吧？所以你只能继续执行后续的同步代码。而当你单击鼠标或滚动窗口时，主线程可能正在执行其它代码，忙着呢！没工夫处理，因此，事件触发线程就负责来接收这个事件，并把要执行的任务暂时保存在任务队列当中。等主线程把手里的同步代码执行完，就立刻会向任务队列提取最新的任务。</p>
+</blockquote>
+<p><strong>单线程和异步</strong></p>
+<ul>
+<li>遇到等待(网络请求，定时任务)不能卡住</li>
+<li>需要异步</li>
+<li>回调callback函数形式</li>
+</ul>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112110932233.png" alt="image-20211211093254048"></p>
+<blockquote>
+<p>异步打印顺序100 300 200  异步不会阻塞 后面代码的执行300会立马出来。</p>
+<p>同步 弹出200会卡主 不点确定300不会出来</p>
+</blockquote>
+<ul>
+<li>基于JS是单线程语言</li>
+<li>异步不会阻塞代码执行</li>
+<li>同步会阻塞代码执行</li>
+</ul>
+<p><strong>应用场景</strong></p>
+<ul>
+<li>网络请求，如ajax图片加载</li>
+<li>定时任务，如setTimeout</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">手写<span class="built_in">Promise</span>加载一张图片 代码演示</span><br><span class="line"><span class="keyword">const</span> url = <span class="string">'http...'</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">loadImg</span>(<span class="params">src</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">const</span> p =  <span class="keyword">new</span> <span class="built_in">Promise</span>(  <span class="comment">//Promise传入一个函数 函数有两个参数</span></span><br><span class="line">    (resolve,reject)=&gt;&#123;</span><br><span class="line">        <span class="keyword">const</span> img = <span class="built_in">document</span>.createElement(<span class="string">'img'</span>)</span><br><span class="line">        img.onload=<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">            resolve(img)</span><br><span class="line">        &#125;</span><br><span class="line">        img.onerror=<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">            reject(<span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">`图片加载失败<span class="subst">$&#123;src&#125;</span>`</span>))<span class="comment">//或者 const err = new Error()/ reject(err)</span></span><br><span class="line">        &#125;</span><br><span class="line">        img.src =src</span><br><span class="line">    &#125;</span><br><span class="line">  )</span><br><span class="line">    <span class="keyword">return</span> p</span><br><span class="line">&#125;</span><br><span class="line">loadImg(url).then(接收一个函数函数就是上面resolve里面的对象)                    <span class="comment">//Promise对象就有thenloadImg(url).then(img=&gt;&#123;</span></span><br><span class="line">	<span class="built_in">console</span>.log(img.width)</span><br><span class="line">	<span class="keyword">return</span> img</span><br><span class="line">&#125;).then(<span class="function"><span class="params">img</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(img.height)</span><br><span class="line">&#125;).catch(<span class="function"><span class="params">ex</span>=&gt;</span><span class="built_in">console</span>.error(ex))</span><br><span class="line"></span><br><span class="line">情况<span class="number">2</span> 如果有两张图</span><br><span class="line">thenloadImg(url).then(<span class="function"><span class="params">img</span>=&gt;</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(img.width)</span><br><span class="line">	<span class="keyword">return</span> img   <span class="comment">//普通对象   **如果是普通对象下一个then函数里参数就会接收到返回的对象</span></span><br><span class="line">&#125;).then(<span class="function"><span class="params">img</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(img.height)</span><br><span class="line">    <span class="keyword">return</span> loadImg(url2)<span class="comment">//promise实例**如果是promise实例的话下一个then函数里的参数是loadImg(u2)加载完成之后的图片对象</span></span><br><span class="line">&#125;).then(<span class="function"><span class="params">img2</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(img2.width)</span><br><span class="line">    <span class="keyword">return</span> img2</span><br><span class="line">&#125;)</span><br><span class="line">这就是利用promise解决回调地狱的问题</span><br></pre></td></tr></table></figure>
+<p><strong>小结</strong></p>
+<ul>
+<li>单线程和异步，异步和同步区别<ul>
+<li>基于JS是单线程语言</li>
+<li>异步不会阻塞代码执行</li>
+<li>同步会阻塞代码执行</li>
+</ul>
+</li>
+<li>前端异步的应用场景:<ul>
+<li>网络请求</li>
+<li>定时任务</li>
+</ul>
+</li>
+<li>Promise解决callback hell</li>
+</ul>
+<h3 id="15、JS-Web-API（DOM）"><a href="#15、JS-Web-API（DOM）" class="headerlink" title="15、JS Web API（DOM）"></a>15、JS Web API（DOM）</h3><ul>
+<li>DOM</li>
+<li>BOM</li>
+<li>事件绑定</li>
+<li>ajax</li>
+<li>存储</li>
+</ul>
+<p><strong>vue 和React框架应用广泛，封装了DOM操作</strong><br><strong>但DOM操作一直都会前端工程师的基础、必备知识</strong><br><strong>只会vue而不懂 DOM操作的前端程序员，不会长久</strong></p>
+<blockquote>
+<p>不要被工具和框架限制了自己的能力</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>、DOM的本质是从HTML文件解译出的一棵树（一层一层）</span><br><span class="line"></span><br><span class="line"><span class="number">2</span>、DOM是哪种数据结构</span><br><span class="line">	是树（DOM树）结构</span><br><span class="line"><span class="number">3</span>、DOM操作的常用API</span><br><span class="line">	* DOM节点的操作</span><br><span class="line">    * DOM结构操作</span><br><span class="line">    * attribute和property的操作</span><br><span class="line"><span class="number">4</span>、attr和property 的区别</span><br><span class="line">	* property:修改对象属性，不会体现到 html结构中（尽量用这个）</span><br><span class="line">	* attribute:修改html 属性，会改变html结构</span><br><span class="line">	* 两者都有可能引起 DOM重新渲染</span><br></pre></td></tr></table></figure>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112111029555.png" alt="image-20211211102904678"></p>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112111029346.png" alt="image-20211211102949224"></p>
+<blockquote>
+<p>property本身不是API的一部分，是一种JS属性操作的形式</p>
+</blockquote>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112111033030.png" alt="image-20211211103301872"></p>
+<blockquote>
+<p>设置attribute会将设置的属性嵌到dom结构里的（修改标签的属性）</p>
+<p> 而property修改的是JS变量的一个属性（不会对标签产生任何的影响）</p>
+</blockquote>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112111034273.png" alt="image-20211211103431882"></p>
+<p><strong>property和attribute</strong></p>
+<ul>
+<li>property:修改对象属性，不会体现到 html结构中（尽量用这个）</li>
+<li>attribute:修改html 属性，会改变html结构</li>
+<li>两者都有可能引起 DOM重新渲染</li>
+</ul>
+<p><strong>DOM结构操作</strong></p>
+<ul>
+<li>新增/插入节点</li>
+<li>获取子元素列表,获取父元素</li>
+<li>删除子元素</li>
+</ul>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112111041651.png" alt="image-20211211104105539"></p>
+<blockquote>
+<p>移动节点就是原本div1没有p2的 设置了此操作div1就有了p2</p>
+</blockquote>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112111043263.png" alt="image-20211211104241164"></p>
+<blockquote>
+<p>获取子元素列表有时候不是我们想要的 因为它会将文本元素一块打印出来</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//首先先将divchild变成一个数组再进行遍历</span></span><br><span class="line"><span class="comment">//Array.prototype.slice.call(div1.childNodes)就是将返回的结果变成一个数组</span></span><br><span class="line"><span class="keyword">const</span> divchild = <span class="built_in">Array</span>.prototype.slice.call(div1.childNodes).filter(<span class="function"><span class="params">child</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(child.nodeType===<span class="number">1</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">    	<span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'divchild'</span>,divchild)<span class="comment">//结果就是dom元素 3个p标签/就不是text文本</span></span><br><span class="line"></span><br><span class="line">**filter()：方法创建一个新的数组，新数组中的元素是通过检查指定数组中符合条件的所有元素；不会改变原始数组；</span><br><span class="line"><span class="keyword">return</span>后面判断结果，取布尔值，<span class="literal">true</span>的话就添入新的filter数组中，<span class="literal">false</span>的话，不会添进filter的数组中。**</span><br></pre></td></tr></table></figure>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112111053378.png" alt="image-20211211105346903"></p>
+<p><strong>DOM性能</strong></p>
+<ul>
+<li>DOM操作非常“昂贵”，避免频繁的DOM操作（占用CPU多 ）</li>
+<li>对DOM查询做缓存</li>
+<li>将频繁操作改为一次性操作</li>
+</ul>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112111108747.png" alt="image-20211211110819646"></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> list = <span class="built_in">document</span>.getElementById(<span class="string">'list'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>；i++)&#123;</span><br><span class="line">    <span class="keyword">const</span> li = <span class="built_in">document</span>.createElement(<span class="string">'li'</span>)</span><br><span class="line">    li.innerHTML = <span class="string">`LIST Item <span class="subst">$&#123;i&#125;</span>`</span></span><br><span class="line">    list.appendChild(li)</span><br><span class="line">&#125;</span><br><span class="line">这样就是频繁操作DOM,耗费性能</span><br></pre></td></tr></table></figure>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112111125652.png" alt="image-20211211112538924"></p>
+<h3 id="16、BOM操作（Browser-Object-Model）"><a href="#16、BOM操作（Browser-Object-Model）" class="headerlink" title="16、BOM操作（Browser Object Model）"></a>16、BOM操作（Browser Object Model）</h3><p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112111437471.png" alt="image-20211211143716541"></p>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112111437609.png" alt="image-20211211143728545"></p>
+<h3 id="17、事件"><a href="#17、事件" class="headerlink" title="17、事件"></a>17、事件</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>、编写一个通用的事件监听函数</span><br><span class="line"><span class="number">2</span>、描述事件冒泡的流程</span><br><span class="line"><span class="number">3</span>、无限下拉的图片列表,如何监听每个图片的点击?</span><br></pre></td></tr></table></figure>
+<p><strong>事件绑定</strong></p>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112111439359.png" alt="image-20211211143946225"></p>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112111441678.png" alt="image-20211211144103348"></p>
+<blockquote>
+<p>elem：绑定的按钮id </p>
+</blockquote>
+<p><strong>事件冒泡</strong></p>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112111452922.png" alt="image-20211211145246199"></p>
+<p><strong>stopPropagation组织冒泡 没有这个点击激活的时候由于会冒泡到body就会触发body从而打印取消</strong></p>
+<p><strong>事件代理（是基于事件冒泡来做的）</strong></p>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112111455966.png" alt="image-20211211145459660"></p>
+<blockquote>
+<p>绑定在父元素上 代码简介 （比每一个a标签都绑定一个元素）</p>
+<p>减少浏览器的内存占用 （每一个a标签都去挂载事件监听，耗内存）</p>
+<p>禁止滥用</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bindEvent</span>(<span class="params">elem,type,selector,fn</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(fn == <span class="literal">null</span>) &#123;   <span class="comment">//传递三个参数和四个参数的对比</span></span><br><span class="line">		fn = selector</span><br><span class="line">    	selector = <span class="literal">null</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">elem.addEventListener(type,event =&gt; &#123;   <span class="comment">//整体对照下面的例子进行观察</span></span><br><span class="line">    	<span class="keyword">const</span> target = event.target<span class="comment">//触发的元素</span></span><br><span class="line">		<span class="keyword">if</span> (selector) &#123;  <span class="comment">//这里的selector就是a</span></span><br><span class="line">		<span class="comment">//代理绑定</span></span><br><span class="line">            <span class="keyword">if</span>(target.matches(selector))&#123; <span class="comment">//target.matches一个DOM元素是否符合CSS选择器</span></span><br><span class="line">                fn.call(target,event)</span><br><span class="line">            &#125;</span><br><span class="line">		&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="comment">//普通绑定</span></span><br><span class="line">            fn.call(target,event)<span class="comment">//这里的target就是this的意思</span></span><br><span class="line">        &#125;</span><br><span class="line">	&#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//普通绑定</span></span><br><span class="line"><span class="keyword">const</span> btn1 = <span class="built_in">document</span>.getElementById(<span class="string">'btn1'</span>)</span><br><span class="line">bindEvent(btn1, <span class="string">'click'</span> , event =&gt;&#123;</span><br><span class="line">	<span class="comment">//console.log (event.target）//获取触发的元素</span></span><br><span class="line">    event.preventDefault()<span class="comment">//阻止默认行为</span></span><br><span class="line">	alert(<span class="keyword">this</span>.innerHTML)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//代理绑定</span></span><br><span class="line"><span class="keyword">const</span> div3 = <span class="built_in">document</span>.getElementById (<span class="string">'div3'</span>)</span><br><span class="line">bindEvent(div3, <span class="string">'click '</span>,<span class="string">'a'</span>, event =&gt;&#123;</span><br><span class="line">	event.preventDefault()</span><br><span class="line">	alert(<span class="keyword">this</span>.innerHTML)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> btn1 = <span class="built_in">document</span>.getElementById(<span class="string">'btn1'</span>)</span><br><span class="line">bindEvent(btn1, <span class="string">'click'</span> , <span class="function"><span class="keyword">function</span>(<span class="params">event </span>)</span>&#123;</span><br><span class="line">	<span class="comment">//console.log (event.target）//获取触发的元素</span></span><br><span class="line">    event.preventDefault()<span class="comment">//阻止默认行为</span></span><br><span class="line">	alert(<span class="keyword">this</span>.innerHTML)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//代理绑定</span></span><br><span class="line"><span class="keyword">const</span> div3 = <span class="built_in">document</span>.getElementById (<span class="string">'div3'</span>)</span><br><span class="line">bindEvent(div3, <span class="string">'click '</span>,<span class="string">'a'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</span><br><span class="line">	event.preventDefault()</span><br><span class="line">	alert(<span class="keyword">this</span>.innerHTML)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112111532295.png" alt="image-20211211153208756"></p>
+<p><strong>下图就可以验证target.matches(selector) 其中代理绑定的是a标签不是button标签，因此就可以判断是否符合css选择器</strong></p>
+<blockquote>
+<p>上述代码有错误，因为箭头函数没有this，会向上级作用域查找，为window，而window.innerHTML就不符合要求了</p>
+<p>因此得将箭头函数转换为普通函数</p>
+</blockquote>
+<p><strong>描述事件冒泡的流程</strong></p>
+<ul>
+<li>基于 DOM 树形结构</li>
+<li>事件会顺着触发元素向上冒泡</li>
+<li>应用场景:代理（是基于事件冒泡机制才能使用的）</li>
+</ul>
+<p><strong>无限下拉图片列表，如何监听每个图片的点击</strong></p>
+<ul>
+<li>事件代理</li>
+<li>用e.target获取触发元素</li>
+<li>用matches来判断是否是触发元素</li>
+</ul>
+<h3 id="18、跨域"><a href="#18、跨域" class="headerlink" title="18、跨域"></a>18、跨域</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> 同源策略</span><br><span class="line">**ajax请求时，浏览器要求当前网页和server 必须同源（安全)</span><br><span class="line">**同源︰协议、域名、端口，三者必须</span><br><span class="line">前端:http:<span class="comment">//a.com:8080/;   server:https://b.com/api/xxx  三者都不相同</span></span><br></pre></td></tr></table></figure>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112111548913.png" alt="image-20211211154807380"></p>
+<p><strong>加载图片css js可无视同源策略</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>、&lt;img src=跨域的图片地址/&gt;</span><br><span class="line"><span class="number">2</span>、&lt;link href=跨域的css地址/&gt;</span><br><span class="line"><span class="number">3</span>、&lt;script src=跨域的js地址&gt;&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">4、&lt;img/</span>&gt;可用于统计打点，可使用第三方统计服务</span><br><span class="line"><span class="number">5</span>、&lt;link /&gt; <span class="xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span>可使用CDN ，CDN一般都是外域</span></span><br><span class="line">6、&lt;script&gt;可实现JSONP</span><br></pre></td></tr></table></figure>
+<p><strong>跨域</strong></p>
+<ul>
+<li>所有的跨域，都必须经过server端允许和配合</li>
+<li>未经server端允许就实现跨域，说明浏览器有漏洞，危险信号</li>
+</ul>
+<p><strong>JSONP</strong><br>访问<a href="https://imooc.com/，服务端定返回一个html文件吗?" target="_blank" rel="noopener">https://imooc.com/，服务端定返回一个html文件吗?</a></p>
+<blockquote>
+<p>不一定，服务器可以任意动态拼接数据返回，只要符合html格式要求</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>、&lt;script&gt;可绕过跨域限制</span><br><span class="line"><span class="number">2</span>、服务器可以任意动态拼接数据返回</span><br><span class="line"><span class="number">3</span>、所以，&lt;script&gt;就可以获得跨域的数据，只要服务端愿意返回</span><br><span class="line">（跨域必须经过服务端的允许和配合，服务端如果愿意给你返回一个拼接好的数据的script的JSONP文件的话，这样就可以通过&lt;script&gt;可绕过跨域限制，从而获得跨域的数据）</span><br></pre></td></tr></table></figure>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112111617957.png" alt="img"></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ajax</span>(<span class="params">url</span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">const</span> p = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve,reject</span>) =&gt;</span>&#123;</span><br><span class="line">	<span class="keyword">const</span> xhr = <span class="keyword">new</span> XMLHttpRequest()</span><br><span class="line">	xhr.open ( <span class="string">'GET'</span>, <span class="string">'/data/test.json'</span> , <span class="literal">true</span>)</span><br><span class="line">    xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (xhr.readyState == <span class="number">4</span>)&#123;</span><br><span class="line">        	<span class="keyword">if</span> (xhr.status === <span class="number">200</span>)&#123;</span><br><span class="line">    			resolve( </span><br><span class="line">    				<span class="built_in">JSON</span>. parse(xhr.responseText)</span><br><span class="line">    				)</span><br><span class="line">    			&#125;<span class="keyword">else</span> <span class="keyword">if</span> (xhr.status===<span class="number">404</span>)&#123;</span><br><span class="line">    				reject(<span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">' 404 not found '</span>))</span><br><span class="line">        	&#125;</span><br><span class="line">   		 &#125;</span><br><span class="line">	 &#125;</span><br><span class="line">        xhr.send(<span class="literal">null</span>)</span><br><span class="line">    &#125;)</span><br><span class="line"><span class="keyword">return</span> p</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> url = <span class="string">'/data/test.json'</span></span><br><span class="line">ajax(url)</span><br><span class="line">.then(<span class="function"><span class="params">res</span> =&gt;</span><span class="built_in">console</span>.log(res))</span><br><span class="line">.catch(<span class="function"><span class="params">err</span> =&gt;</span><span class="built_in">console</span>.error(err))</span><br></pre></td></tr></table></figure>
+<p><strong>ajax知识点</strong></p>
+<ul>
+<li>XMLHttpRequest</li>
+<li>状态码:readyState status</li>
+<li>跨域︰同源策略（如何绕过)，JSON，CORS</li>
+</ul>
+<h3 id="19、存储"><a href="#19、存储" class="headerlink" title="19、存储"></a>19、存储</h3><p>1、描述cookie localStorage sessionStorage区别</p>
+<blockquote>
+<p>容量 cookie 4kb  另外一个5M<br>API 易用性<br>是否跟随http请求发送出去  </p>
+</blockquote>
+<p><strong>cookie</strong></p>
+<ul>
+<li><p>本身用于浏览器和server通讯（本身是http请求的一部分）</p>
+</li>
+<li><p>被“借用”到本地存储来（ localStorage sessionStorage这是html5之后才提出来的，所以之前都是拿cookie做本地存储）</p>
+</li>
+<li><p>可用document.cookie= ‘..’来修改（前端修改cookie的方式）=&gt;赋值同名覆盖 不同名叠加</p>
+</li>
+<li><p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112111636930.png" alt="image-20211211163645518"></p>
+<p><strong>注意</strong>：cookie的设计并不是用来本地存储，它是为了浏览器和客服端通讯，只是被借用到本地存储来</p>
+</li>
+</ul>
+<p><strong>cookie的缺点</strong></p>
+<ul>
+<li>存储大小，最大4KB（限制）</li>
+<li>http请求时需要发送到服务端，增加请求数据量</li>
+<li>只能用document.cookie = ‘.…’来修改,太过简陋</li>
+</ul>
+<p><strong>localStorage和sessionStorage</strong></p>
+<ul>
+<li>HTML5专门为存储而设计,最大可存5M(已经很大了)</li>
+<li>API简单易用 =&gt;setItem getItem</li>
+<li>不会随着http请求被发送出去</li>
+</ul>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112111639672.png" alt="image-20211211163925702"></p>
+<p><strong>localStorage和 sessionStorage</strong></p>
+<ul>
+<li>localStorage数据会永久存储，除非代码或手动删除</li>
+<li>sessionStorage 数据只存在于当前会话，浏览器关闭则清空</li>
+<li>一般用localStorage会更多一些</li>
+</ul>
+<h3 id="20、防抖"><a href="#20、防抖" class="headerlink" title="20、防抖"></a>20、防抖</h3><p><strong>防抖 debounce</strong></p>
+<ul>
+<li>监听一个输入框的，文字变化后触发chaange事件</li>
+<li>直接用keyup 事件，则会频发触发change事件</li>
+<li>防抖∶用户输入结束或暂停时，才会触发change事件</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">debounce</span>(<span class="params">fn, delay = <span class="number">500</span>）&#123;</span></span></span><br><span class="line"><span class="function"><span class="params"></span></span></span><br><span class="line"><span class="function"><span class="params">	let timer = null</span></span></span><br><span class="line"><span class="function"><span class="params">                   </span></span></span><br><span class="line"><span class="function"><span class="params">	return function(</span>)</span>&#123;.</span><br><span class="line">		<span class="keyword">if</span> (timer) &#123;</span><br><span class="line">			clearTimeout(timer)</span><br><span class="line">			&#125;</span><br><span class="line">		timer = setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">			fn.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>)</span><br><span class="line">            timer = <span class="literal">null</span></span><br><span class="line">		&#125;, delay)</span><br><span class="line">      &#125;</span><br><span class="line">&#125;</span><br><span class="line">input1.addEventListener(<span class="string">'keyup'</span>,debounce(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log (input1.value)</span><br><span class="line">&#125;),<span class="number">600</span>)</span><br></pre></td></tr></table></figure>
+<p>对照下面这个</p>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112111722163.png" alt="image-20211211172257947"></p>
+<p><strong>节流</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">节流throttle</span><br><span class="line"><span class="number">1</span>、拖拽一个元素时，要随时拿到该元素被拖拽的位置</span><br><span class="line"><span class="number">2</span>、直接用drag事件，则会频发触发，很容易导致卡顿</span><br><span class="line"><span class="number">3</span>、节流:无论拖拽速度多快，都会每隔<span class="number">100</span>ms触发一次</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">throttle</span>(<span class="params">fn, delay = <span class="number">100</span>）&#123;</span></span></span><br><span class="line"><span class="function"><span class="params"></span></span></span><br><span class="line"><span class="function"><span class="params">	let timer = null</span></span></span><br><span class="line"><span class="function"><span class="params">                   </span></span></span><br><span class="line"><span class="function"><span class="params">	return function(</span>)</span>&#123;.</span><br><span class="line">		<span class="keyword">if</span> (timer) &#123;</span><br><span class="line">			<span class="keyword">return</span> </span><br><span class="line">			&#125;</span><br><span class="line">		timer = setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">			fn.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>)</span><br><span class="line">            timer = <span class="literal">null</span></span><br><span class="line">		&#125;, delay)</span><br><span class="line">      &#125;</span><br><span class="line">&#125;</span><br><span class="line">input1.addEventListener(<span class="string">'drag'</span>,throttle(<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;<span class="comment">//这里的e是传给throttle返回的函数 而function包裹的函数没有e</span></span><br><span class="line">   <span class="comment">// 由于有fn.apply(this, arguments) 有这个fn是function这个函数 其中arguments有event</span></span><br><span class="line">		<span class="built_in">console</span>.log (e.offsetX,e.offsetY)</span><br><span class="line">&#125;),<span class="number">200</span>)</span><br></pre></td></tr></table></figure>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112111735199.png" alt="image-20211211173501159"></p>
+<p><strong>关于简历</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">简洁明了，突出个人技能和项目经验（技术栈）</span><br><span class="line">可以把个人博客，开源作品放在简历里</span><br><span class="line">不要造假，保证能力上的真实性（斟酌用词，不要使用精通， 了解熟练即可）</span><br><span class="line"></span><br><span class="line">谈谈自己的缺点</span><br></pre></td></tr></table></figure>
+<h2 id="React框架"><a href="#React框架" class="headerlink" title="React框架"></a>React框架</h2><h3 id="1、事件"><a href="#1、事件" class="headerlink" title="1、事件"></a>1、事件</h3><ol>
+<li><p>bind this：修改方法的this指向。使用箭头函数this就指向当前实例，就不用bind（this）</p>
+</li>
+<li><p>关于event 参数</p>
+<ul>
+<li><p>event. preventDefault()//阻止默认行为</p>
+</li>
+<li><p>event. stopPropagation() //阻止冒泡</p>
+</li>
+<li><p>event.target 指向当前元素，即当前元素触发</p>
+</li>
+<li><p>event.nativeEvent.target 指向当前元素 即当前元素触发</p>
+</li>
+<li><p>event.nativeEvent.currentTarget 绑定是绑定在document上<strong>**</strong></p>
+</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li><p>event是SyntheticEvent事件，模拟出来DOM事件所有能力</p>
+</li>
+<li><p>event.nativeEvent是原生事件对象</p>
+</li>
+<li><p>所有的事件，都被挂载到document上<strong>**</strong></p>
+</li>
+<li><p>和DOM事件不一样，和Vue事件也不一样</p>
+</li>
+</ul>
+<ol>
+<li>传递自定义参数</li>
+</ol>
+<h3 id="2、setState"><a href="#2、setState" class="headerlink" title="2、setState"></a>2、setState</h3><ol>
+<li><p>不可变值（不能直接修改state）</p>
+<ul>
+<li>concat，slice，filter 这些东西不会改变原来的list值。而push pop splice会改变不可用 </li>
+<li>或者可以通过this.state.list.slice() <strong>不传入值就相当于给list做了一个副本，这样就可以使用push，pop这种API，原本的list不变</strong></li>
+<li>扩展对象可以用解构赋值 {…this.state.list,a:100}</li>
+</ul>
+</li>
+<li><p>可能是异步更新</p>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112122053575.png" alt="image-20211212205326882"></p>
+<blockquote>
+<p>先打印再累加   想要获取最新的值就在setState传入第二个参数，第二个参数的值是一个函数</p>
+</blockquote>
+<p><strong>但是在setTimeout中setState是同步的  自己定义的DOM事件，setState是同步的</strong></p>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112122059184.png" alt="image-20211212205931478"></p>
+<p>标准写法应该这样</p>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112122119780.png" alt="image-20211212211952584"></p>
+<blockquote>
+<p>要销毁这个自定义的DOM事件</p>
+</blockquote>
+</li>
+<li><p>可能会被合并（仅限对象才会被合并，函数不会被合并）</p>
+</li>
+</ol>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112122152658.png" alt="image-20211212215230884"></p>
+<h3 id="3、组件生命周期"><a href="#3、组件生命周期" class="headerlink" title="3、组件生命周期"></a>3、组件生命周期</h3><p> <img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112122159266.png" alt="image-20211212215915750"></p>
+<h3 id="4、高级特性"><a href="#4、高级特性" class="headerlink" title="4、高级特性"></a>4、高级特性</h3><ol>
+<li><p>函数组件</p>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112122208615.png" alt="image-20211212220821520"></p>
+</li>
+<li><p>非受控组件</p>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112122215332.png" alt="image-20211212221502666"></p>
+<blockquote>
+<p> 建议写受控组件  因为受控没有ref  因为官网尽量不要写ref</p>
+</blockquote>
+</li>
+<li><p>Portals</p>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112122216014.png" alt="image-20211212221609897"></p>
+<blockquote>
+<p><strong>Portals使用场景</strong><br>overflow: hidden  父元素设置了BFC影响了子元素的展示，可以让子元素逃离父元素之外展示<br>父组件z-index值太小：同理<br>fixed需要放在body第一层级：同理</p>
+</blockquote>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112122225929.png" alt="image-20211212222543204"></p>
+</li>
+<li><p>context</p>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112122226510.png" alt="image-20211212222646168"></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>) 创建Context容器对象：</span><br><span class="line">	<span class="keyword">const</span> XxxContext = React.createContext()  </span><br><span class="line">	</span><br><span class="line"><span class="number">2</span>) 渲染子组时，外面包裹xxxContext.Provider, 通过value属性给后代组件传递数据：</span><br><span class="line">	&lt;xxxContext.Provider value=&#123;数据&#125;&gt;</span><br><span class="line">		子组件</span><br><span class="line">    &lt;<span class="regexp">/xxxContext.Provider&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">		&lt;Provider value=&#123;&#123;username,age&#125;&#125;&gt;</span></span><br><span class="line"><span class="regexp">					&lt;B/</span>&gt;</span><br><span class="line">				&lt;<span class="regexp">/Provider&gt;  这样包裹一下 B组件以及B的子组件都能用只不过需要声明接收</span></span><br><span class="line"><span class="regexp">    </span></span><br><span class="line"><span class="regexp">3) 后代组件读取数据：</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">	/</span><span class="regexp">/第一种方式:仅适用于类组件 </span></span><br><span class="line"><span class="regexp">	  static contextType = xxxContext  /</span><span class="regexp">/ 声明接收context</span></span><br><span class="line"><span class="regexp">	  this.context /</span><span class="regexp">/ 读取context中的value数据</span></span><br><span class="line"><span class="regexp">	  </span></span><br><span class="line"><span class="regexp">	/</span><span class="regexp">/第二种方式: 函数组件与类组件都可以  函数式没有this所以第一种不适合函数式组件</span></span><br><span class="line"><span class="regexp">	  &lt;xxxContext.Consumer&gt;</span></span><br><span class="line"><span class="regexp">	    &#123;</span></span><br><span class="line"><span class="regexp">	      value =&gt; ( /</span><span class="regexp">/ value就是context中的value数据</span></span><br><span class="line"><span class="regexp">	        要显示的内容</span></span><br><span class="line"><span class="regexp">	      )</span></span><br><span class="line"><span class="regexp">	    &#125;</span></span><br><span class="line"><span class="regexp">	  &lt;/</span>xxxContext.Consumer&gt;</span><br><span class="line"><span class="string">``</span><span class="string">`</span></span><br><span class="line"><span class="string">在应用开发中一般不用context, 一般都它封装react插件</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>异步组件</p>
+<p>性能优化：异步组件—&gt;组件比较大，路由需要懒加载</p>
+<p> <strong>lazyLoad  懒加载 路由组件最常用  就是避免100个组件去请求100次  最好的就是点哪个就请求哪个</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.通过React的lazy函数配合import()函数动态加载路由组件 ===&gt; 路由组件代码会被分开打包</span></span><br><span class="line"><span class="keyword">const</span> Login = lazy(<span class="function"><span class="params">()</span>=&gt;</span><span class="keyword">import</span>(<span class="string">'@/pages/Login'</span>))  <span class="comment">//现点现加载 </span></span><br><span class="line"></span><br><span class="line"><span class="comment">//2.通过&lt;Suspense&gt;指定在加载得到路由打包文件前显示一个自定义loading界面</span></span><br><span class="line">&lt;Suspense fallback=&#123;&lt;h1&gt;loading.....&lt;<span class="regexp">/h1&gt;&#125;&gt;</span></span><br><span class="line"><span class="regexp">    &lt;Switch&gt;</span></span><br><span class="line"><span class="regexp">        &lt;Route path="/</span>xxx<span class="string">" component=&#123;Xxxx&#125;/&gt;</span></span><br><span class="line"><span class="string">        &lt;Redirect to="</span>/login<span class="string">"/&gt;</span></span><br><span class="line"><span class="string">    &lt;/Switch&gt;</span></span><br><span class="line"><span class="string">&lt;/Suspense&gt;  //这就是如果网络慢慢 迟迟不回来 要fallback指定一个组件component=&#123;Xxxx&#125;显示</span></span><br><span class="line"><span class="string">//Network选项卡 点谁加载谁  把网络故意调慢  点了About加载 会显示Loading</span></span><br><span class="line"><span class="string">//&lt;h1&gt;loading.....&lt;/h1&gt;如果Loading要写成一个组件就另外写一个文件就可以 但是引入的时候不要懒加载</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>性能组件（永远是面试的重点）</p>
+<p>性能优化对于React更加重要</p>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112131211882.png" alt="image-20211213121121649"></p>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112131212189.png" alt="image-20211213121203921"></p>
+<blockquote>
+<p>判断下一个状态的数据和前一个数据是否相同，不相同可以渲染，相同就不可以渲染。优化性能</p>
+<p>背后的逻辑是什么？ SCU默认会返回true，但是有返回false的权利</p>
+<p>SCU一定要每次都用嘛？不一定，性能优化需要的时候用。需要的时候才优化</p>
+</blockquote>
+<p><strong>SCU使用总结**</strong></p>
+<ul>
+<li><p>SCU 默认返回true ，即React默认重新渲染所有子组件</p>
+</li>
+<li><p>必须配合“不可变值”一起使用</p>
+</li>
+<li><p>可先不用SCU，有性能问题时再考虑使用</p>
+<p><strong>PureComponent 和memo</strong></p>
+</li>
+<li><p>PureComponent , SCU默认实现了浅比较</p>
+</li>
+<li><p>memo ，函数组件中的PureComponent</p>
+</li>
+<li><p>浅比较已使用大部分情况（尽量不要做深度比较)</p>
+</li>
+</ul>
+<p><strong>immutable.js</strong></p>
+<ul>
+<li>彻底拥抱“不可变质”</li>
+<li>基于共享数据（不是深拷贝），速度好</li>
+<li>有一定学习和迁移成本，按需使用</li>
+</ul>
+</li>
+<li><p>高阶组件HOC</p>
+<p><strong>关于组件公共逻辑的抽离</strong></p>
+<ul>
+<li>mixin , 已被React 弃用</li>
+<li>高阶组件HOC</li>
+<li>Render Props</li>
+<li>connect也是高阶组件</li>
+</ul>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112131431082.png" alt="image-20211213143101772"></p>
+<blockquote>
+<p>接收一个组件，返回的是一个由函数拼接而成的组件</p>
+</blockquote>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112131440059.png" alt="image-20211213144047471"></p>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112131441622.png" alt="image-20211213144120493"></p>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112131442900.png" alt="image-20211213144230500"></p>
+</li>
+<li><p>Render Props（比HOC更容易理解）</p>
+</li>
+</ol>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112131451135.png" alt="image-20211213145106982"></p>
+<p><strong>注意</strong>：暴露的是什么，组件就传什么，比如下图，暴露的是APP 在入口文件APP相当于子组件所以直接在APP输入props即可</p>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112131453594.png" alt="image-20211213145353719"></p>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112131454305.png" alt="image-20211213145442204"></p>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112131456086.png" alt="image-20211213145533126"></p>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112131458034.png" alt="image-20211213145754832"></p>
+<h3 id="5、Redux"><a href="#5、Redux" class="headerlink" title="5、Redux"></a>5、Redux</h3><p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112131508199.png" alt="image-20211213150838083"></p>
+<blockquote>
+<p>redux怎么去获取异步action</p>
+<p>单向数据流的图</p>
+</blockquote>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112131523848.png" alt="image-20211213152256044"></p>
+<h3 id="6、React原理"><a href="#6、React原理" class="headerlink" title="6、React原理"></a>6、React原理</h3><p><strong>函数式编程</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">纯函数，不可变值</span><br></pre></td></tr></table></figure>
+<p><strong>vdom和diff</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">diff比较同级，不跨级比较</span><br></pre></td></tr></table></figure>
+<p><strong>jsx本质</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>、是一个 React.createElement 函数，他接收多个参数，执行返回vnode，vnode通过vdom的patch或者其他方法渲染页面</span><br><span class="line"><span class="comment">//调用 React 的 createElement API </span></span><br><span class="line"><span class="number">2</span>、不是模板引擎，而是语法糖</span><br><span class="line"><span class="number">3</span>、第一个参数，可能是组件（大写），也可能是html 标签名（小写）</span><br><span class="line"><span class="number">4</span>、第二个参数是属性信息，如果没有属性则为 <span class="literal">null</span>；</span><br><span class="line">第三个参数是子元素；</span><br><span class="line">    如果拥有多个子元素，可以依次放在第三个、第四个...</span><br><span class="line">    也可以用在数组中存放多个子元素	</span><br><span class="line"><span class="number">4</span>、组件名，首字母必须大写( React规定)</span><br></pre></td></tr></table></figure>
+<p><strong>合成事件</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>、所有事件挂载到<span class="built_in">document</span> 上</span><br><span class="line"><span class="number">2</span>、event 不是原生的，是 SyntheticEvent合成事件对象</span><br><span class="line"><span class="number">3</span>、和Vue 事件不同，和DOM事件也不同</span><br><span class="line">为何要合成事件机制?</span><br><span class="line"><span class="number">1</span>、更好的兼容性和跨平台</span><br><span class="line"><span class="number">2</span>、载到<span class="built_in">document</span> ，减少内存消耗，避免频繁解绑</span><br><span class="line"><span class="number">3</span>、方便事件的统一管理（如事务机制)</span><br></pre></td></tr></table></figure>
+<p><strong>setState 和 batchUpdata</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>、setState无所谓异步还是同步</span><br><span class="line"><span class="number">2</span>、看是否能命中batchUpdate机制</span><br><span class="line"><span class="number">3</span>、判断isBatchingUpdates</span><br><span class="line"></span><br><span class="line">哪些能命中batchUpdate机制</span><br><span class="line"><span class="number">1</span>、生命周期（和它调用的函数)</span><br><span class="line"><span class="number">2</span>、React 中注册的事件（和它调用的函数)</span><br><span class="line"><span class="number">3</span>、React可以“管理”的入口</span><br><span class="line"></span><br><span class="line">哪些不能命中batchUpdate机制</span><br><span class="line"><span class="number">1</span>、setTimeout setInterval 等（和它调用的函数)</span><br><span class="line"><span class="number">2</span>、自定义的DOM事件（和它调用的函数)</span><br><span class="line"><span class="number">3</span>、React“管不到”的入口</span><br></pre></td></tr></table></figure>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112141231918.png" alt="image-20211214123112436"></p>
+<blockquote>
+<p>Y就是异步的State N 就是同步的State</p>
+</blockquote>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112141233547.png" alt="image-20211214123342209"></p>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112141234154.png" alt="image-20211214122922788"></p>
+<blockquote>
+<p>执行函数前处于batchUpdate 且isBatchingUpdates=ture。执行函数完之后isBatchingUpdates=false。</p>
+<p>因为settimeout（）这个函数式异步的就直接执行isBatchingUpdates=false。了 之后进行this.set的时候isBatchingUpdates已经是false了。所以判断setState是异步还是同步的时候，就看isBatchUpdates是true还是false 且设置这个是在入口中设置的。</p>
+</blockquote>
+<p><strong>组件之间如何通讯</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>、父子组件props</span><br><span class="line"><span class="number">2</span>、自定义事件</span><br><span class="line"><span class="number">3</span>、Redux和Context</span><br></pre></td></tr></table></figure>
+<p><strong>Context是什么，如何应用</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">父组件，向其下所有子孙组件传递信息</span><br><span class="line">如一些简单的公共信息，主题色，语言等。</span><br><span class="line">复杂的公共信息，用redux</span><br></pre></td></tr></table></figure>
+<p><strong>shouldComponentUpdate用途</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">性能优化</span><br><span class="line">配合不可变值一起使用，否则会出错</span><br></pre></td></tr></table></figure>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112141634311.png" alt="image-20211214163434174"></p>
+<blockquote>
+<p>两次异步操作合并成一次所以只加1，异步操作玩之后执行同步</p>
+</blockquote>
+<p><strong>纯函数</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">返回一个新值，没有副作用（不会偷偷修改其他值）</span><br><span class="line">重点：不可变值</span><br><span class="line">如arr1=arr.slice()</span><br></pre></td></tr></table></figure>
+<p><strong>函数组件和class组件的区别</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">纯函数，输入props，输出JSX</span><br><span class="line">没有实例，没有生命周期，没有state</span><br><span class="line">不能扩展其他方法</span><br></pre></td></tr></table></figure>
+<p><strong>什么是受控组件</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">表单的值，收state 控制</span><br><span class="line">需要自行监听onChange ，更新state</span><br></pre></td></tr></table></figure>
+<p><strong>何时使用异步组件</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">加载大组件</span><br><span class="line">路由懒加载</span><br></pre></td></tr></table></figure>
+<p><strong>多个组件有公共逻辑，如何抽离</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">高阶组件</span><br><span class="line">Render Props</span><br></pre></td></tr></table></figure>
+<p><strong>Redux如何进行异步请求</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">使用异步action</span><br><span class="line">如redux-thunk</span><br></pre></td></tr></table></figure>
+<p><strong>PureComponent 有何区别</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">实现了浅比较的shouldComponentUpdate</span><br><span class="line">优化性能</span><br><span class="line">但要结合不可变值使用</span><br></pre></td></tr></table></figure>
+<p><strong>React性能优化</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">渲染列表时加key</span><br><span class="line">自定义事件、DOM事件及时销毁</span><br><span class="line">合理使用异步组件</span><br><span class="line">减少函数bind <span class="keyword">this</span>的次数</span><br><span class="line">合理使用SCU PureComponent和memo</span><br><span class="line">合理使用Immutable.js</span><br><span class="line">webpack层面的优化(后面会讲)</span><br><span class="line">前端通用的性能优化，如图片懒加载</span><br><span class="line">使用SSR</span><br></pre></td></tr></table></figure>
+<p><strong>React和Vue的区别</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">都支持组件化</span><br><span class="line">都是数据驱动视图</span><br><span class="line">都使用vdom 操作 DOM</span><br><span class="line"></span><br><span class="line">React使用JSX拥抱JS，Vue使用模板拥抱html</span><br><span class="line">React函数式编程，Vue声明式编程</span><br><span class="line">React 更多需要自力更生，Vue把想要的都给你</span><br></pre></td></tr></table></figure>
+<h3 id="7、webpack"><a href="#7、webpack" class="headerlink" title="7、webpack"></a>7、webpack</h3><p><strong>webpack介绍</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">webpack已经是前端打包构建的不二选择</span><br><span class="line">每日必用，面试必考</span><br><span class="line">成熟的工具，重点在于配置和使用，原理并不高优</span><br><span class="line"></span><br><span class="line">前端代码为何要进行构建和打包</span><br><span class="line"><span class="built_in">module</span> chunk bundle 分别什么意思，有何区别?</span><br><span class="line">loader和plugin的区别?</span><br><span class="line">webpack如何实现懒加载?</span><br><span class="line">webpack常见性能优化</span><br><span class="line">babel-runtime和 babel-polyfill的区别</span><br></pre></td></tr></table></figure>
+<p><strong>webpack基本配置</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">vue-cli create-react-app  **cli工程师</span><br><span class="line">常用上述脚手架，而不会自己配置webpaclk ?</span><br><span class="line">则面试不会通过</span><br><span class="line"></span><br><span class="line">拆分配置和merge （公共的配置common 生产环境下的配置，开发环境下的配置）</span><br><span class="line"></span><br><span class="line">跨域问题：开发环境下还会定义一个devserver 里可以通过设置代理proxy将本地/api/XXX代理到 localhost：<span class="number">3000</span>/api/xxx</span><br><span class="line"></span><br><span class="line">loader的执行顺序是从后往前</span><br><span class="line">postcss-loader 浏览器的兼容性的</span><br><span class="line">对css文件：先postcss-loader 浏览器的兼容性的一些东西做了再变成css插入到style中</span><br><span class="line">对less文件，先通过less解析语法成css然后插入style中</span><br><span class="line">图片大小小于<span class="number">5</span>kb用base64格式产出否则用file-loader的形式，产出url格式</span><br></pre></td></tr></table></figure>
+<p><strong>webpack高级配置</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">基本配置只能做demo，不能做线上项目</span><br><span class="line">多入口：entry要写两个。</span><br><span class="line">output要通过[name]的变量去操作 </span><br><span class="line">plugins要：每一个入口都要创建一个新的HtmlWebpackPlugin的实例（<span class="keyword">new</span>）</span><br><span class="line">	chunks：会帮你只引入什么名字的js文件 不写chunk会把html文件一块引入。</span><br></pre></td></tr></table></figure>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112141932424.png" alt="image-20211214193227860"></p>
+<p><strong>抽离css文件</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">开发环境下用的是通过css-loader转换成出css文件插入到style-loader里面去的</span><br><span class="line">生成环境下需要用MiniCssExtractPlugin.loader,通过这种方式就不再是塞到style-loader里面去了</span><br><span class="line">单独拧出来，（在plugins里面加了一个抽离css文件的plugins的配置）还是用<span class="keyword">new</span> MiniCssExtractPlugin标志一下抽离出的css文件是什么。抽离完还要压缩（optimization配置里面）抽离出来就可以在index.html引入抽离的css文件了</span><br></pre></td></tr></table></figure>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112141950571.png" alt="image-20211214195006905"></p>
+<p><strong>抽离公共代码</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">抽离公共部分相互引用，减少加载和执行的次数</span><br><span class="line">开发环境下没必要做。</span><br><span class="line"></span><br><span class="line">第三方模块复用一次的原因是是避免细微的改动重新加载这个模块，影响加载速度，耗费性能。</span><br><span class="line">test 是模块来自 </span><br><span class="line">大小限制最好写<span class="number">3</span>kb <span class="number">5</span>kB这样 name就是代码分割产出的chunk</span><br><span class="line">多入口plugins里面引用<span class="keyword">new</span> HtmlWebpackPlugin下也要考虑代码分割的chunk</span><br></pre></td></tr></table></figure>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112142004025.png" alt="image-20211214200446809"></p>
+<p><strong>懒加载</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">引入动态数据-&gt;懒加载</span><br><span class="line">异步代码也会产出一个chunk 文件名不是自己规定的</span><br></pre></td></tr></table></figure>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112142051458.png" alt="image-20211214205110387"></p>
+<p><strong>moudle chunk bundle的区别</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span> -各个源码文件，webpack 中一切皆模块 只要是引入的就是模块</span><br><span class="line">chunk -多模块合并成的，如entry（一个入口就可以生成一个至多个chunk，因为入口定义的文件也包括其他文件一块引进来） </span><br><span class="line">        <span class="keyword">import</span>() splitChunk 拆分代码也可以定义chunk 懒加载引入动态数据也是一个chunk</span><br><span class="line">        可以理解成内存中的一个概念，还没整理的输出</span><br><span class="line">bundle -最终的输出文件（一个chunk对应一个bundle）bundle可能是很多个文件不止一个文件</span><br></pre></td></tr></table></figure>
+<p><strong>webpack性能优化</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>、优化打包构建速度-开发体验和效率</span><br><span class="line">    优化 babel-loader - 缓存 加一个cacheDirectory参数，加上之后只要ES6代码没有改，就不会重新编译，缓存一下。</span><br><span class="line">    				 - 有include和exclude两者选一个去明确打包范围</span><br><span class="line">	</span><br><span class="line">	happyPack -多进程打包工具 -JS单线程，开启多进程打包</span><br><span class="line">        					-提高构建速度（特别是多核CPU )</span><br><span class="line">							-把对.js文件的处理转交给id为babel的HappyPack实例 图<span class="number">3</span></span><br><span class="line">	</span><br><span class="line">	IgnorePlugin -避免引入无用模块 -例如moment.js这个日期处理的库 加载时间的库，<span class="number">200</span>多kb 就是因为把语言的库引进来了，可以通					 -过引入这个插件来避免引入这个模块，至于语言的模块就自己手动引入  -还能优化产出的体积  图<span class="number">1</span></span><br><span class="line">	</span><br><span class="line">	ParallelUglifyPlugin -开启多进程进行代码压缩JS JS单线程，开启多进程压缩更快和HappyPack原理类似 图四压缩就是直接输结果</span><br><span class="line">						</span><br><span class="line">	noParse  -避免重复打包  像一些min.js文件基本都是采用模块化处理过了，不用再重新打包 在moudule文件下加一下就好了如下图<span class="number">2</span></span><br><span class="line">	</span><br><span class="line">    自动刷新 -一保存代码编译完之后浏览器自动刷新 开发环境用（devServer）默认开启会用</span><br><span class="line">    </span><br><span class="line">	热更新 -自动刷新的升级版，改完代码之后浏览器不要刷新，代码就生效，体验更好</span><br><span class="line">                        自动刷新:整个网页全部刷新，速度较慢</span><br><span class="line">                        自动刷新:整个网页全部刷新，状态会丢失 包括你点击的路由 自动刷新玩就会回到首页和你输入的状态下次就不见</span><br><span class="line">						热更新：新代码生效，网页不刷新，状态不丢失</span><br><span class="line">                        引入插件，<span class="keyword">new</span>实例，devServer设置hot为<span class="literal">true</span></span><br><span class="line">                        如果是改js文件的话就会导致自动刷新，原因是因为某些模块没有开启热更新的监听 图<span class="number">4</span></span><br><span class="line">                        自动刷新会影响你开发的体验再去开启热更新</span><br><span class="line">	</span><br><span class="line">	DllPlugin-针对大的库和大的第三方插件没必要每一次都把所有打包一遍，我们可以实现把第三方库打包好之后引用 *动态链接库插件</span><br><span class="line">			 - 前端框架如vue React，体积大，构建慢</span><br><span class="line">			 - 较稳定，不常升级版本</span><br><span class="line">			 - 同一个版本只构建一次即可，不用每次都重新构建</span><br><span class="line">            webpack 已内置 DllPlugin支持</span><br><span class="line">            DllPlugin插件 -先把react进行预打包出dll文件（webpack.dull.js） 图<span class="number">5</span> 产出两个文件 一个是加载了打包所有关于入口						  - react-react-dom的所有文件，另一个是索引</span><br><span class="line">            DlIReferencePlugin插件 -使用dll文件。使用就不要重新打包 </span><br><span class="line">			使用首先现在入口文件的index.html引入这个src = ‘./react.dull.js’这个文件 然后<span class="keyword">new</span>实例 图<span class="number">6</span></span><br><span class="line">			</span><br><span class="line">	webpack优化构建速度(可用于生产环境)					不可用生产环境</span><br><span class="line">        优化 babel-loader									 自动刷新</span><br><span class="line">        happyPack										  热更新</span><br><span class="line">        IgnorePlugin									  DllPlugin</span><br><span class="line">        ParallelUglifyPlugin  *必须用</span><br><span class="line">        noParse</span><br><span class="line">	</span><br><span class="line"></span><br><span class="line">	**总结**</span><br><span class="line">    IgnorePlugin直接不引入，代码中没有</span><br><span class="line">    noParse 引入，但不打包</span><br><span class="line">	项目较大，打包较慢，开启多进程能提高速度</span><br><span class="line">	项目较小，打包很快，开启多进程会降低速度(进程开销)</span><br><span class="line">	按需使用</span><br><span class="line"></span><br><span class="line">     **ES6 Module和Commonjs区别**</span><br><span class="line">    ES6 Module静态引入，编译时引入  必须放在最上面 否则报错  图<span class="number">7</span></span><br><span class="line"> 	Commonjs动态引入，执行时引入，有可能需要有可能不需要 （图<span class="number">7</span> 里面的<span class="keyword">if</span>就不知道是否会被执行）</span><br><span class="line">	只有ES6 Module 才能静态分析，实现Tree-Shaking（webpack打包的时候执行，打包的时候代码还没执行）</span><br><span class="line">	webpack只是一个静态分析，静态构建，编译，代码还没正式在线上被用户去运行</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="number">2</span>、优化产出代码-产品性能  **更重要</span><br><span class="line">	体积更小</span><br><span class="line">    合理分包，不重复加载</span><br><span class="line">    速度更快，内存使用更少</span><br><span class="line">    ****每一个都是优化</span><br><span class="line">    小图片base64编码</span><br><span class="line">    bundle加hash（打包出的bunlde代码时加上hash）</span><br><span class="line">    懒加载</span><br><span class="line">    提前公共代码-&gt;做一个公共的包，不需要重复打包公共的模块</span><br><span class="line">    IgnorePlugin 还能优化产出的体积</span><br><span class="line">    使用CDN加速: 打包出的html 引入的文件前缀都加了cdn 图<span class="number">7</span> 这仅仅是第一步还需要将打包的文件上传到cdn的网址</span><br><span class="line">    使用mode:production:去打包生成环境下的代码 自动开启代码压缩  Vue React 等会自动删掉调试代码（如开发环境的warning )</span><br><span class="line">    					自动开启Tree-<span class="function"><span class="params">shaking</span>=&gt;</span>对未使用的代码删除 只要mode为production即可 </span><br><span class="line">                        ES6 Module才能让tree-shaking生效commonjs就不行</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    Scope Hosting 将两个文件合并，多个函数放在一个函数里，使得作用域少 使得内存占用少一些，代码体积更小 图<span class="number">8</span></span><br></pre></td></tr></table></figure>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112142134368.png" alt="image-20211214213424143"></p>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112142137514.png" alt="image-20211214213751310"></p>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112142144545.png" alt="image-20211214214448414"></p>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112142148311.png" alt="image-20211214214856230"></p>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112142159701.png" alt="image-20211214215938574"></p>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112142210863.png" alt="image-20211214221035644"></p>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112142215187.png" alt="image-20211214221515068"></p>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112142224647.png" alt="image-20211214222435551"></p>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112142237194.png" alt="image-20211214223716971"></p>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112142240415.png" alt="image-20211214224034222"></p>
+<p><strong>babel</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">前端开发环境必备工具 同webpack，需要了解基本的配置和使用</span><br><span class="line">环境搭建&amp;基本配置</span><br><span class="line">	babel-demo npx babel src/index.js 这样就可以通过babel编译index,js文件</span><br><span class="line">    babel其实就是通过plugin将ES6语法转换为ES5</span><br><span class="line"></span><br><span class="line">babel-polyfill（po里），core-js标准库集成了所有ES6 ES7新语法的polyfill的补丁（兼容性）但是这个库对ES6的generator函数（处理异步），被<span class="keyword">async</span>/<span class="keyword">await</span>代替不支持， 但是regenerator这个库就支持了。 babel-polyfill就是这两个库的集合</span><br><span class="line">                        Babel <span class="number">7.4</span>之后弃用babel</span><br><span class="line">                        推荐直接使用core-js和regenerator				</span><br><span class="line">							问题：会污染全局环境   如果是自己独立开发可以用</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">babel-runtime:不会污染全局环境。产出第三方lib就要用这个，否则会污染全局环境</span><br></pre></td></tr></table></figure>
+<h3 id="8、-面试真题演练"><a href="#8、-面试真题演练" class="headerlink" title="8、 面试真题演练"></a>8、 面试真题演练</h3><p><strong>1.前端为何要进行打包和构建</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">代码层面</span><br><span class="line">    体积更小(Tree-Shaking、压缩、合并），加载更快</span><br><span class="line">    开发而言：编译高级语言或语法（TS，ES6+，模块化，scss )     </span><br><span class="line">    兼容性和错误检查（Polyfill,postcss，eslint）</span><br><span class="line">研发层面（前端工程化）</span><br><span class="line">    统一、高效的开发环境</span><br><span class="line">    统一的构建流程和产出标准</span><br><span class="line">    集成公司构建规范（提测、上线等)</span><br></pre></td></tr></table></figure>
+<p><strong>loader和plugin区别</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">loader模块转换器，如less &gt;css</span><br><span class="line">plugin扩展插件，如HtmlWebpackPlugin</span><br><span class="line">常用的loader和plugin有什么？ 之前讲过的能掌握即可</span><br></pre></td></tr></table></figure>
+<p><strong>babel和 webpack的区别</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">babel - JS新语法编译工具，不关心模块化</span><br><span class="line">webpack-打包构建工具，是多个loader、plugin 的集合</span><br></pre></td></tr></table></figure>
+<p><strong>如何产出一个lib</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">参考webpack.dll.js里面有一个output.library</span><br></pre></td></tr></table></figure>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112151920950.png" alt="image-20211215192019355"></p>
+<p><strong>webpack如何实现懒加载</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span>语法</span><br><span class="line">结合Vue React异步组件</span><br><span class="line">结合React-router异步加载路由</span><br></pre></td></tr></table></figure>
+<p><strong>为何Proxy不能被Polyfill</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Proxy</span> 的功能用 <span class="built_in">Object</span>.defineProperty 无法模拟</span><br></pre></td></tr></table></figure>
+<p><strong>组件和状态设计</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">todoList：</span><br><span class="line"><span class="number">1</span>、用数据描述内容</span><br><span class="line"><span class="number">2</span>、结构化</span><br><span class="line"><span class="number">3</span>、可扩展性</span><br><span class="line"><span class="number">4</span>、功能上拆分层次</span><br><span class="line"><span class="number">5</span>、容器组件（只管理数据）、UI（只显示视图）</span><br></pre></td></tr></table></figure>
+<h3 id="9、项目流程"><a href="#9、项目流程" class="headerlink" title="9、项目流程"></a>9、项目流程</h3><p><strong>PM（项目管理）想在项目开发过程中增加需求，该怎么办</strong></p>
+<figure class="highlight sqf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">不能拒绝，走需求变更流程即可</span><br><span class="line">公司如果有规定，按规定走</span><br><span class="line">否则，发起项目组和<span class="built_in">leader</span>的评审，重新评估排期</span><br></pre></td></tr></table></figure>
+<p><strong>项目即将延期了，该怎么办</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">项目沟通</span><br><span class="line">多人协作，沟通是最重要的事情</span><br><span class="line">每日一沟通（如站会），有事说事，无事报平安</span><br><span class="line">及时识别风险，及时汇报</span><br></pre></td></tr></table></figure>
+<p><strong>你将如何保证项目质量</strong></p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">符合开发规范</span></span><br><span class="line"><span class="attr">写出开发文档</span></span><br><span class="line"><span class="attr">及时单元测试</span></span><br><span class="line"><span class="attr">Mock</span> <span class="string">API</span></span><br><span class="line"><span class="attr">Code</span> <span class="string">Review  （让大佬帮你浏览一遍）</span></span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div>万一真有土豪呢！！！</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/loading.gif" data-original="/images/wechatpay.jpg" alt="Jony J 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/loading.gif" data-original="/images/alipay.png" alt="Jony J 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%BC%BA%E5%8C%96/" rel="tag"># 前端基础知识强化</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/12/05/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="prev" title="数据结构与算法">
+      <i class="fa fa-chevron-left"></i> 数据结构与算法
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/12/15/%E6%A0%A1%E6%8B%9B%E7%9B%B4%E9%80%9A%E8%BD%A6/" rel="next" title="前端基础知识强化">
+      前端基础知识强化 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#面试题"><span class="nav-text">面试题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML-CSS-面试题"><span class="nav-text">HTML CSS 面试题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、如何理解HTML-语义化？"><span class="nav-text">1、如何理解HTML 语义化？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、默认情况下，哪些HTML-标签是块级元素、哪些是内联元素？"><span class="nav-text">2、默认情况下，哪些HTML 标签是块级元素、哪些是内联元素？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、盒子模型的宽度如何计算？"><span class="nav-text">3、盒子模型的宽度如何计算？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、argin-纵向重叠的问题"><span class="nav-text">4、argin 纵向重叠的问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5、margin-负值的问题"><span class="nav-text">5、margin 负值的问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-float-布局"><span class="nav-text">6.float 布局</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7、flex-布局"><span class="nav-text">7、flex 布局</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8、absolute-和relative-分别依据什么定位？"><span class="nav-text">8、absolute 和relative 分别依据什么定位？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9、居中对齐有哪些实现方式？"><span class="nav-text">9、居中对齐有哪些实现方式？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10、CSS-图文样式"><span class="nav-text">10、CSS -图文样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11、CSS-响应式"><span class="nav-text">11、CSS -响应式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript面试题"><span class="nav-text">JavaScript面试题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、typeof-能判断的类型"><span class="nav-text">1、typeof 能判断的类型?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、何时使用-何时使用"><span class="nav-text">2、何时使用&#x3D;&#x3D;&#x3D;何时使用&#x3D;&#x3D;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、window-onload和-DOMContentLoaded区别"><span class="nav-text">3、window.onload和 DOMContentLoaded区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、JS创建10个标签，点击弹出对应的序号"><span class="nav-text">4、JS创建10个标签，点击弹出对应的序号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5、手写节流throttle和防抖debounce"><span class="nav-text">5、手写节流throttle和防抖debounce</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6、Promise解决什么问题"><span class="nav-text">6、Promise解决什么问题?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7、值类型和引用类型的区别"><span class="nav-text">7、值类型和引用类型的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8、typeof-运算符"><span class="nav-text">8、typeof 运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9、深拷贝"><span class="nav-text">9、深拷贝</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10、变量计算-类型转换"><span class="nav-text">10、变量计算-类型转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11、原型和原型链"><span class="nav-text">11、原型和原型链</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12、作用域和闭包"><span class="nav-text">12、作用域和闭包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13、this"><span class="nav-text">13、this</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#14、异步和单线程"><span class="nav-text">14、异步和单线程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#15、JS-Web-API（DOM）"><span class="nav-text">15、JS Web API（DOM）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#16、BOM操作（Browser-Object-Model）"><span class="nav-text">16、BOM操作（Browser Object Model）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#17、事件"><span class="nav-text">17、事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#18、跨域"><span class="nav-text">18、跨域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#19、存储"><span class="nav-text">19、存储</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#20、防抖"><span class="nav-text">20、防抖</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#React框架"><span class="nav-text">React框架</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、事件"><span class="nav-text">1、事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、setState"><span class="nav-text">2、setState</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、组件生命周期"><span class="nav-text">3、组件生命周期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、高级特性"><span class="nav-text">4、高级特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5、Redux"><span class="nav-text">5、Redux</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6、React原理"><span class="nav-text">6、React原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7、webpack"><span class="nav-text">7、webpack</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8、-面试真题演练"><span class="nav-text">8、 面试真题演练</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9、项目流程"><span class="nav-text">9、项目流程</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <br/>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Jony J"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Jony J</p>
+  <div class="site-description" itemprop="description">stay hungry stay foolish！</div>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/wzt2023" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;wzt2023" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/images/wechat.jpg" title="WeChat → &#x2F;images&#x2F;wechat.jpg"><i class="fab fa-weixin fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/images/qq.png" title="QQ → &#x2F;images&#x2F;qq.png"><i class="fab fa-qq fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:710471807@qq.com" title="E-Mail → mailto:710471807@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      友链
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://leetcode-cn.com/problemset/all/" title="https:&#x2F;&#x2F;leetcode-cn.com&#x2F;problemset&#x2F;all&#x2F;" rel="noopener" target="_blank">leetcode</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+      <div id="music163player">
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=441491828&auto=0&height=66"></iframe>
+     
+      </div>
+    </div> 
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">TT 版权所有</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">146k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">2:12</span>
+</div>
+
+
+ <div class="powered-by">
+  <i class="fa fa-user-md"></i>
+  <span id="busuanzi_container_site_uv">
+    本站总访客数:<span id="busuanzi_value_site_uv"></span>&nbsp;&nbsp;| 
+  </span>
+  <span id="busuanzi_container_site_pv">
+      &nbsp;本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  </span>
+</div>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/velocity-animate@1/velocity.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/velocity-animate@1/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  <script defer src="//cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three.min.js"></script>
+    <script defer src="//cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/canvas_lines.min.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : '8YHV7splQK9asMA21ILvvuFe-gzGzoHsz',
+      appKey     : 'DwFfLh2EMujmRQp3tkcWjOJI',
+      placeholder: "分享你的想法",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+
+  <script async src="/js/cursor/fireworks.js"></script>
+
+
+
+
+  <script src="/js/activate-power-mode.min.js"></script>
+  <script>
+    POWERMODE.colorful = true;
+    POWERMODE.shake = false;
+    document.body.addEventListener('input', POWERMODE);
+  </script>
+
+  
+<script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=i;var e=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}i(),n.addEventListener("scroll",function(){var t,e;t=i,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+</html>
