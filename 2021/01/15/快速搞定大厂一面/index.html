@@ -21,19 +21,40 @@
     var CONFIG = {"hostname":"wzt2022.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":18,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideLeftBigIn","post_body":"slideRightBigIn","coll_header":"slideLeftIn","sidebar":"slideLeftBigIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="切换 Next 主题 找到这个 next 主题的 GitHub 网站 进入你的博客本地路径，例如我的是放在 D 盘下，然后将主题 clone 到本地  12cd D:\myblog\bloggit clone https:&#x2F;&#x2F;github.com&#x2F;theme-next&#x2F;hexo-theme-next themes&#x2F;next">
+  <meta name="description" content="JavaScript核心原理 数据类型的判断方法  第三种方法最好，Object.prototype.toString  它返回的结果是[object Xxx 就比如object Number] 123456789101112131415&#39;123&#39;&#x3D;&#x3D;123  true&quot;&quot;&#x3D;&#x3D;null   falsenull&#x3D;&#x3D;0    false&quot;&#x3D;&#x3D;0      true[]&#x3D;&#x3D;0     true[]&#x3D;&#x3D;&quot;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo 搭建博客填坑">
-<meta property="og:url" content="https://wzt2022.github.io/2021/11/11/Hexo%20%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E5%A1%AB%E5%9D%91/index.html">
+<meta property="og:title" content="快速搞定大厂一面">
+<meta property="og:url" content="https://wzt2022.github.io/2021/01/15/%E5%BF%AB%E9%80%9F%E6%90%9E%E5%AE%9A%E5%A4%A7%E5%8E%82%E4%B8%80%E9%9D%A2/index.html">
 <meta property="og:site_name" content="TT の 博客">
-<meta property="og:description" content="切换 Next 主题 找到这个 next 主题的 GitHub 网站 进入你的博客本地路径，例如我的是放在 D 盘下，然后将主题 clone 到本地  12cd D:\myblog\bloggit clone https:&#x2F;&#x2F;github.com&#x2F;theme-next&#x2F;hexo-theme-next themes&#x2F;next">
-<meta property="article:published_time" content="2021-11-10T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-11-10T16:00:00.000Z">
+<meta property="og:description" content="JavaScript核心原理 数据类型的判断方法  第三种方法最好，Object.prototype.toString  它返回的结果是[object Xxx 就比如object Number] 123456789101112131415&#39;123&#39;&#x3D;&#x3D;123  true&quot;&quot;&#x3D;&#x3D;null   falsenull&#x3D;&#x3D;0    false&quot;&#x3D;&#x3D;0      true[]&#x3D;&#x3D;0     true[]&#x3D;&#x3D;&quot;">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="article:published_time" content="2021-01-14T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-01-14T16:00:00.000Z">
 <meta property="article:author" content="Jony J">
-<meta property="article:tag" content="Hexo爬坑">
+<meta property="article:tag" content="前端面试题">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://wzt2022.github.io/images/loading.gif">
 
-<link rel="canonical" href="https://wzt2022.github.io/2021/11/11/Hexo%20%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E5%A1%AB%E5%9D%91/">
+<link rel="canonical" href="https://wzt2022.github.io/2021/01/15/%E5%BF%AB%E9%80%9F%E6%90%9E%E5%AE%9A%E5%A4%A7%E5%8E%82%E4%B8%80%E9%9D%A2/">
 
 
 <script id="page-configurations">
@@ -46,7 +67,7 @@
   };
 </script>
 
-  <title>Hexo 搭建博客填坑 | TT の 博客</title>
+  <title>快速搞定大厂一面 | TT の 博客</title>
   
 
 
@@ -219,7 +240,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://wzt2022.github.io/2021/11/11/Hexo%20%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E5%A1%AB%E5%9D%91/">
+    <link itemprop="mainEntityOfPage" href="https://wzt2022.github.io/2021/01/15/%E5%BF%AB%E9%80%9F%E6%90%9E%E5%AE%9A%E5%A4%A7%E5%8E%82%E4%B8%80%E9%9D%A2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -232,7 +253,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Hexo 搭建博客填坑
+          快速搞定大厂一面
         </h1>
 
         <div class="post-meta">
@@ -247,7 +268,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2021-11-11 00:00:00" itemprop="dateCreated datePublished" datetime="2021-11-11T00:00:00+08:00">2021-11-11</time>
+              <time title="创建时间：2021-01-15 00:00:00" itemprop="dateCreated datePublished" datetime="2021-01-15T00:00:00+08:00">2021-01-15</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -255,7 +276,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
+                  <a href="/categories/%E9%9D%A2%E8%AF%95/" itemprop="url" rel="index"><span itemprop="name">面试</span></a>
                 </span>
             </span>
 
@@ -275,8 +296,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2021/11/11/Hexo%20%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E5%A1%AB%E5%9D%91/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2021/11/11/Hexo%20%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E5%A1%AB%E5%9D%91/" itemprop="commentCount"></span>
+    <a title="valine" href="/2021/01/15/%E5%BF%AB%E9%80%9F%E6%90%9E%E5%AE%9A%E5%A4%A7%E5%8E%82%E4%B8%80%E9%9D%A2/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/01/15/%E5%BF%AB%E9%80%9F%E6%90%9E%E5%AE%9A%E5%A4%A7%E5%8E%82%E4%B8%80%E9%9D%A2/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -286,14 +307,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>730</span>
+              <span>2.5k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>2 分钟</span>
             </span>
 
         </div>
@@ -305,36 +326,76 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="切换-Next-主题"><a href="#切换-Next-主题" class="headerlink" title="切换 Next 主题"></a>切换 Next 主题</h2><ol>
-<li>找到这个 next 主题的 <a href="https://github.com/theme-next/hexo-theme-next" target="_blank" rel="noopener">GitHub 网站</a></li>
-<li><p>进入你的博客本地路径，例如我的是放在 D 盘下，然后将主题 clone 到本地</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd D:\myblog\blog</span><br><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;theme-next&#x2F;hexo-theme-next themes&#x2F;next</span><br></pre></td></tr></table></figure>
- <a id="more"></a></li>
-<li><p>修改配置文件<br>打开根目录下的·<code>_config.yml</code> 的站点配置文件，找到themes的配置项，修改为next</p>
- <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme: next</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>调试、发布</p>
-<p> 输入调试指令，在浏览器中输入localhost:4000查看</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server --debug</span><br></pre></td></tr></table></figure>
-<p> 在本地查看无误之后，输入生成和发布命令,就可已将新主题发布到自己的博客网站上了。</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
-<p> 如出现缓存引起的异常，可以在生成命令前执行清除缓存命令</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<hr>
-<h2 id="Hexo-部署-Next-主题网页字体不生效"><a href="#Hexo-部署-Next-主题网页字体不生效" class="headerlink" title="Hexo 部署 Next 主题网页字体不生效"></a>Hexo 部署 Next 主题网页字体不生效</h2><ul>
-<li><p>说明：</p>
-  <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo 下的 _config.yml 称为站点配置文件</span><br><span class="line">themes/next 中的_config.yml 称为主题配置文件</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
+        <h2 id="JavaScript核心原理"><a href="#JavaScript核心原理" class="headerlink" title="JavaScript核心原理"></a>JavaScript核心原理</h2><p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112162135618.png" alt="image-20211216213550505"></p>
+<p><strong>数据类型的判断方法</strong></p>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112162206866.png" alt="image-20211216214052951"></p>
+<p><strong>第三种方法最好，Object.prototype.toString  它返回的结果是[object Xxx 就比如object Number]</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'123'</span>==<span class="number">123</span>  <span class="literal">true</span></span><br><span class="line"><span class="string">""</span>==<span class="literal">null</span>   <span class="literal">false</span></span><br><span class="line"><span class="literal">null</span>==<span class="number">0</span>    <span class="literal">false</span></span><br><span class="line"><span class="string">"==0      true</span></span><br><span class="line"><span class="string">[]==0     true</span></span><br><span class="line"><span class="string">[]=="</span>     <span class="literal">true</span></span><br><span class="line">[]==![]   <span class="literal">true</span></span><br><span class="line"><span class="literal">null</span> == <span class="literal">undefined</span> <span class="comment">// true</span></span><br><span class="line"><span class="built_in">Number</span>(<span class="literal">null</span>)   <span class="number">0</span></span><br><span class="line"><span class="built_in">Number</span>(<span class="string">''</span>)    <span class="number">0</span></span><br><span class="line">parselnt(<span class="string">''</span>)  <span class="literal">NaN</span></span><br><span class="line">parselnt(</span><br><span class="line">&#123;&#125;+<span class="number">10</span> =<span class="string">'10[object Object]'</span></span><br><span class="line">    </span><br><span class="line"><span class="string">'1'</span>+<span class="literal">undefined</span> = <span class="string">'1undefined'</span></span><br></pre></td></tr></table></figure>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112162156980.png" alt="image-20211216215624904"></p>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112162156884.png" alt="image-20211216215633721"></p>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112162159385.png" alt="image-20211216215927226"></p>
+<blockquote>
+<p>Object.valueOf()方法</p>
+</blockquote>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112162204796.png" alt="image-20211216220410734"></p>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112162204069.png" alt="image-20211216220424019"></p>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112162204686.png" alt="image-20211216220432142"></p>
+<p><strong>浅拷贝</strong></p>
+<blockquote>
+<p>自己创建一个新的对象，来接受你要重新复制或引用的对象值。如果对象属性是基本的数据类型，复制的就是基本类型的值给新对象;但如果属性是引用数据类型，复制的就是内存中的地址，如果其中一个对象改变了这个内存中的地址，肯定会影响到另一个对象。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">第一种方法通过<span class="built_in">Object</span>.assign方法</span><br><span class="line"><span class="keyword">let</span> target= o;</span><br><span class="line"><span class="keyword">let</span> source = &#123;<span class="attr">a</span>: &#123; <span class="attr">b</span>: <span class="number">1</span>&#125;;</span><br><span class="line"><span class="built_in">Object</span>.assign(target, source); <span class="comment">//target为浅拷贝的对象，source是拷贝的来源</span></span><br><span class="line"><span class="built_in">console</span>.log(target); <span class="comment">//&#123;a: &#123; b:1&#125;&#125;;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> target=&#123;&#125;;</span><br><span class="line"><span class="keyword">let</span> source =&#123;<span class="attr">a</span>: &#123;<span class="attr">b</span>: <span class="number">2</span>&#125;;</span><br><span class="line"><span class="built_in">Object</span>.assign(target, source);</span><br><span class="line"><span class="built_in">console</span>.log(target);<span class="comment">//&#123;a:&#123; b: 10&#125;;</span></span><br><span class="line">source.a.b = <span class="number">10</span>;</span><br><span class="line"><span class="built_in">console</span>.log(source); <span class="comment">//&#123;a:&#123; b: 10&#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(target); <span class="comment">//&#123;a: &#123; b: 10&#125;;</span></span><br><span class="line"></span><br><span class="line">第二种方法通过扩展运算符方式</span><br></pre></td></tr></table></figure>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112162222351.png" alt="image-20211216222245203"></p>
+<blockquote>
+<p>因为a是基本数据类型，只拷贝了值1，但是b是一个对象，拷贝了c：1的地址</p>
+<p>因此会有上述结果  也证明了是浅拷贝</p>
+<p>如果是深拷贝即便是对象也都不会变 c还是1</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">第三种方法:concat方法也是浅拷贝 （只能用于数据的浅拷贝）使用场景比较局限</span><br></pre></td></tr></table></figure>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112162225589.png" alt="image-20211216222513533"></p>
+<blockquote>
+<p>slice拷贝数组</p>
+</blockquote>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112162226804.png" alt="image-20211216222657736"></p>
+<blockquote>
+<p>深拷贝：将一个对象从内存中完整地拷贝出来一份给目标对象，并从堆内存中开辟一个全新的空间存放新对象，且新对象的修改并不会改变原对象，二者实现真正的分离。</p>
+</blockquote>
+<p><strong>方法一：JSON.stringfy</strong></p>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112162234878.png" alt="image-20211216223420804"></p>
+<blockquote>
+<p>用这个方法进行深拷贝的弊端：</p>
 <ol>
-<li><p>按照hexo 的官方文档，在站点配置文件设置语言（第7行）</p>
- <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Site</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">Lee</span> <span class="string">的个人博客</span></span><br><span class="line"><span class="attr">subtitle:</span> <span class="string">'进击的技术客'</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">'Everything will be ok!'</span></span><br><span class="line"><span class="attr">keywords:</span> <span class="string">'努力一片天'</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">Lee</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">zh-Hans</span></span><br><span class="line"><span class="attr">timezone:</span> <span class="string">''</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>这样还是不起作用的话,请查看 <code>theme/next/languages/</code> 目录下是否有 <code>zh-Hans.yml</code> 文件.一般是有 <code>zh-CN.yml</code> ，所以要把 <code>zh-CN.yml</code> 文件改成名字为 <code>zh-Hans.yml</code> 就可以了</p>
-</li>
+<li>拷贝的对象的值中如果有函数、undefined、symbol这几种类型，经过JSON.stringify序列化之后的字符串中这个键值对会消失<br>2．拷贝 Date引用类型会变成字符串<br>3．无法拷贝不可枚举的属性<br>4．无法拷贝对象的原型链<br>5．拷贝 RegExp 引用类型会变成空对象<br>6．对象中含有NaN、Infinity 以及-Infinity，JSON序列化的结果会变成null</li>
 </ol>
+<p>7．无法拷贝对象的循环应用，即对象成环(obj[key]= obj)</p>
+</blockquote>
+<p><strong>继承方式</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">JS的继承到底有多少种实现方式呢?</span><br><span class="line">    原型链继承 </span><br><span class="line">		两个实例使用同一个原型对象的话 内存空间是共享的，当一个发生改变的时候，另外一个也随之进行了变化  图<span class="number">1</span></span><br><span class="line">	构造函数继承（借助call）</span><br><span class="line">	它使父类引用的属性不会被共享，优化了第一种继承方式的弊端）但是缺点是只能继承父类的实例属性和方法，不能继承原型属性或者方法</span><br><span class="line">	组合继承（前两种的组合）</span><br><span class="line">	原型式继承 <span class="built_in">Object</span>.create()</span><br><span class="line">    寄生式继承</span><br><span class="line">    寄生组合继承</span><br><span class="line">ES6的extends关键字是用哪种继承方式实现的呢?</span><br><span class="line">    寄生组合继承</span><br></pre></td></tr></table></figure>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112162243159.png" alt="image-20211216224316214"></p>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112171105372.png" alt="image-20211217110552271"></p>
+<blockquote>
+<p>new关键词的主要作用就是执行一个构造函数、返回一个实例对象，根据构造函数的情况，来确定是否可以接受参数的传递</p>
+</blockquote>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112171107447.png" alt="image-20211217110749763"></p>
+<p><strong>new关键字执行之后总是会返回一个对象，要么是实例对象，要么是return语句指定的对象</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = <span class="string">'Jack'</span>;</span><br><span class="line">    <span class="keyword">return</span> &#123;<span class="attr">age</span>: <span class="number">18</span>&#125; <span class="comment">//返回与this无关的对象</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">	<span class="keyword">var</span> p= <span class="keyword">new</span> Person();</span><br><span class="line">    <span class="built_in">console</span>.log(p)<span class="comment">//&#123;age: 18&#125;</span></span><br><span class="line">    <span class="built_in">console</span>.log(p.name)<span class="comment">// undefined</span></span><br><span class="line">    <span class="built_in">console</span>.log(p.age)<span class="comment">// 18</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = <span class="string">'Jack'</span>;</span><br><span class="line"> 	<span class="keyword">return</span> <span class="string">'tom'</span>; <span class="comment">//不是一个对象</span></span><br><span class="line">&#125;</span><br><span class="line">    <span class="keyword">var</span> p= <span class="keyword">new</span> Person();</span><br><span class="line">    <span class="built_in">console</span>.log(p)<span class="comment">//&#123;name: 'Jack'&#125;</span></span><br><span class="line">    <span class="built_in">console</span>.log(p.name)<span class="comment">// Jack</span></span><br></pre></td></tr></table></figure>
+<p><strong>apply call bind都可以改变函数func this的指向，call和apply传参的写法不同，apply的第二个参数为数组，call第2个至第n个都是func的传参，bind和这两个都不同，bind改变this的指向但是不是立马执行，call和apply是立马执行</strong></p>
+<blockquote>
+<p>A对象有个getName的方法,B对象也需要临时使用同样的方法那么这时候可以借用A对象的getName方法</p>
+</blockquote>
+<p>![</p>
+<p>](<a href="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112171245503.png" target="_blank" rel="noopener">https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112171245503.png</a>)</p>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112171247928.png" alt="image-20211217124702882"></p>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112171248927.png" alt="image-20211217124803739"></p>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112171248175.png" alt="image-20211217124853074"></p>
+<blockquote>
+<p>这两个方法是直接返回执行结果，而bind方法是返回一个函数，因此上面直接用eval执行得到结果</p>
+</blockquote>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112171250331.png" alt="image-20211217125007222"></p>
+<blockquote>
+<p>实现bind的核心在于返回的时候需要返回一个函数，因此这里的fbound需要返回，但是在返回的过程中，原型链对象上的属性不能丢失，所以这里需要使用Object.create方法将this.prototype上的属性挂到fbound的原型上面，最后再返回fbound</p>
+</blockquote>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112171251996.png" alt="image-20211217125102925"></p>
 
     </div>
 
@@ -364,7 +425,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Hexo%E7%88%AC%E5%9D%91/" rel="tag"># Hexo爬坑</a>
+              <a href="/tags/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/" rel="tag"># 前端面试题</a>
           </div>
 
         
@@ -373,12 +434,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/02/26/%E5%89%8D%E7%AB%AF%E8%BF%9B%E5%87%BB%E7%AC%94%E8%AE%B0%E6%80%BB%E7%BB%93/" rel="prev" title="前端进击笔记总结">
-      <i class="fa fa-chevron-left"></i> 前端进击笔记总结
+    <a href="/2021/01/05/JavaScript%E5%BC%BA%E5%8C%96/" rel="prev" title="Javscript强化">
+      <i class="fa fa-chevron-left"></i> Javscript强化
     </a></div>
       <div class="post-nav-item">
-    <a href="/2021/11/11/2021.3.7React%E8%87%AA%E5%AE%9A%E4%B9%89%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/" rel="next" title="React自定义主题配置">
-      React自定义主题配置 <i class="fa fa-chevron-right"></i>
+    <a href="/2021/01/15/%E6%A0%A1%E6%8B%9B%E7%9B%B4%E9%80%9A%E8%BD%A6/" rel="next" title="前端知识强化总结">
+      前端知识强化总结 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -439,7 +500,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#切换-Next-主题"><span class="nav-text">切换 Next 主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo-部署-Next-主题网页字体不生效"><span class="nav-text">Hexo 部署 Next 主题网页字体不生效</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript核心原理"><span class="nav-text">JavaScript核心原理</span></a></li></ol></div>
       </div>
       <br/>
       <!--/noindex-->

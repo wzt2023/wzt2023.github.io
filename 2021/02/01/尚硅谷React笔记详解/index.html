@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon32X32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon16X16.png">
+  <link rel="mask-icon" href="/images/mylogo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.loli.net/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Hack:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"wzt2022.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":18,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideLeftBigIn","post_body":"slideRightBigIn","coll_header":"slideLeftIn","sidebar":"slideLeftBigIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="React 基础123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100">
+<meta property="og:type" content="article">
+<meta property="og:title" content="尚硅谷React笔记详解">
+<meta property="og:url" content="https://wzt2022.github.io/2021/02/01/%E5%B0%9A%E7%A1%85%E8%B0%B7React%E7%AC%94%E8%AE%B0%E8%AF%A6%E8%A7%A3/index.html">
+<meta property="og:site_name" content="TT の 博客">
+<meta property="og:description" content="React 基础123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="og:image" content="https://wzt2022.github.io/images/loading.gif">
+<meta property="article:published_time" content="2021-01-31T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-01-31T16:00:00.000Z">
+<meta property="article:author" content="Jony J">
+<meta property="article:tag" content="React">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://wzt2022.github.io/images/loading.gif">
+
+<link rel="canonical" href="https://wzt2022.github.io/2021/02/01/%E5%B0%9A%E7%A1%85%E8%B0%B7React%E7%AC%94%E8%AE%B0%E8%AF%A6%E8%A7%A3/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
+  };
+</script>
+
+  <title>尚硅谷React笔记详解 | TT の 博客</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?6f41e725d94bfbcea62c56e046b8a37a";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="TT の 博客" type="application/atom+xml">
+</head>
+<!-- 页面点击小红心 -->
+ <script async src="/js/fireworks.js"></script>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">TT の 博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">远方除了遥远，一无所有。</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-life">
+
+    <a href="/life/" rel="section"><i class="fa fa-heart fa-fw"></i>生活中的美好</a>
+
+  </li>
+        <li class="menu-item menu-item-photo">
+
+    <a href="/photo/" rel="section"><i class="fa fa-image fa-fw"></i>照片</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/lf2021" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://wzt2022.github.io/2021/02/01/%E5%B0%9A%E7%A1%85%E8%B0%B7React%E7%AC%94%E8%AE%B0%E8%AF%A6%E8%A7%A3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Jony J">
+      <meta itemprop="description" content="stay hungry stay foolish！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TT の 博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          尚硅谷React笔记详解
+        </h1>
+
+        <div class="post-meta">
+          
+              <i class="fa fa-thumb-tack"></i>
+              <font color=7D26CD>置顶</font>
+              <span class="post-meta-divider">|</span>
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-02-01 00:00:00" itemprop="dateCreated datePublished" datetime="2021-02-01T00:00:00+08:00">2021-02-01</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/React/" itemprop="url" rel="index"><span itemprop="name">React</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2021/02/01/%E5%B0%9A%E7%A1%85%E8%B0%B7React%E7%AC%94%E8%AE%B0%E8%AF%A6%E8%A7%A3/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/02/01/%E5%B0%9A%E7%A1%85%E8%B0%B7React%E7%AC%94%E8%AE%B0%E8%AF%A6%E8%A7%A3/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>17k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>15 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="React-基础"><a href="#React-基础" class="headerlink" title="React 基础"></a>React 基础</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br></pre></td><td class="code"><pre><span class="line">**使用jsx创建虚拟DOM</span><br><span class="line"><span class="number">1.</span>&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"../js/babel.min.js"</span>&gt;&lt;<span class="regexp">/script&gt;  -&gt; 引入babel，用于将jsx转为js</span></span><br><span class="line"><span class="regexp">const VDOM = (  </span></span><br><span class="line"><span class="regexp">			&lt;h1 id="title"&gt;</span></span><br><span class="line"><span class="regexp">				&lt;span&gt;Hello,React&lt;/</span>span&gt;  </span><br><span class="line">			&lt;<span class="regexp">/h1&gt;</span></span><br><span class="line"><span class="regexp">		)</span></span><br><span class="line"><span class="regexp">/</span>* 此处一定不要写引号，因为不是字符串  下面这些代码经过babel翻译为js原生代码的写法*<span class="regexp">/</span></span><br><span class="line"><span class="regexp">	babel.js的作用</span></span><br><span class="line"><span class="regexp">    1.浏览器不能直接解析JSX代码, 需要babel转译为纯JS的代码才能运行</span></span><br><span class="line"><span class="regexp">    2.只要用了JSX，都要加上type="text/</span>babel<span class="string">", 声明需要babel来处理</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    React面向组件编程:</span></span><br><span class="line"><span class="string">    1.	组件名必须首字母大写</span></span><br><span class="line"><span class="string">    2.	虚拟DOM元素只能有一个根元素</span></span><br><span class="line"><span class="string">    3.	虚拟DOM元素必须有结束标签</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">**使用js创建虚拟DOM</span></span><br><span class="line"><span class="string">2.&lt;script type="</span>text/javascript<span class="string">" &gt; //原生js</span></span><br><span class="line"><span class="string">const VDOM = React.createElement('h1',&#123;id:'title'&#125;,React.createElement('span',&#123;&#125;,'Hello,React'))//标签名 标签属性  标签内容    </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">3.关于虚拟DOM：</span></span><br><span class="line"><span class="string">        1.本质是Object类型的对象（一般js对象）</span></span><br><span class="line"><span class="string">        2.虚拟DOM比较“轻”，真实DOM比较“重”，因为虚拟DOM是React内部在用，无需真实DOM上那么多的属性。</span></span><br><span class="line"><span class="string">        3.虚拟DOM最终会被React转化为真实DOM，呈现在页面上。</span></span><br><span class="line"><span class="string">        一定注意区分：【js语句(代码)】与【js表达式】</span></span><br><span class="line"><span class="string">					1.表达式：一个表达式会产生一个值，可以放在任何一个需要值的地方</span></span><br><span class="line"><span class="string">								下面这些都是表达式：</span></span><br><span class="line"><span class="string">										(1). a</span></span><br><span class="line"><span class="string">										(2). a+b</span></span><br><span class="line"><span class="string">										(3). demo(1)</span></span><br><span class="line"><span class="string">										(4). arr.map() </span></span><br><span class="line"><span class="string">										(5). function test () &#123;&#125;</span></span><br><span class="line"><span class="string">					2.语句(代码)：</span></span><br><span class="line"><span class="string">								下面这些都是语句(代码)：</span></span><br><span class="line"><span class="string">										(1).if()&#123;&#125;</span></span><br><span class="line"><span class="string">										(2).for()&#123;&#125;</span></span><br><span class="line"><span class="string">										(3).switch()&#123;case:xxxx&#125;</span></span><br><span class="line"><span class="string">4.jsx语法规则：</span></span><br><span class="line"><span class="string">        1.定义虚拟DOM时，不要写引号。</span></span><br><span class="line"><span class="string">        2.标签中混入JS表达式时要用&#123;&#125;。</span></span><br><span class="line"><span class="string">        3.样式的类名指定不要用class，要用className。</span></span><br><span class="line"><span class="string">        4.内联样式，要用style=&#123;&#123;key:value&#125;&#125;的形式去写。</span></span><br><span class="line"><span class="string">        5.只有一个根标签 就是说h2只能一个，如果要两个就得加一个div  [div包裹很不情愿,后期有办法处理,可以通过Frangment标签.]</span></span><br><span class="line"><span class="string">        6.标签必须闭合</span></span><br><span class="line"><span class="string">        7.标签首字母</span></span><br><span class="line"><span class="string">            (1).若小写字母开头，则将该标签转为html中同名元素（都是小写的），若html中无该标签对应的同名元素，则报错。good会报错</span></span><br><span class="line"><span class="string">            (2).若大写字母开头，react就去渲染对应的组件，若组件没有定义，则报错。GOOD    </span></span><br><span class="line"><span class="string">5.创建函数式组件</span></span><br><span class="line"><span class="string">        **函数名大写 函数必须有返回值</span></span><br><span class="line"><span class="string">		function MyComponent()&#123;</span></span><br><span class="line"><span class="string">			console.log(this); //此处的this是undefined，因为babel编译后开启了严格模式 禁止这种自定义的函数this指向window</span></span><br><span class="line"><span class="string">			return &lt;h2&gt;我是用函数定义的组件(适用于【简单组件】的定义)&lt;/h2&gt;</span></span><br><span class="line"><span class="string">		&#125;</span></span><br><span class="line"><span class="string">		**渲染组件到页面</span></span><br><span class="line"><span class="string">		ReactDOM.render(&lt;MyComponent/&gt;,document.getElementById('test')) //标签必须闭合&lt;MyComponent/&gt;</span></span><br><span class="line"><span class="string">		/* </span></span><br><span class="line"><span class="string">			执行了ReactDOM.render(&lt;MyComponent/&gt;.......之后，发生了什么？)</span></span><br><span class="line"><span class="string">					1.React解析组件标签，找到了MyComponent组件。</span></span><br><span class="line"><span class="string">					2.发现组件是使用函数定义的，随后调用该函数，将返回的虚拟DOM转为真实DOM，随后呈现在页面中。</span></span><br><span class="line"><span class="string">		*/</span></span><br><span class="line"><span class="string">6.创建类式组件</span></span><br><span class="line"><span class="string">		class MyComponent extends React.Component &#123;</span></span><br><span class="line"><span class="string">			render()&#123;</span></span><br><span class="line"><span class="string">                //不用写构造器 写render 返回值也必须写  继承React.Component也必须写</span></span><br><span class="line"><span class="string">				//render是放在哪里的？ —— 组件的的原型对象上，供实例使用。</span></span><br><span class="line"><span class="string">				//render中的this是谁？—— 组件的实例对象 &lt;=&gt; MyComponent组件实例对象。</span></span><br><span class="line"><span class="string">				console.log('render中的this:',this);//结果MyComponent的实例对象</span></span><br><span class="line"><span class="string">				return &lt;h2&gt;我是用类定义的组件(适用于【复杂组件】的定义)&lt;/h2&gt;</span></span><br><span class="line"><span class="string">			&#125;</span></span><br><span class="line"><span class="string">		&#125;</span></span><br><span class="line"><span class="string">		//2.渲染组件到页面</span></span><br><span class="line"><span class="string">		ReactDOM.render(&lt;MyComponent/&gt;,document.getElementById('test'))  //const my = new MyComponent()</span></span><br><span class="line"><span class="string">		/* </span></span><br><span class="line"><span class="string">			执行了ReactDOM.render(&lt;MyComponent/&gt;.......之后，发生了什么？</span></span><br><span class="line"><span class="string">					1.React解析组件标签，找到了MyComponent组件。</span></span><br><span class="line"><span class="string">					2.发现组件是使用类定义的，随后new出来该类的实例，并通过该实例调用到原型上的render方法。</span></span><br><span class="line"><span class="string">					3.将render返回的虚拟DOM转为真实DOM，随后呈现在页面中。</span></span><br><span class="line"><span class="string">		*/</span></span><br><span class="line"><span class="string">7.类式组件可以自定义方法————要用赋值语句的形式+箭头函数，否则this指向为undefined。</span></span><br><span class="line"><span class="string">	类中可以直接写赋值语句，就类似于在实例自身追加一个属性名</span></span><br><span class="line"><span class="string">  因为类中的方法默认开启了局部的严格模式，所以changeWeather中的this为undefined。   </span></span><br><span class="line"><span class="string">  函数式不知道方法只能支持赋值语句。</span></span><br><span class="line"><span class="string">  </span></span><br><span class="line"><span class="string">8.方法的定义在render外部，解构赋值是在render内部</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">9.严重注意：状态(state)不可直接更改，下面这行就是直接更改！！！React不认这样的更改//this.state.isHot = !isHot //这是错误的写法</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">10.对标签属性进行类型、必要性的限制放到类里   如果Person有初始化状态，就这样写state = &#123;&#125;在这里面写就可以了。</span></span><br><span class="line"><span class="string">    Person.propTypes = &#123;</span></span><br><span class="line"><span class="string">        name:PropTypes.string.isRequired, //限制name必传，且为字符串</span></span><br><span class="line"><span class="string">        sex:PropTypes.string,//限制sex为字符串</span></span><br><span class="line"><span class="string">        age:PropTypes.number,//限制age为数值</span></span><br><span class="line"><span class="string">            &#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Person.defaultProps = &#123;</span></span><br><span class="line"><span class="string">        sex:'男'，//sex默认值为男</span></span><br><span class="line"><span class="string">        age:18 //age默认值为18</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">11.用函数式创建组件，由于没有实例函数因此没有this。无法使用state和refs这两个属性 但是props属性例外。</span></span><br><span class="line"><span class="string">function Person (props)&#123;</span></span><br><span class="line"><span class="string">			const &#123;name,age,sex&#125; = props  **** C参数全部都在props</span></span><br><span class="line"><span class="string">			return (</span></span><br><span class="line"><span class="string">					&lt;div&gt;你好&lt;/div&gt;   </span></span><br><span class="line"><span class="string">				)</span></span><br><span class="line"><span class="string">		&#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">12.	对标签属性进行类型、必要性的限制  类的关键字 static    ***可以当做简写形式</span></span><br><span class="line"><span class="string">    static propTypes = &#123;</span></span><br><span class="line"><span class="string">        name:PropTypes.string.isRequired, //限制name必传，且为字符串   把这两个东西放进一个打括号里</span></span><br><span class="line"><span class="string">        sex:PropTypes.string,//限制sex为字符串</span></span><br><span class="line"><span class="string">        age:PropTypes.number,//限制age为数值</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">13.渲染类组件标签的基本流程:</span></span><br><span class="line"><span class="string">		1.React解析组件标签，找到了MyComponent组件。</span></span><br><span class="line"><span class="string">        2.发现组件是使用类定义的，随后new出来该类的实例，并通过该实例调用到原型上的render方法。</span></span><br><span class="line"><span class="string">        3.将render返回的虚拟DOM转为真实DOM，随后呈现在页面中。</span></span><br><span class="line"><span class="string">14. 强烈注意</span></span><br><span class="line"><span class="string">    *	组件中render方法中的this为组件实例对象</span></span><br><span class="line"><span class="string">    **	组件自定义的方法中this为undefined，如何解决？</span></span><br><span class="line"><span class="string">            a)	通过函数对象的bind()强制绑定this</span></span><br><span class="line"><span class="string">            b)	箭头函数</span></span><br><span class="line"><span class="string">	***	状态数据，不能直接修改或更新</span></span><br><span class="line"><span class="string">15.ref的三种形式</span></span><br><span class="line"><span class="string">	*   字符串形式的ref   &lt;input ref="</span>input1<span class="string">"/&gt;</span></span><br><span class="line"><span class="string">        const &#123;input1&#125; = this.refs//调用的时候要加了s </span></span><br><span class="line"><span class="string">		这种字符串形式的ref马上要被废弃，因为string类型的refs存在一些效率上的问题。</span></span><br><span class="line"><span class="string">        </span></span><br><span class="line"><span class="string">    **  回调形式的ref    &lt;input ref=&#123;(c)=&gt;&#123;this.input1 = c&#125;&#125;</span></span><br><span class="line"><span class="string">    	这么写的结果就是把ref当前所处的节点挂在了实例自身上，并且取了个名字叫input1</span></span><br><span class="line"><span class="string">        const &#123;input1&#125; = this//取input1就直接从实例自身取就可以了，直接写this即可</span></span><br><span class="line"><span class="string">        </span></span><br><span class="line"><span class="string"> 	*** createRef创建ref容器·myRef = React.createRef()  &lt;input ref=&#123;this.myRef&#125;/&gt;</span></span><br><span class="line"><span class="string">        使用直接this.myRef.current....  即可</span></span><br><span class="line"><span class="string">        这是最推荐的 但是也是最繁琐的 因为有多少个ref就要创建多少个myRef</span></span><br><span class="line"><span class="string">        React.createRef调用后可以返回一个容器，该容器可以存储**被ref所标识的节点**,该容器是“专人专用”的</span></span><br><span class="line"><span class="string">        ref所在节点input被放到了myRef的容器里</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">16.回调函数的特点: 1、你定义的函数 2、你没调用 3、这函数最终执行了 </span></span><br><span class="line"><span class="string">17.事件的处理；</span></span><br><span class="line"><span class="string">				(1).通过onXxx属性指定事件处理函数(注意大小写)</span></span><br><span class="line"><span class="string">						a.React使用的是自定义(合成)事件, 而不是使用的原生DOM事件（onClick） —————— 为了更好的兼容性</span></span><br><span class="line"><span class="string">						b.React中的事件是通过事件委托方式处理的(委托给组件最外层的元素)     ————————为了高效</span></span><br><span class="line"><span class="string">				(2).通过event.target得到发生事件的DOM元素对象 ——————————不要过度使用ref</span></span><br><span class="line"><span class="string">                   &lt;button onClick=&#123;this.showData&#125;&gt;点我提示左侧的数据&lt;/button&gt;</span></span><br><span class="line"><span class="string">            		//展示左侧输入框的数据</span></span><br><span class="line"><span class="string">                    showData = (event)=&gt;&#123;//发生事件的事件源</span></span><br><span class="line"><span class="string">                        console.log(event.target);**输出的是&lt;button&gt;点我提示左侧的数据&lt;/button&gt;</span></span><br><span class="line"><span class="string">                        alert(this.myRef.current.value);</span></span><br><span class="line"><span class="string">                    &#125;</span></span><br><span class="line"><span class="string">				失去焦点那边可以省略ref 因为发生事件的元素正好是你操作的元素，就可以省略</span></span><br><span class="line"><span class="string">				点击按钮提示那个不能省略 因为给的是button加的Click事件，但是要拿input的数据</span></span><br><span class="line"><span class="string">                </span></span><br><span class="line"><span class="string">18.受控组件:输入类的DOM随着你的输入把东西维护到状态里去，等需要用的时候直接从状态里取出来</span></span><br><span class="line"><span class="string">				handleSubmit = (event)=&gt;&#123;</span></span><br><span class="line"><span class="string">                    event.preventDefault() //阻止表单提交</span></span><br><span class="line"><span class="string">                    const &#123;username,password&#125; = this.state//拿到的真正的值 下面就不用.value</span></span><br><span class="line"><span class="string">                    alert(`你输入的用户名是：$&#123;username&#125;,你输入的密码是：$&#123;password&#125;`)</span></span><br><span class="line"><span class="string">                &#125;</span></span><br><span class="line"><span class="string">				&lt;form onSubmit=&#123;this.handleSubmit&#125;&gt;</span></span><br><span class="line"><span class="string">						用户名：&lt;input onChange=&#123;this.saveUsername&#125; type="</span>text<span class="string">" name="</span>username<span class="string">"/&gt;</span></span><br><span class="line"><span class="string">						密码：&lt;input onChange=&#123;this.savePassword&#125; type="</span>password<span class="string">" name="</span>password<span class="string">"/&gt;</span></span><br><span class="line"><span class="string">						&lt;button&gt;登录&lt;/button&gt;</span></span><br><span class="line"><span class="string">				&lt;/form&gt;</span></span><br><span class="line"><span class="string">   非受控组件:现用现取</span></span><br><span class="line"><span class="string">   				const &#123;username,password&#125; = this //获取那两个节点</span></span><br><span class="line"><span class="string">				//对输入类的DOM 现用现取</span></span><br><span class="line"><span class="string">				alert(`你输入的用户名是：$&#123;username.value&#125;,你输入的密码是：$&#123;password.value&#125;`)</span></span><br><span class="line"><span class="string">                &lt;form onSubmit=&#123;this.handleSubmit&#125;&gt;</span></span><br><span class="line"><span class="string">						用户名：&lt;input ref=&#123;c =&gt; this.username = c&#125; type="</span>text<span class="string">" name="</span>username<span class="string">"/&gt;</span></span><br><span class="line"><span class="string">						密码：&lt;input ref=&#123;c =&gt; this.password = c&#125; type="</span>password<span class="string">" name="</span>password<span class="string">"/&gt;</span></span><br><span class="line"><span class="string">						&lt;button&gt;登录&lt;/button&gt;&#123;/*点了登陆就触发那个表单提交*/&#125;</span></span><br><span class="line"><span class="string">				&lt;/form&gt;</span></span><br><span class="line"><span class="string">19.高阶函数:如果一个函数符合下面2个规范中的任何一个，那该函数就是高阶函数。</span></span><br><span class="line"><span class="string">        1.若A函数，接收的参数是一个函数，那么A就可以称之为高阶函数。</span></span><br><span class="line"><span class="string">        2.若A函数，调用的返回值依然是一个函数，那么A就可以称之为高阶函数。</span></span><br><span class="line"><span class="string">        常见的高阶函数有：Promise、setTimeout、arr.map()等等</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">   使用函数柯里化:不加小括号是因为把一个函数作为onChange回调，加了小括号我把这个函数返回值交给onChange回调，下面写的返回值就是                 一个函数 返回的就是函数。</span></span><br><span class="line"><span class="string">onChange=&#123;this.saveFormData('username')</span></span><br><span class="line"><span class="string">saveFormData = (dataType)=&gt;&#123; //dataTye就是传的东西</span></span><br><span class="line"><span class="string">        return (event)=&gt;&#123;  </span></span><br><span class="line"><span class="string">            this.setState(&#123;[dataType]:event.target.value&#125;) //函数作为onchange的回调是返回值作为回调</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">	//onchange要的就是一个函数 现在给的就是一个函数 onchange回调执行的时候 react帮你调用然后传入event</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">   不使用函数柯里化:onChange=&#123;event =&gt; this.saveFormData('username',event) &#125; 直接传一个函数</span></span><br><span class="line"><span class="string">   	//保存表单数据到状态中  同时接到dataType event</span></span><br><span class="line"><span class="string">			saveFormData = (dataType,event)=&gt;&#123;</span></span><br><span class="line"><span class="string">				this.setState(&#123;[dataType]:event.target.value&#125;)  //因为上面传的是一个函数，因此这里就不用返回一个函数</span></span><br><span class="line"><span class="string">			&#125;</span></span><br></pre></td></tr></table></figure>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112071958382.png" alt="image-20211207195755851"></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">20.</span>组件生命周期理解</span><br><span class="line">    <span class="number">1.</span>	组件从创建到死亡它会经历一些特定的阶段。</span><br><span class="line">    <span class="number">2.</span>	React组件中包含一系列勾子函数(生命周期回调函数), 会在特定的时刻调用。</span><br><span class="line">    <span class="number">3.</span>	我们在定义组件时，会在特定的生命周期回调函数中，做特定的工作。</span><br><span class="line"></span><br><span class="line">    **挂载时**</span><br><span class="line">    <span class="keyword">constructor</span>:组件构造函数，常用于初始化组件state，以及对组件内响应方法的绑定</span><br><span class="line"></span><br><span class="line">    componentWillMount:在第一次渲染前的钩子函数，也常用于初始化state，在新版生命周期中已弃用</span><br><span class="line"></span><br><span class="line">    render:组件渲染函数，返回一个jsx元素，用于显示真实DOM中的元素</span><br><span class="line"></span><br><span class="line">    componentDidMount:在组件挂载后执行，一般在这个钩子中做一些初始化的事，例如：开启定时器、发送网络请求、订阅消息</span><br><span class="line">    </span><br><span class="line">    **更新时**</span><br><span class="line">    compontentWillReceiveProps:</span><br><span class="line">    在父组件更新时会触发此函数，在此函数中可以根据props是否变化来setState，并且在此函数中的	setState不会再次触发子组件的		render</span><br><span class="line"></span><br><span class="line">    shouldComponentUpdate:/控制组件更新的“阀门” 应不应该更新状态</span><br><span class="line">	在setState和compontentWillReceiveProps后会触发此函数，可以在此函数中编写相关方法判断是否继续render，相当于一个自定义	  的diff函数</span><br><span class="line"></span><br><span class="line">    componentWillUpdate:组件的props或state发生改变后，render之前触发，在第一次组件挂载时不会触发此函数 ***弃用</span><br><span class="line"></span><br><span class="line">    render</span><br><span class="line"></span><br><span class="line">    componentDidUpdate:在组件的props或state更新完并执行完render后触发   </span><br><span class="line"></span><br><span class="line">    **卸载时**</span><br><span class="line">	componentWillUnmount:在组件卸载或者销毁之前触发  一般在这个钩子中做一些收尾的事，例如：关闭定时器、取消订阅消息</span><br><span class="line">    </span><br><span class="line">	其中componentWillMount、compontentWillReceiveProps、componentWillUpdate在新版生命周期中均已被弃用</span><br></pre></td></tr></table></figure>
+<p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112072120099.png" alt="image-20211207212028192"></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line">新版生命周期:</span><br><span class="line">				<span class="number">1.</span> 初始化阶段: 由ReactDOM.render()触发---初次渲染</span><br><span class="line">								<span class="number">1.</span>	<span class="keyword">constructor</span>()</span><br><span class="line">								2.	getDerivedStateFromProps </span><br><span class="line">								3.	render()</span><br><span class="line">								4.	componentDidMount() =====&gt; 常用*****</span><br><span class="line">											一般在这个钩子中做一些初始化的事，例如：开启定时器、发送网络请求、订阅消息</span><br><span class="line">				2. 更新阶段: 由组件内部this.setSate()或父组件重新render触发</span><br><span class="line">								1.	getDerivedStateFromProps</span><br><span class="line">								2.	shouldComponentUpdate()</span><br><span class="line">								3.	render()        ******必须要用</span><br><span class="line">								4.	getSnapshotBeforeUpdate</span><br><span class="line">								5.	componentDidUpdate()</span><br><span class="line">				3. 卸载组件: 由ReactDOM.unmountComponentAtNode()触发</span><br><span class="line">								1.	componentWillUnmount()  =====&gt; 常用***</span><br><span class="line">											一般在这个钩子中做一些收尾的事，例如：关闭定时器、取消订阅消息</span><br><span class="line"></span><br><span class="line">新版生命周期:中将较于旧版，增加了两个新的钩子，分别是getDerivedStateFromProps、getSnapshotBeforeUpdate，</span><br><span class="line">并弃用了componentWillMount、compontentWillReceiveProps、componentWillUpdate这三个钩子</span><br><span class="line"></span><br><span class="line">static getDerivedStateFromProps(nextProps, prevState) </span><br><span class="line">若state的值在任何时候都取决于props那么可以使用getDerivedStateFromProps  横跨挂载和更新</span><br><span class="line">    </span><br><span class="line">getDerivedStateFromProps为静态函数，传入参数为nextProps、prevState。其中，nextProps为将要更新的props，prevState	为上一个状态，可根据传入的props，以及过去的state来增加限制条件，防止无用的更新</span><br><span class="line"></span><br><span class="line">getSnapshotBeforeUpdate(prevProps, prevState)</span><br><span class="line">	在更新之前获取快照 在组件更新DOM前调用，可以在此DOM更新前捕获一些页面信息（例如滚动位置），此生命周期返回的值会作为参数传入	 componentDidUpdate</span><br><span class="line">    </span><br><span class="line">key的作用</span><br><span class="line">经典面试题:</span><br><span class="line">      1). react/vue中的key有什么作用？（key的内部原理是什么？）</span><br><span class="line">      2). 为什么遍历列表时，key最好不要用index?</span><br><span class="line">      </span><br><span class="line">			1. 虚拟DOM中key的作用：</span><br><span class="line">					1). 简单的说: key是虚拟DOM对象的标识, 在更新显示时key起着极其重要的作用。</span><br><span class="line"></span><br><span class="line">					2). 详细的说: 当状态中的数据发生变化时，react会根据【新数据】生成【新的虚拟DOM】, </span><br><span class="line">												随后React进行【新虚拟DOM】与【旧虚拟DOM】的diff比较，比较规则如下：</span><br><span class="line"></span><br><span class="line">									a. 旧虚拟DOM中找到了与新虚拟DOM相同的key：</span><br><span class="line">												(1).若虚拟DOM中内容没变, 直接使用之前的真实DOM</span><br><span class="line">												(2).若虚拟DOM中内容变了, 则生成新的真实DOM，随后替换掉页面中之前的真实													 DOM</span><br><span class="line"></span><br><span class="line">									b. 旧虚拟DOM中未找到与新虚拟DOM相同的key</span><br><span class="line">												根据数据创建新的真实DOM，随后渲染到到页面</span><br><span class="line">									</span><br><span class="line">			2. 用index作为key可能会引发的问题： （this.setState(&#123;persons:[p,...persons]&#125;)这个就是破坏了顺序性操作）</span><br><span class="line">								<span class="number">1.</span> 若对数据进行：逆序添加、逆序删除等破坏顺序操作:</span><br><span class="line">												会产生没有必要的真实DOM更新 ==&gt; 界面效果没问题, 但效率低。</span><br><span class="line"></span><br><span class="line">								<span class="number">2.</span> 如果结构中还包含输入类的DOM：</span><br><span class="line">												会产生错误DOM更新 ==&gt; 界面有问题。</span><br><span class="line">												</span><br><span class="line">								<span class="number">3.</span> 注意！如果不存在对数据的逆序添加、逆序删除等破坏顺序操作，</span><br><span class="line">									仅用于渲染列表用于展示，使用index作为key是没有问题的。</span><br><span class="line">					</span><br><span class="line">			<span class="number">3.</span> 开发中如何选择key?:</span><br><span class="line">								<span class="number">1.</span>最好使用每条数据的唯一标识作为key, 比如id、手机号、身份证号、学号等唯一值。</span><br><span class="line">								<span class="number">2.</span>如果确定只是简单的展示数据，用index也是可以的。</span><br><span class="line">            </span><br><span class="line">            慢动作回放----使用index索引值作为key</span><br><span class="line"></span><br><span class="line">			初始数据：</span><br><span class="line">					&#123;<span class="attr">id</span>:<span class="number">1</span>,<span class="attr">name</span>:<span class="string">'小张'</span>,<span class="attr">age</span>:<span class="number">18</span>&#125;,</span><br><span class="line">					&#123;<span class="attr">id</span>:<span class="number">2</span>,<span class="attr">name</span>:<span class="string">'小李'</span>,<span class="attr">age</span>:<span class="number">19</span>&#125;,</span><br><span class="line">			初始的虚拟DOM：</span><br><span class="line">					&lt;li key=<span class="number">0</span>&gt;小张--<span class="number">-18</span>&lt;input type=<span class="string">"text"</span>/&gt;&lt;<span class="regexp">/li&gt;</span></span><br><span class="line"><span class="regexp">					/</span><span class="regexp">/这里的input框给小王用了 所以小张残留的信息给了小王了 因此会产生错误DOM更新，界面有问题</span></span><br><span class="line"><span class="regexp">					&lt;li key=1&gt;小李---19&lt;input type="text"/</span>&gt;&lt;<span class="regexp">/li&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">			更新后的数据：</span></span><br><span class="line"><span class="regexp">					&#123;id:3,name:'小王',age:20&#125;,</span></span><br><span class="line"><span class="regexp">					&#123;id:1,name:'小张',age:18&#125;,</span></span><br><span class="line"><span class="regexp">					&#123;id:2,name:'小李',age:19&#125;,</span></span><br><span class="line"><span class="regexp">			更新数据后的虚拟DOM：</span></span><br><span class="line"><span class="regexp">					&lt;li key=0&gt;小王---20&lt;input type="text"/</span>&gt;&lt;<span class="regexp">/li&gt;</span></span><br><span class="line"><span class="regexp">					&lt;li key=1&gt;小张---18&lt;input type="text"/</span>&gt;&lt;<span class="regexp">/li&gt;</span></span><br><span class="line"><span class="regexp">					&lt;li key=2&gt;小李---19&lt;input type="text"/</span>&gt;&lt;<span class="regexp">/li&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">	-----------------------------------------------------------------</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">			慢动作回放----使用id唯一标识作为key</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">			初始数据：</span></span><br><span class="line"><span class="regexp">					&#123;id:1,name:'小张',age:18&#125;,</span></span><br><span class="line"><span class="regexp">					&#123;id:2,name:'小李',age:19&#125;,</span></span><br><span class="line"><span class="regexp">			初始的虚拟DOM：</span></span><br><span class="line"><span class="regexp">					&lt;li key=1&gt;小张---18&lt;input type="text"/</span>&gt;&lt;<span class="regexp">/li&gt;</span></span><br><span class="line"><span class="regexp">					&lt;li key=2&gt;小李---19&lt;input type="text"/</span>&gt;&lt;<span class="regexp">/li&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">			更新后的数据：</span></span><br><span class="line"><span class="regexp">					&#123;id:3,name:'小王',age:20&#125;,</span></span><br><span class="line"><span class="regexp">					&#123;id:1,name:'小张',age:18&#125;,</span></span><br><span class="line"><span class="regexp">					&#123;id:2,name:'小李',age:19&#125;,</span></span><br><span class="line"><span class="regexp">			更新数据后的虚拟DOM：  因为把小王放在第一个了 所以遍历的时候小王是第一个</span></span><br><span class="line"><span class="regexp">					&lt;li key=3&gt;小王---20&lt;input type="text"/</span>&gt;&lt;<span class="regexp">/li&gt;</span></span><br><span class="line"><span class="regexp">					&lt;li key=1&gt;小张---18&lt;input type="text"/</span>&gt;&lt;<span class="regexp">/li&gt;</span></span><br><span class="line"><span class="regexp">					&lt;li key=2&gt;小李---19&lt;input type="text"/</span>&gt;&lt;<span class="regexp">/li&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="React应用-基于React脚手架"><a href="#React应用-基于React脚手架" class="headerlink" title="React应用(基于React脚手架)"></a>React应用(基于React脚手架)</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>使用脚手架开发的项目的特点: 模块化, 组件化, 工程化</span><br><span class="line"><span class="number">2.</span>react脚手架项目结构:</span><br><span class="line">	(<span class="number">1</span>).index.html -------- 主页面</span><br><span class="line">    (<span class="number">2</span>).App.js    --------- App组件</span><br><span class="line">	(<span class="number">3</span>).index.js   ------- 入口文件</span><br><span class="line"><span class="number">3.</span>功能界面的组件化编码流程:</span><br><span class="line">	<span class="number">1.</span> 拆分组件: 拆分界面,抽取组件</span><br><span class="line">	<span class="number">2.</span> 实现静态组件: 使用组件实现静态页面效果</span><br><span class="line">	<span class="number">3.</span> 实现动态组件</span><br><span class="line">		<span class="number">3.1</span> 动态显示初始化数据</span><br><span class="line">            <span class="number">3.1</span><span class="number">.1</span> 数据类型</span><br><span class="line">            <span class="number">3.1</span><span class="number">.2</span> 数据名称</span><br><span class="line">            <span class="number">3.1</span><span class="number">.2</span> 保存在哪个组件?</span><br><span class="line">		<span class="number">3.2</span> 交互(从绑定事件监听开始</span><br><span class="line"><span class="number">4.</span><span class="built_in">document</span>.getElementById(<span class="string">'root'</span>)<span class="comment">//为什么能找到public里的index.html ,这是因为React底层帮忙写好的。     </span></span><br><span class="line"><span class="number">5.</span>状态在哪里，操作状态的方法就在哪里。</span><br><span class="line"></span><br><span class="line"><span class="number">6.</span>常用的ajax请求库:</span><br><span class="line">    <span class="number">1.</span>	jQuery: 比较重, 如果需要另外引入不建议使用</span><br><span class="line">    <span class="number">2.</span>	axios: 轻量级, 建议使用</span><br><span class="line">        <span class="number">1</span>)	封装XmlHttpRequest对象的ajax</span><br><span class="line">        <span class="number">2</span>)	 promise风格</span><br><span class="line">        <span class="number">3</span>)	可以用在浏览器端和node服务器端</span><br><span class="line"></span><br><span class="line"><span class="number">7.</span>SPA的理解</span><br><span class="line">    <span class="number">1.</span>	单页Web应用（single page web application，SPA）。</span><br><span class="line">    <span class="number">2.</span>	整个应用只有一个完整的页面。</span><br><span class="line">    <span class="number">3.</span>	点击页面中的链接不会刷新页面，只会做页面的局部更新。</span><br><span class="line">    <span class="number">4.</span>	数据都需要通过ajax请求获取, 并在前端异步展现。</span><br></pre></td></tr></table></figure>
+<h3 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">8.</span>路由的理解</span><br><span class="line">    <span class="number">1.</span>	一个路由就是一个映射关系(key:value)</span><br><span class="line">    <span class="number">2.</span>	key为路径, value可能是<span class="function"><span class="keyword">function</span>或<span class="title">component</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">9.路由分类</span></span><br><span class="line"><span class="function">    1.	后端路由：</span></span><br><span class="line"><span class="function">        (<span class="params"><span class="number">1</span></span>)	理解： <span class="title">value</span>是<span class="title">function</span>, 用来处理客户端提交的请求。</span></span><br><span class="line"><span class="function">        (<span class="params"><span class="number">2</span></span>)	注册路由： <span class="title">router</span>.<span class="title">get</span>(<span class="params">path, function(req, res</span>))</span></span><br><span class="line"><span class="function">        (<span class="params"><span class="number">3</span></span>)	工作过程：当<span class="title">node</span>接收到一个请求时, 根据请求路径找到匹配的路由, 调用路由中的函数来处理请求, 返回响应数据</span></span><br><span class="line"><span class="function">    2.	前端路由：</span></span><br><span class="line"><span class="function">        (<span class="params"><span class="number">1</span></span>)	浏览器端路由，<span class="title">value</span>是<span class="title">component</span>，用于展示页面内容。</span></span><br><span class="line"><span class="function">        (<span class="params"><span class="number">2</span></span>)	注册路由: &lt;<span class="title">Route</span> <span class="title">path</span>="/<span class="title">test</span>" <span class="title">component</span>=</span>&#123;Test&#125;&gt;</span><br><span class="line">        (<span class="number">3</span>)	工作过程：当浏览器的path变为/test时, 当前路由组件就会变为Test组件</span><br><span class="line"><span class="number">10.</span>react-router-dom的理解</span><br><span class="line">    <span class="number">1.</span>	react的一个插件库。</span><br><span class="line">    <span class="number">2.</span>	专门用来实现一个SPA应用。</span><br><span class="line">    <span class="number">3.</span>	基于react的项目基本都会用到此库。</span><br><span class="line"></span><br><span class="line">    内置组件</span><br><span class="line">    <span class="number">1.</span>	&lt;BrowserRouter&gt;</span><br><span class="line">    <span class="number">2.</span>	&lt;HashRouter&gt;</span><br><span class="line">    <span class="number">3.</span>	&lt;Route&gt;</span><br><span class="line">    <span class="number">4.</span>	&lt;Redirect&gt;</span><br><span class="line">    <span class="number">5.</span>	&lt;Link&gt;</span><br><span class="line">    <span class="number">6.</span>	&lt;NavLink&gt;</span><br><span class="line">    <span class="number">7.</span>	&lt;Switch&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="Redux"><a href="#Redux" class="headerlink" title="Redux"></a>Redux</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>redux是什么</span><br><span class="line">    (<span class="number">1</span>).redux是一个专门用于做状态管理的JS库(不是react插件库)。</span><br><span class="line">    (<span class="number">2</span>).它可以用在react, angular, vue等项目中, 但基本与react配合使用。</span><br><span class="line">    (<span class="number">3</span>).作用: 集中式管理react应用中多个组件共享的状态。</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span>什么情况下需要使用redux</span><br><span class="line">    (<span class="number">1</span>).某个组件的状态，需要让其他组件可以随时拿到（共享）。</span><br><span class="line">    (<span class="number">2</span>).一个组件需要改变另一个组件的状态（通信）。</span><br><span class="line">    (<span class="number">3</span>).总体原则：能不用就不用, 如果不用比较吃力才考虑使用。</span><br><span class="line"><span class="number">3.</span> redux的三个核心概念</span><br><span class="line">    (<span class="number">1</span>).动作的对象</span><br><span class="line">    (<span class="number">2</span>).包含<span class="number">2</span>个属性</span><br><span class="line">    	type：标识属性, 值为字符串, 唯一, 必要属性</span><br><span class="line">     	data：数据属性, 值类型任意, 可选属性</span><br><span class="line">    (<span class="number">3</span>).例子：&#123; <span class="attr">type</span>: <span class="string">'ADD_STUDENT'</span>,<span class="attr">data</span>:&#123;<span class="attr">name</span>: <span class="string">'tom'</span>,<span class="attr">age</span>:<span class="number">18</span>&#125; &#125;</span><br><span class="line"><span class="number">4.</span>reducer</span><br><span class="line">    <span class="number">1.</span>	用于初始化状态、加工状态。</span><br><span class="line">    <span class="number">2.</span>	加工时，根据旧的state和action， 产生新的state的纯函数。</span><br><span class="line">    </span><br><span class="line"><span class="number">5.</span>store</span><br><span class="line">    <span class="number">1.</span>	将state、action、reducer联系在一起的对象</span><br><span class="line">    <span class="number">2.</span>	如何得到此对象?</span><br><span class="line">        <span class="number">1</span>)	<span class="keyword">import</span> &#123;createStore&#125; <span class="keyword">from</span> <span class="string">'redux'</span></span><br><span class="line">        <span class="number">2</span>)	<span class="keyword">import</span> reducer <span class="keyword">from</span> <span class="string">'./reducers'</span></span><br><span class="line">        <span class="number">3</span>)	<span class="keyword">const</span> store = createStore(reducer)</span><br><span class="line">    <span class="number">3.</span>	此对象的功能?</span><br><span class="line">        <span class="number">1</span>)	getState(): 得到state</span><br><span class="line">        <span class="number">2</span>)	dispatch(action): 分发action, 触发reducer调用, 产生新的state</span><br><span class="line">        <span class="number">3</span>)	subscribe(listener): 注册监听, 当产生了新的state时, 自动调用</span><br><span class="line"></span><br><span class="line"><span class="number">6.</span>redux的核心API</span><br><span class="line">	createstore()</span><br><span class="line">		作用：创建包含指定reducer的store对象</span><br><span class="line"><span class="number">7.</span>store对象</span><br><span class="line">    <span class="number">1.</span>	作用: redux库最核心的管理对象</span><br><span class="line">    <span class="number">2.</span>	它内部维护着:</span><br><span class="line">        <span class="number">1</span>)	state</span><br><span class="line">        <span class="number">2</span>)	reducer</span><br><span class="line">    <span class="number">3.</span>	核心方法:</span><br><span class="line">        <span class="number">1</span>)	getState()</span><br><span class="line">        <span class="number">2</span>)	dispatch(action)</span><br><span class="line">        <span class="number">3</span>)	subscribe(listener)</span><br><span class="line">    <span class="number">4.</span>	具体编码:</span><br><span class="line">        <span class="number">1</span>)	store.getState()</span><br><span class="line">        <span class="number">2</span>)	store.dispatch(&#123;<span class="attr">type</span>:<span class="string">'INCREMENT'</span>, number&#125;)</span><br><span class="line">        <span class="number">3</span>)	store.subscribe(render)</span><br><span class="line"></span><br><span class="line"><span class="number">8.</span>applyMiddleware():作用：应用上基于redux的中间件(插件库)</span><br><span class="line"><span class="number">9.</span>combineReducers():作用：合并多个reducer函数</span><br><span class="line"></span><br><span class="line"><span class="number">10.</span>redux异步编程理解：</span><br><span class="line">        <span class="number">1.</span>	redux默认是不能进行异步处理的, </span><br><span class="line">        <span class="number">2.</span>	某些时候应用中需要在redux中执行异步任务(ajax, 定时器)</span><br><span class="line">		使用异步中间件:npm install --save redux-thunk</span><br><span class="line">            <span class="number">1.</span>	一个react插件库</span><br><span class="line">            <span class="number">2.</span>	专门用来简化react应用中使用redux</span><br><span class="line">            </span><br><span class="line"><span class="number">11.</span> react-Redux将所有组件分成两大类</span><br><span class="line">    <span class="number">1.</span>	UI组件</span><br><span class="line">        <span class="number">1</span>)	只负责 UI 的呈现，不带有任何业务逻辑</span><br><span class="line">        <span class="number">2</span>)	通过props接收数据(一般数据和函数)</span><br><span class="line">        <span class="number">3</span>)	不使用任何 Redux 的 API</span><br><span class="line">        <span class="number">4</span>)	一般保存在components文件夹下</span><br><span class="line">    <span class="number">2.</span>	容器组件</span><br><span class="line">        <span class="number">1</span>)	负责管理数据和业务逻辑，不负责UI的呈现</span><br><span class="line">        <span class="number">2</span>)	使用 Redux 的 API</span><br><span class="line">        <span class="number">3</span>)	一般保存在containers文件夹下</span><br><span class="line"><span class="number">12.</span>相关API</span><br><span class="line">	<span class="number">1.</span>	Provider：让所有组件都可以得到state数据</span><br><span class="line">             &lt;Provider store=&#123;store&#125;&gt;</span><br><span class="line">              &lt;App /&gt;</span><br><span class="line">            &lt;<span class="regexp">/Provider&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">	2.	connect：用于包装 UI 组件生成容器组件</span></span><br><span class="line"><span class="regexp"> 			import &#123; connect &#125; from 'react-redux'</span></span><br><span class="line"><span class="regexp">            connect(mapStateToprops,mapDispatchToProps)(Counter)</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">	3.	mapStateToprops：将外部的数据（即state对象）转换为UI组件的标签属性</span></span><br><span class="line"><span class="regexp">            const mapStateToprops = function (state) &#123;</span></span><br><span class="line"><span class="regexp">              return &#123;</span></span><br><span class="line"><span class="regexp">                value: state</span></span><br><span class="line"><span class="regexp">              &#125;</span></span><br><span class="line"><span class="regexp">            &#125;</span></span><br><span class="line"><span class="regexp">	4.	mapDispatchToProps：将分发action的函数转换为UI组件的标签属性</span></span><br><span class="line"><span class="regexp">    </span></span><br><span class="line"><span class="regexp">13.纯函数</span></span><br><span class="line"><span class="regexp">    1.	一类特别的函数: 只要是同样的输入(实参)，必定得到同样的输出(返回)</span></span><br><span class="line"><span class="regexp">    2.	必须遵守以下一些约束  </span></span><br><span class="line"><span class="regexp">        1)	不得改写参数数据</span></span><br><span class="line"><span class="regexp">        2)	不会产生任何副作用，例如网络请求，输入和输出设备</span></span><br><span class="line"><span class="regexp">        3)	不能调用Date.now()或者Math.random()等不纯的方法  </span></span><br><span class="line"><span class="regexp">    3.	redux的reducer函数必须是一个纯函数</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">14.高阶函数</span></span><br><span class="line"><span class="regexp">    1.	理解: 一类特别的函数</span></span><br><span class="line"><span class="regexp">        1)	情况1: 参数是函数</span></span><br><span class="line"><span class="regexp">        2)	情况2: 返回是函数</span></span><br><span class="line"><span class="regexp">    2.	常见的高阶函数: </span></span><br><span class="line"><span class="regexp">        1)	定时器设置函数</span></span><br><span class="line"><span class="regexp">        2)	数组的forEach()/m</span>ap()/filter()/reduce()/find()/bind()</span><br><span class="line">        <span class="number">3</span>)	promise</span><br><span class="line">        <span class="number">4</span>)	react-redux中的connect函数</span><br><span class="line">    <span class="number">3.</span>	作用: 能实现更加动态, 更加可扩展的功能</span><br></pre></td></tr></table></figure>
+<h3 id="redux工作流程"><a href="#redux工作流程" class="headerlink" title="redux工作流程"></a>redux工作流程</h3><p><img data-src="/images/loading.gif" data-original="https://gitee.com/letter-from-berlin/PictureBed/raw/master/202112081552249.png" alt="image-20211208153416819"></p>
+<h3 id="简书项目"><a href="#简书项目" class="headerlink" title="简书项目"></a>简书项目</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>、在reducer.js文件里,不能对原始的state做修改，为了防止这一点得引入facebook团队研发出来的一个库：immutable.js</span><br><span class="line"></span><br><span class="line">它会帮助我们生成一个immutable对象 （不可改变的）如果state是immutable对象就是不可以被改变，就不会出问题。</span><br><span class="line"><span class="number">2</span>、immutable这个库提供了一个fromJS方法，可以帮助我们把一个js对象转化为immutable对象，用这个方法把数据对象（js对象）</span><br><span class="line"></span><br><span class="line">转化为immutable对象。此时header下的index文件的mapState方法里的数据已经转化为immutable类型的数据（state.header）</span><br><span class="line"></span><br><span class="line">如果是immutable类型的数据，再进行state.header.focused这种语法是不合理的了。immutable.js里面调用state.header里的属性不能通过点focused的方式来调用，得通过点<span class="keyword">get</span>的方法传入focused的属性来获取对应的属性。此时不会报错，但是点击的时候就会报错报错的原因在与当你派发一个action的时候，传入reducers返回的是一个普通对象，普通对象时没有<span class="keyword">get</span>方法的 为了防止这种情况，可以使用immutable对象的<span class="keyword">set</span>方法，immutable对象的<span class="keyword">set</span>方法，会结合之前immutable对象的值和设置的值,返回一个全新的对象，此时没有改变原始的state</span><br><span class="line">3、：借助immutable这个库避免编写改变数据里state的情况</span><br><span class="line">4、获取ajax数据一般来说不会直接写在组件里，会把异步的操作放到action，或者放到redux-saga里面进行处理，这里统一使用redux-thunk，把异步操作都放至action里处理</span><br><span class="line">5、redux-thunk其实就是action和store之间的中间件 其实就是对dispatch方法的升级 以前的action返回的是一个对象，现在可以返回函数</span><br><span class="line">6、在public文件夹下创建一个api文件夹之后在创建headerList.json的文件输入一下数据 之后在网页访问这个链接页面就可以显示数据</span><br><span class="line">原理:首先先到功能目录下看看有没有对应的路由，找不到就会去public目录下找api的headerList.json，找到后就会把文件的内容输出出来</span><br><span class="line">通过这个特性，我们可以创建一些假数据，保存。模拟的数据要和后端对的数据要保持一致，就是定一下格式</span><br><span class="line">7、这样写实际上还是有问题的：创建store，默认list是一个空数组，fromJS方法会将js对象转换为immuable对象，list是个数组，也会变成immuable的数组，但是调用<span class="keyword">set</span>去改变list的时候，action.data实际上是一个普通的数组， list数组会由immuable数组变成一个普通的数组，这样的话数据类型就会变了，解决这个问题</span><br><span class="line">8、至于优化觉得可以做一些性能上的优化。因为每点击一次焦点的时候就会发送一次ajax请求。实际上列表中的数据获取一次就可以了</span><br><span class="line">解决问题：给``handleInputFocus(list)``传入list 然后输出list可以看出第一次请求的时候list.size是0，之后就是50，</span><br><span class="line">所以控制当size为0的时候才发送请求，之后不等于0的时候就不发生了，这样就避免了每次获取焦点的时候都发一个ajax请求，从而做到性能上的调优。</span><br><span class="line"></span><br><span class="line">9、前两周这个包刚更新过如果按之前的编码规则会使得路由组件无法显示</span><br><span class="line">import Home from './Home '</span><br><span class="line">老版本</span><br><span class="line">&lt;Route path=" / home" component=&#123; Home &#125; /&gt;</span><br><span class="line">新版本</span><br><span class="line">&lt;Route path=<span class="string">" / home"</span> element=&#123; &lt;Home/&gt; &#125; /&gt;</span><br><span class="line"><span class="number">10</span>、在public下的api定义一个接口home.json。之后在home组件下借助componentDidMount这个声明周期函数来发ajax请求去获取数据，获取了数据，（当组件挂载完毕）。就要将获取的数据取修改store里初试的数据</span><br><span class="line"><span class="number">11</span>、修改store里的数据也就是状态 就得使用connect的第二个参数，通过这个函数就可以定义一个方法将action派发给store，因为UI组件不能和store直接通信，只能通过容器组件。派发给store之后store就会派发给reducer。</span><br><span class="line"><span class="number">12</span>、因为首页的index.js都调用了connect的方法，和store做了连接，这就会产生一个问题，只要store发生了改变，那么每一个组件都会被重新渲染，也就是每个函数的render函数会被重新执行，可能有些数据发生改变了，但是那个数据和这个组件一点关系都没有，但是这个组件依然会被重新渲染，导致性能不好。提高组价性能 shouldComponentUpdata，可以在这里做性能优化的代码，判断只有与这个组件相关的数据发生改变才让render函数重新执行（重新渲染），否则<span class="keyword">return</span> <span class="literal">false</span>不让render函数重新执行。</span><br><span class="line">通过这种方式来避免虚拟DOM的比对，提高性能，react也考虑到了这点，如果你在每个特组件都去自己写should....太麻烦了，react内置了新的组件类型，引入PureComponent，区别就是PureComponent内在自己底层实现了should...,这样就不用我们手写收should......做性能优化。之后就是每个UI组件都替换为PureComponent</span><br><span class="line">之所以项目用**PureComponent**，是因为项目的数据管理用了immuable.js的框架，它可以保证我们的数据是immuable的，这样PureComponent和immuablejs数据格式的管理相结合，使用PureComponent一点问题都没有，但是如果你在你的项目里面，没有使用immuable.js管理你的数据，那么使用PureComponen有的时候会遇到坑。（偏底层的坑）</span><br><span class="line"><span class="number">13</span>、当我们在react实现页面跳转的时候，我们要用到react-router-dom第三方模块，它的这种跳转是单页应用跳转，link标签要在Router里面否则会报错</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div>万一真有土豪呢！！！</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/loading.gif" data-original="/images/wechatpay.jpg" alt="Jony J 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/loading.gif" data-original="/images/alipay.png" alt="Jony J 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/React/" rel="tag"># React</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/01/25/%E9%9D%A2%E8%AF%95%E9%A2%98/" rel="prev" title="常规面试题">
+      <i class="fa fa-chevron-left"></i> 常规面试题
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/02/26/%E5%89%8D%E7%AB%AF%E8%BF%9B%E5%87%BB%E7%AC%94%E8%AE%B0%E6%80%BB%E7%BB%93/" rel="next" title="前端进击笔记总结">
+      前端进击笔记总结 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#React-基础"><span class="nav-text">React 基础</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#React应用-基于React脚手架"><span class="nav-text">React应用(基于React脚手架)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#路由"><span class="nav-text">路由</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Redux"><span class="nav-text">Redux</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#redux工作流程"><span class="nav-text">redux工作流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#简书项目"><span class="nav-text">简书项目</span></a></li></ol></div>
+      </div>
+      <br/>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Jony J"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Jony J</p>
+  <div class="site-description" itemprop="description">stay hungry stay foolish！</div>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/wzt2023" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;wzt2023" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/images/wechat.jpg" title="WeChat → &#x2F;images&#x2F;wechat.jpg"><i class="fab fa-weixin fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/images/qq.png" title="QQ → &#x2F;images&#x2F;qq.png"><i class="fab fa-qq fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:710471807@qq.com" title="E-Mail → mailto:710471807@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      友链
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://leetcode-cn.com/problemset/all/" title="https:&#x2F;&#x2F;leetcode-cn.com&#x2F;problemset&#x2F;all&#x2F;" rel="noopener" target="_blank">leetcode</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+      <div id="music163player">
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=441491828&auto=0&height=66"></iframe>
+     
+      </div>
+    </div> 
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">TT 版权所有</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">200k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">3:02</span>
+</div>
+
+
+ <div class="powered-by">
+  <i class="fa fa-user-md"></i>
+  <span id="busuanzi_container_site_uv">
+    本站总访客数:<span id="busuanzi_value_site_uv"></span>&nbsp;&nbsp;| 
+  </span>
+  <span id="busuanzi_container_site_pv">
+      &nbsp;本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  </span>
+</div>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/velocity-animate@1/velocity.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/velocity-animate@1/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  <script defer src="//cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three.min.js"></script>
+    <script defer src="//cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/canvas_lines.min.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : '8YHV7splQK9asMA21ILvvuFe-gzGzoHsz',
+      appKey     : 'DwFfLh2EMujmRQp3tkcWjOJI',
+      placeholder: "分享你的想法",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+
+  <script async src="/js/cursor/fireworks.js"></script>
+
+
+
+
+  <script src="/js/activate-power-mode.min.js"></script>
+  <script>
+    POWERMODE.colorful = true;
+    POWERMODE.shake = false;
+    document.body.addEventListener('input', POWERMODE);
+  </script>
+
+  
+<script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=i;var e=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}i(),n.addEventListener("scroll",function(){var t,e;t=i,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+</html>

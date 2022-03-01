@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon32X32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon16X16.png">
+  <link rel="mask-icon" href="/images/mylogo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.loli.net/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Hack:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"wzt2022.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":18,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideLeftBigIn","post_body":"slideRightBigIn","coll_header":"slideLeftIn","sidebar":"slideLeftBigIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="day011. 项目开发准备1). 项目描述: 整体业务功能&#x2F;功能模块&#x2F;主体的技术&#x2F;开发模式 2). 技术选型: 数据展现&#x2F;用户交互&#x2F;组件化, 后端, 前后台交互, 模块化, 项目构建&#x2F;工程化, 其它 3). API接口: 接口的4个组成部分, 接口文档, 对&#x2F;调&#x2F;测接口 2. git管理项目的常用操作1). 创建本地仓库     创建.gitignore配置文件     git init">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React BOSS直聘">
+<meta property="og:url" content="https://wzt2022.github.io/2021/11/13/React%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%E4%B9%8BBOSS%E6%8B%9B%E8%81%98/index.html">
+<meta property="og:site_name" content="TT の 博客">
+<meta property="og:description" content="day011. 项目开发准备1). 项目描述: 整体业务功能&#x2F;功能模块&#x2F;主体的技术&#x2F;开发模式 2). 技术选型: 数据展现&#x2F;用户交互&#x2F;组件化, 后端, 前后台交互, 模块化, 项目构建&#x2F;工程化, 其它 3). API接口: 接口的4个组成部分, 接口文档, 对&#x2F;调&#x2F;测接口 2. git管理项目的常用操作1). 创建本地仓库     创建.gitignore配置文件     git init">
+<meta property="article:published_time" content="2021-11-12T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-11-12T16:00:00.000Z">
+<meta property="article:author" content="Jony J">
+<meta property="article:tag" content="React项目">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://wzt2022.github.io/2021/11/13/React%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%E4%B9%8BBOSS%E6%8B%9B%E8%81%98/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
+  };
+</script>
+
+  <title>React BOSS直聘 | TT の 博客</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?6f41e725d94bfbcea62c56e046b8a37a";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="TT の 博客" type="application/atom+xml">
+</head>
+<!-- 页面点击小红心 -->
+ <script async src="/js/fireworks.js"></script>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">TT の 博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">远方除了遥远，一无所有。</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-life">
+
+    <a href="/life/" rel="section"><i class="fa fa-heart fa-fw"></i>生活中的美好</a>
+
+  </li>
+        <li class="menu-item menu-item-photo">
+
+    <a href="/photo/" rel="section"><i class="fa fa-image fa-fw"></i>照片</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/lf2021" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://wzt2022.github.io/2021/11/13/React%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%E4%B9%8BBOSS%E6%8B%9B%E8%81%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Jony J">
+      <meta itemprop="description" content="stay hungry stay foolish！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TT の 博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          React BOSS直聘
+        </h1>
+
+        <div class="post-meta">
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-11-13 00:00:00" itemprop="dateCreated datePublished" datetime="2021-11-13T00:00:00+08:00">2021-11-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/React/" itemprop="url" rel="index"><span itemprop="name">React</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2021/11/13/React%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%E4%B9%8BBOSS%E6%8B%9B%E8%81%98/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/11/13/React%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%E4%B9%8BBOSS%E6%8B%9B%E8%81%98/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>12k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>11 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="day01"><a href="#day01" class="headerlink" title="day01"></a>day01</h1><h2 id="1-项目开发准备"><a href="#1-项目开发准备" class="headerlink" title="1. 项目开发准备"></a>1. 项目开发准备</h2><pre><code>1). 项目描述: 整体业务功能/功能模块/主体的技术/开发模式
+2). 技术选型: 数据展现/用户交互/组件化, 后端, 前后台交互, 模块化, 项目构建/工程化, 其它
+3). API接口: 接口的4个组成部分, 接口文档, 对/调/测接口
+</code></pre><h2 id="2-git管理项目的常用操作"><a href="#2-git管理项目的常用操作" class="headerlink" title="2. git管理项目的常用操作"></a>2. git管理项目的常用操作</h2><pre><code>1). 创建本地仓库
+    创建.gitignore配置文件
+    git init
+    git add *
+    git commit -m &quot;xxx&quot;
+2). 创建github远程仓库
+    New Repository
+    指定名称
+    创建
+3). 将本地仓库推送到远程仓库
+    git remote add origin https://github.com/zxfjd3g/170612_JSAdvance.git 关联远程仓库
+    git push origin master
+
+4). push本地的更新 
+    git add *
+    git commit -m &quot;xxx&quot;
+    git push origin master
+
+5). pull远程的更新
+        git pull origin master
+
+6). 克隆github上的项目:
+    git clone https://github.com/zxfjd3g/xxx.git
+</code></pre><h2 id="3-搭建项目"><a href="#3-搭建项目" class="headerlink" title="3. 搭建项目"></a>3. 搭建项目</h2><pre><code>1). 使用create-react-app脚手架创建模板项目(工程化)
+2). 引入antd-mobile, 并实现按需打包和自定义主题
+3). 引入react-router-dom(v4): 
+    HashRouter/Route/Switch
+    history: push()/replace()
+4). 引入redux
+    redux/react-redux/redux-thunk
+    redux: createStore()/combineReducers()/applyMiddleware()
+    react-redux: &lt;Provider store={store}&gt; / connect()(Xxx)
+    4个重要模块: reducers/store/actions/action-types
+
+5).src 客户端代码文件夹
+    api          ajax请求相关模块文件夹=&gt;发送ajax请求的函数模块 n个接口请求的函数模块 函数的返回值都是promise实例
+    assets       共用资源文件夹   =&gt;样式以及图片
+    components   UI组件模块文件夹 =&gt;头像 logo 底部 用户列表
+    containers   容器组件模块文件夹  =&gt; 登陆 注册 主页面(聊天 老板 大神 信息完善 消息列表 个人中心)
+    redux        redux相关模块文件夹
+    utils        工具模块文件夹  功能函数就是重定向
+    index.js      入口JS     就是匹配路由三者（登陆注册和主页面）
+</code></pre><h2 id="4-登陆-注册界面"><a href="#4-登陆-注册界面" class="headerlink" title="4. 登陆/注册界面"></a>4. 登陆/注册界面</h2><pre><code> 首先先拆分路由 路由分为main/login/register为一级路由 还有就是main里面的二级路由 
+ 映射路由import {HashRouter,Switch,Route} from &#39;react-router-dom&#39;
+1). 创建3个1级路由: main/login/register
+2). 完成登陆/注册的静态组件
+  antd组件: NavBar/WingBlank/WhiteSpace/List/InputItem/Radio/Button 导航栏/两翼留白/上下留白/列表/文本输入/Gird宫格
+  路由跳转: this.props.history.replace(&#39;/login&#39;)
+  收集表单输入数据: state/onChange/变量属性名
+</code></pre><h2 id="5-实现简单后台"><a href="#5-实现简单后台" class="headerlink" title="5. 实现简单后台"></a>5. 实现简单后台</h2><pre><code>1). 使用webstorm创建基于node+express的后台应用
+2). 根据需求编写后台路由
+3). 使用postman测试后台接口
+4). 使用nodemon实现后台应用的自动重启动
+5). 路由回调函数的3步: 读取请求参数/处理/返回响应数据
+</code></pre><p>​    </p>
+<h1 id="day02"><a href="#day02" class="headerlink" title="day02"></a>day02</h1><h2 id="1-使用mongoose操作数据库"><a href="#1-使用mongoose操作数据库" class="headerlink" title="1. 使用mongoose操作数据库"></a>1. 使用mongoose操作数据库</h2><pre><code>1). 连接数据库
+2). 定义schema和Model
+3). 通过Model函数对象或Model的实例的方法对集合数据进行CRUD操作 
+</code></pre><h2 id="2-注册-登陆后台处理"><a href="#2-注册-登陆后台处理" class="headerlink" title="2. 注册/登陆后台处理"></a>2. 注册/登陆后台处理</h2><pre><code>1). models.js
+    连接数据库: mongoose.connect(url)
+    定义文档结构: schema
+    定义操作集合的model: UserModel
+2). routes/index.js
+    根据接口编写路由的定义
+    注册: 流程
+    登陆: 流程
+    响应数据结构: {code: 0, data: user}, {code: 1, msg: &#39;xxx&#39;}
+</code></pre><h2 id="3-注册-登陆前台处理"><a href="#3-注册-登陆前台处理" class="headerlink" title="3. 注册/登陆前台处理"></a>3. 注册/登陆前台处理</h2><pre><code>1). ajax
+    ajax请求函数(通用): 使用axios库, 返回的是promise对象
+    后台接口请求函数: 针对具体接口定义的ajax请求函数, 返回的是promise对象
+    代理: 跨域问题/配置代理解决
+    await/async: 同步编码方式实现异步ajax请求 
+2). redux
+    store.js
+      生成并暴露一个store管理对象
+    reducers.js
+      包含n个reducer函数
+      根据老state和指定action来产生返回一个新的state
+    actions.js
+      包含n个action creator函数
+      同步action: 返回一个action对象({type: &#39;XXX&#39;, data: xxx})
+      异步action: 返回一个函数: disptach =&gt; {执行异步代理, 结束时dispatch一个同步action}
+    action-types.js
+      action的type名称常量
+3). component
+    UI组件: 
+        组件内部没有使用任何redux相关的API
+        通过props接收容器组件传入的从redux获取数据
+        数据类型: 一般和函数
+    容器组件
+        connect(
+          state =&gt; ({user: state.user}),
+          {action1, action2}
+        )(UI组件)
+</code></pre><h1 id="day03"><a href="#day03" class="headerlink" title="day03"></a>day03</h1><h2 id="1-实现user信息完善功能"><a href="#1-实现user信息完善功能" class="headerlink" title="1. 实现user信息完善功能"></a>1. 实现user信息完善功能</h2><pre><code>1). 用户信息完善界面路由组件: 
+    组件: dashen-info/laoban-info =&gt;通过onChange/state来收集用户输入数据(头像名称 职位简介 职位名称 公司名称 工资)
+    header-selector（共同的部分）=&gt;头部作为UI组件，作为父组件定义一个设置头像的函数并传给子组件，子组件点击头像的时候首先要先更新state里的状态，还要去调用父组件传过来的方法，方法传入头像
+    界面: Navbar/List/Grid（宫格）/InputItem（文本输入）/Button/TextareaItem（多行输入）
+    注册2级路由: 在main路由组件
+    界面完善后就是点击保存前后台交互的过程了 之前登陆和注册成功后 store里定义了一个重定向的地址为/ 而在入口文件这个/指主页面
+    而在信息完善的静态组件完成后有四种情况 首先有两种类型用户 老板和大神  成功之后有信息已完善和未完善
+    四个就四个路由路径 判断是否完善信息，看user.header是否有值 判断用户类型：看user.type 此时就要定义一个功能函数
+2). 登陆/注册成功后的跳转路由计算 就是看后台返回的数据看是否有头像和什么类型 进行相应的路由跳转
+    定义工具函数 getRedirectTo(type,header)
+    计算逻辑分析
+3). 后台路由处理  更新用户的路由 更新的时候是需要id，但是前面登陆和注册的时候已经把id存在浏览器cookie里
+                从请求cookie得到userid
+                const userid = req.cookies.userid//cookies是对象 是个键值对 如果没有说明没有登陆直接返回提示还未登陆
+                根本userid找到对应的user 然而user一定有值嘛 不一定/要是里面的cookie数据被篡改了 没有对应的user就更新不了
+                //通知浏览器删除userid cookie   // 返回一个提示信息请先登陆
+                将user信息和前台发送的数据进行拼接 Object.assign(req.body, {_id, username, type}) 返回一个合并的对象
+4). 前台接口请求函数 更新用户信息接口 export const reqUpdateUser = (user) =&gt; ajax(&#39;/update&#39;, user, &#39;POST&#39;)
+5). 前台redux
+    action-types
+    异步action/同步action 
+    reducer
+6). 前台组件 点击保存派发异步action 执行异步action返回一个函数: disptach =&gt; {执行异步代理（注册的接口 向后台发送ajax请求）
+将后台返回的数据通过派发同步action的方式派发给reducers，reducers将之前的数据和后台返回的数据进行一个拼接将其保存在state       里，然后映射到相应组件的props里。就会重新render
+    UI组件包装生成容器组件用connect 
+    读取状态数据
+    更新状态 如果更新失败就说明前台数据有问题或者有人篡改了cookie 派发一个action返回一个...initUser 自动跳转登陆界面
+    因为这是什么都没有
+</code></pre><h2 id="2-搭建整体界面-上"><a href="#2-搭建整体界面-上" class="headerlink" title="2. 搭建整体界面(上)"></a>2. 搭建整体界面(上)</h2><pre><code>1). 登陆状态维护
+    后台将userid保存到cookie中
+    前台读取cookie中的userid
+    redux中管理user信息状态
+访问二级路由都需要登陆状态    
+2). 实现自动登陆 在Main组件实现自动登陆 当组件挂载时去获取用户信息，因为之前后台在做登陆的路由使用cooike来标识了登陆的有效时间
+也就是你完成注册就不需要登陆了并且你关闭页面输入相应地址都能回到相应的页面有效期为24小时 =&gt; 登陆过(cookie中有userid)，但没有有登陆(redux管理的user中没有_id)发请求获取对应的user 就要去派发action去获取相应的user信息
+步骤:读取cookie中的userid     如果没有，自动重定向到登陆界面
+    如果有,读取redux中的user状态=&gt; 如果 user没有_id，返回null(不做任何显示) 因为是异步的 当数据返回时就不显示null了 短暂
+    如果有_id，说明已经登陆 显示对应的界面  还要一种情况就是请求根路径 
+    根据user的type和header来计算出一个重定向的路由路径，并自动重定向
+    如果有user_id且请求的不是根路径就显示相对应的路由(映射)
+
+    后台逻辑分析 :而后台先读取cookie 中的 userid 如果没有返回请先登陆 如果有就将相应的user信息返回至前台
+                这里派发的同步action都是和更新是一样的
+    ajax请求根据cookie中的userid查询获取对应的user信息
+
+    获取用户信息的路由是为了实现自动登录存在userid没有user._id的情况
+</code></pre><h1 id="day04"><a href="#day04" class="headerlink" title="day04"></a>day04</h1><h2 id="1-搭建整体界面-下"><a href="#1-搭建整体界面-下" class="headerlink" title="1. 搭建整体界面(下)"></a>1. 搭建整体界面(下)</h2><pre><code>封装导航路由相关数据(数组/对象):在Main组件引入这四个导航的容器组件 还有一个404的UI组件
+     因为每一个容器组件都有自己的一个路径以及组件标题 图标 图标下面的文本，这些信息为了更好的管理就要拿 每一个路由都要有这些信息，    就要拿对象来存取底部导航的信息，每一个对象组成一个数组(大神列表 老板列表 消息列表 个人中心)
+             path:&#39;/laoban&#39;,//路由路径
+            component:Laoban,
+            title:&#39;大神列表&#39;,
+            icon:&#39;dashen&#39;,
+            text:&#39;大神&#39;
+            遍历该数组去映射路由(因为数组里的每个个对象都是一个底部导航都是以一个个键值对的形式存在的)
+            包括头部导航的设置是通过遍历数组找到请求的路径等于底部导航的路径
+            并且可以设置hidden值将数组中的某一项进行隐藏 当请求的路径等于点击底部导航的路径时如果用户的类型是大神 隐藏大神的列表，将隐藏后的navList底部导航
+抽取底部导航组件:将隐藏后的导航列表传给底部导航组件 底部导航的UI组件拿到导航列表进行遍历
+                          title={nav.text}  文本
+                        icon={{uri:require(`./nav/${nav.icon}.png`)}}  图标 
+                        selectedIcon={{uri:require(`./nav/${nav.icon}-selected.png`)}}  选中
+                        selected={path===nav.path} 默认选中
+                        onPress={()=&gt;this.props.history.replace(nav.path)}//按下去跳转路由 由于没有这个属性
+ 引入import {withRouter} from &#39;react-router-dom&#39; 内部会想组件中传入一些路由组件特有的属性 history/location/math
+非路由组件使用路由组件API 引入import {withRouter} from &#39;react-router-dom&#39;
+底部导航组件不是路由组件 路由组件是被Route包裹的
+</code></pre><h2 id="2-个人中心"><a href="#2-个人中心" class="headerlink" title="2. 个人中心"></a>2. 个人中心</h2><pre><code>读取user信息显示 
+退出登陆 退出登陆去派发重置User的同步action 去除cookie中id
+</code></pre><h2 id="3-用户列表"><a href="#3-用户列表" class="headerlink" title="3. 用户列表"></a>3. 用户列表</h2><pre><code>为大神/老板列表组件抽取用户列表组件 抽取共性组件
+异步读取指定类型用户列表数据 组件挂载时获取用户列表 发送异步action 之前的都是操作user 现在要操作整个user列表
+因此要重新写一个reducers
+    后台路由 根据类型获取用户列表const{type} = req.query 
+    api  请求获取用户列表的接口export const reqUserList = (type) =&gt; ajax(&#39;/userlist&#39;, {type})
+    redux 
+    component 将state里状态映射到老板大神组件props里 传给子组件也就是用户列表这个UI组件 子组件接收到遍历相应的信息
+</code></pre><h2 id="4-socket-io"><a href="#4-socket-io" class="headerlink" title="4. socket.io"></a>4. socket.io</h2><pre><code>实现实时聊天的库
+包装的H5 WebSocket和轮询---&gt; 兼容性/编码简洁性
+它包装的是 H5 WebSocket 和轮询, 如果是较新的浏览器内部使用 WebSocket,
+如果浏览器不支持, 那内部就会使用轮询实现实时通信
+包含2个包:
+  socket.io: 用于服务器端
+  socket.io-client: 用于客户端
+基本思想: 远程自定义事件机制
+    on(name, function(data){}): 绑定监听
+    emit(name, data): 发送消息
+
+    io: 服务器端核心的管理对象
+    socket: 客户端与服务器的连接对象
+</code></pre><h1 id="day05"><a href="#day05" class="headerlink" title="day05"></a>day05</h1><h2 id="1-聊天组件功能"><a href="#1-聊天组件功能" class="headerlink" title="1. 聊天组件功能:"></a>1. 聊天组件功能:</h2><pre><code>后台接口:首先要引入由mongoose操作的聊天的数据库（发送用户的id 接收用户的id  from和to组成的字符串 内容 标识是否已读 创建时间）
+    //关于后台的东西:聊天的消息要用数据库存起来，每发一条消息都会产生一条记录在server里db models里写 之前只定义一个users的集    //合现在要多定义一个chats集合的文档结构
+    其次引入socket.io这个库 返回的是一个函数，这个函数接收一个server（服务器），相当于服务器挂在上面得到一个io对象，用这个对象有一个on来1.监视客户端与服务器的连接，绑定监听, 接收客户端发送的消息 2.处理数据 3. 向所有连接上的客户端发消息 这样做的前提就是发给浏览器端要确认一下是不是发给我的
+
+新增获取当前用户所有相关聊天信息列表:根据接口文档返回的是除了消息数组还有包含所有users相关信息的一个对象容器
+对象的好处就是根据某一个user_id能够得到user信息 因为chatmsg里有from和to的user_id 你只要告诉我chatmsg我就能找到users
+            {
+                &quot;code&quot;: 0,
+                &quot;data&quot;: {
+                    &quot;users&quot;: {
+                        &quot;5ae1d5d19151153d30e008fd&quot;: {
+                            &quot;username&quot;: &quot;ds2&quot;
+                        },
+                        &quot;5ae1ddd99ca58023d82351ae&quot;: {
+                            &quot;username&quot;: &quot;aa&quot;,
+                            &quot;header&quot;: &quot;头像1&quot;
+                        },
+                        &quot;5ae1df049ca58023d82351af&quot;: {
+                            &quot;username&quot;: &quot;aa2&quot;
+                        },
+                        &quot;5ae1e72aa072c522e024b18e&quot;: {
+                            &quot;username&quot;: &quot;bb&quot;,
+                            &quot;header&quot;: &quot;头像3&quot;
+                        },
+                        &quot;5ae1f088d37a442b749fc143&quot;: {
+                            &quot;username&quot;: &quot;laoban1&quot;,
+                            &quot;header&quot;: &quot;头像2&quot;
+                        }
+                    },
+                    &quot;chatMsgs&quot;: [
+                        {
+                            &quot;read&quot;: false,
+                            &quot;_id&quot;: &quot;5ae1f3c3a95eb824841199f1&quot;,
+                            &quot;from&quot;: &quot;5ae1f088d37a442b749fc143&quot;,
+                            &quot;to&quot;: &quot;5ae1ddd99ca58023d82351ae&quot;,
+                            &quot;content&quot;: &quot;aa&quot;,
+                            &quot;create_time&quot;: 1524757443374,
+                            &quot;__v&quot;: 0
+                        }
+                    ]
+                }
+            }
+获取当前用户所有相关聊天信息列表路由:
+获取cookie中的userid
+  const userid = req.cookies.userid
+查询得到所有user文档数组
+  UserModel.find(function (err, userDocs) {
+    // 用对象存储所有user信息: key为user的_id, val为name和header组成的user对象
+    const users = {} // 对象容器
+    userDocs.forEach(doc =&gt; {
+      users[doc._id] = {username: doc.username, header: doc.header}  //找用户名和头像
+           return users
+    })
+    ChatModel.find({&#39;$or&#39;: [{from: userid}, {to: userid}]}, filter, function (err, chatMsgs) {
+      // 返回包含所有用户和当前用户相关的所有聊天消息的数据
+      res.send({code: 0, data: {users, chatMsgs}})  //找聊天记录
+    })
+    返回一个对象给前台
+chat静态组件:点击userlist里就要跳转到聊天的界面&lt;Card onClick={() =&gt; this.props.history.push(`/chat/${user._id}&#39;)}&gt;
+            也是需要withrouter
+发送消息与接收消息 点击发送（有消息才）派发action(要传入发送的id 和接收的id 和content)
+         const to = this.props.match.params.userid 对方
+         const from = this.props.user._id redux将状态映射在chat组件的props
+         现在发消息不是用ajax请求了 是用socket.io来发 后台接收到消息进行处理返回给前台 前台也要对数据进行筛选
+         完成这些之后，只要用户登陆就去获取消息列表，有三种情况
+         注册成功，登陆成功，getUser自动登陆 之后都要获取消息列表 封装一个得到消息列表 消息列表是之前就获得的了
+         希望initIO调用的实际是一上来就希望初始化sockio 能启动监视 
+         做到这里 redux就有了消息列表的数据 之后就是显示在组件里
+         对chatMsgs进行过滤 
+         const targetId = this.props.match.params.userid
+         const chatId = [meId,targetId].sort().join(&#39;_&#39;)
+         const msgs = chatMsgs.filter(msg=&gt;msg.chat_id===chatId)
+         此时的msgs就是两个人互相发的消息 但是还是要过滤 因为左边是对方发给我的  右边是我发给对面的 
+         此时就实现了消息列表显示了
+
+接收消息显示: 因为后台是向所有连接上的客户端发消息，只有当chatMsg是与当前用户相关的消息, 才去分发同步action保存消息 
+完善列表显示: 表情功能  初始化表情列表数据 设置是否显示表情列表的状态 通过点击表情图案显示和触焦的时候隐藏
+</code></pre><h1 id="day06"><a href="#day06" class="headerlink" title="day06"></a>day06</h1><h2 id="1-消息列表"><a href="#1-消息列表" class="headerlink" title="1. 消息列表"></a>1. 消息列表</h2><pre><code>对消息进行分组保存, 且只保存每个组最后一条消息  message路由组件
+    首先先读store保存的数据
+    定义一个getLastMsg的函数
+    使用{}进行分组(chat_id),只保存每个组最后一条msg  let lastMsg = lastMsgObjs[chatId] 如果没有这个遍历的msg就是
+        如果有就比较时间 越晚的
+    到所有分组的lastMsg组成数组 const lastMsgs  = Object.values(lastMsgObjs)
+    对数组排序(create_time,降序)   return m2.create_time - m1.create_time  //降序排列 大的放前面
+对于对象容器和数组容器的选择
+数组排序
+</code></pre><h2 id="2-未读消息数量显示"><a href="#2-未读消息数量显示" class="headerlink" title="2. 未读消息数量显示"></a>2. 未读消息数量显示</h2><pre><code>每个组的未读数量统计  由
+总未读数量统计显示
+查看消息后, 更新未读数量
+</code></pre><h2 id="3-自定义redux和react-redux"><a href="#3-自定义redux和react-redux" class="headerlink" title="3. 自定义redux和react-redux"></a>3. 自定义redux和react-redux</h2><pre><code>理解redux模块
+    1). redux模块整体是一个对象模块
+    2). 内部包含几个函数
+        createStore(reducers)  // reducers: function(state, action){ return newState}
+        combineReducers(reducers)  // reducers: {reducer1, reducer2}  返回: function(state, action){ return newState}
+        applyMiddleware()  // 暂不实现
+    3). store对象的功能
+        getState()  // 返回当前state
+        dispatch(action)  // 分发action: 调用reducers()得到新的总state, 执行所有已注册的监听函数
+        subscibe(listener) // 订阅监听: 将监听函数保存起来
+理解react-redux模块
+    1). react-redux模块整体是一个对象模块
+    2). 包含2个重要属性: Provider和connect
+    3). Provider
+        值: 组件类
+        作用: 向所有容器子组件提供全局store对象
+        使用: &lt;Provider store={store}&gt;&lt;Xxx/&gt;&lt;/Provider&gt;
+    4). connect
+        值: 高阶函数
+        作用: 包装组件生成容器组件, 让被包装组件能与redux进行通信
+        使用: connect(mapStateToProps, mapDispatchToProps)(Xxx)
+</code></pre><h2 id="硅谷直聘总结"><a href="#硅谷直聘总结" class="headerlink" title="硅谷直聘总结"></a>硅谷直聘总结</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>、使用 create-react-app(脚手架)搭建项目(工程化)</span><br><span class="line"><span class="number">2</span>、项目(前端)源码目录设计:</span><br><span class="line">	api          ajax请求相关模块文件夹=&gt;发送ajax请求的函数模块 n个接口请求的函数模块 函数的返回值都是promise实例</span><br><span class="line">    assets       共用资源文件夹   =&gt;样式以及图片</span><br><span class="line">    components   UI组件模块文件夹 =&gt;头像 logo 底部 用户列表</span><br><span class="line">    containers   容器组件模块文件夹  =&gt; 登陆 注册 主页面(聊天 老板 大神 信息完善 消息列表 个人中心)</span><br><span class="line">    redux        redux相关模块文件夹</span><br><span class="line">    utils        工具模块文件夹  功能函数就是重定向</span><br><span class="line">    index.js      入口JS     就是匹配路由三者（登陆注册和主页面）</span><br><span class="line"><span class="number">3</span>、引入 antd-mobile实现按需打包和自定义主题  完成登陆/注册的静态组件</span><br><span class="line"> antd组件: NavBar/WingBlank/WhiteSpace/List/InputItem/Radio/Button 导航栏/两翼留白/上下留白/列表/文本输入/Gird宫格</span><br><span class="line"><span class="number">4</span>、引入路由下载路由包: react-router-dom <span class="keyword">import</span> &#123;HashRouter, Switch, Route&#125; <span class="keyword">from</span> <span class="string">'react-router-dom'</span></span><br><span class="line">	拆分路由 路由组件分为main/login/register为一级路由 还有就是main里面的二级路由 路口文件映射一级路由 </span><br><span class="line"><span class="number">5</span>、引入redux</span><br><span class="line">	reducers.js:包含多个用于生成新的 state 的 reducer 函数的模块</span><br><span class="line">    store.js:redux 最核心的 store 对象模块</span><br><span class="line">    action-type.js:包含所有 action 的 type 常量名称的模块，避免编写错误无法定位</span><br><span class="line">    redux/actions.js:包含n个action creator函数</span><br><span class="line"><span class="number">6</span>、完成登陆/注册的静态组件注册 </span><br><span class="line">		antd组件: NavBar/WingBlank/WhiteSpace/List/InputItem/Radio/Button 导航栏/两翼留白/上下留白/列表/文本输入</span><br><span class="line">		登陆的路由组件通过通过onChange监听来收集表单输入数据</span><br><span class="line">        路由跳转: <span class="keyword">this</span>.props.history.replace(<span class="string">'/login'</span>)</span><br><span class="line">	实现简单后台:</span><br><span class="line">        <span class="number">1</span>). 使用webstorm创建基于node+express的后台应用</span><br><span class="line">        <span class="number">2</span>). 根据需求编写后台路由</span><br><span class="line">        <span class="number">3</span>). 使用postman测试后台接口</span><br><span class="line">        <span class="number">4</span>). 使用nodemon实现后台应用的自动重启动</span><br><span class="line">        <span class="number">5</span>). 路由回调函数的<span class="number">3</span>步: 读取请求参数/处理/返回响应数据</span><br><span class="line"><span class="number">7</span>、搭建后台应用结构  监听的端口号在<span class="number">3000</span> 	bin目录下的www可以修改端口。</span><br><span class="line"><span class="number">8</span>、要在后台创建一个包含n个操作数据库集合数据的Model模块的文件夹并使用 mongoose 操作数据库</span><br><span class="line">    <span class="number">1.</span> 连接数据库</span><br><span class="line">      <span class="number">1.1</span>. 引入mongoose</span><br><span class="line">      <span class="number">1.2</span>. 连接指定数据库(URL只有数据库是变化的)</span><br><span class="line">      <span class="number">1.3</span>. 获取连接对象</span><br><span class="line">      <span class="number">1.4</span>. 绑定连接完成的监听(用来提示连接成功)</span><br><span class="line">    <span class="number">2.</span> 定义出对应特定集合的Model并向外暴露  </span><br><span class="line">      <span class="number">2.1</span>. 字义Schema(描述文档结构) 可以指定文档的结构 （属性名/属性值的类型）</span><br><span class="line">      <span class="number">2.2</span>. 定义Model(与集合对应, 可以操作集合) 通过 Model实例进行添加查询多个或一个数据更新删除数据 </span><br><span class="line">      <span class="number">2.3</span>. 向外暴露Model</span><br><span class="line">	<span class="number">3.</span> 进行增删改查操作里的回调函数的user是包含user的文档对象</span><br><span class="line">       查看数据库的数据可以使用MongDB这个插件</span><br><span class="line"><span class="number">9</span>、路由器模块: routes/index.js引入所创建的Model </span><br><span class="line">   根据请求URL 请求方式 请求的参数类型处理请求，返回响应数据 由于前台没做好用postman进行测试</span><br><span class="line">   使用nodemon 这个包可以自动重运行（改完代码它会自动重新运行）</span><br><span class="line"><span class="number">10</span>、注册/登陆前台处理</span><br><span class="line">	封装 ajax 请求代码（与后台通信要发ajax请求） </span><br><span class="line">    n个接口请求的函数模块 （注册登陆接口）</span><br><span class="line">    获取查询数据用<span class="keyword">get</span>请求  提交数据的因为会保存到数据库所以用POST</span><br><span class="line">11、使用 redux 管理用户信息 </span><br><span class="line">	注册登陆的后台返回的数据有三个属性 code msg data   </span><br><span class="line">12、实现登陆注册的步骤 </span><br><span class="line">	后台处理:连接数据库: mongoose.connect(url)</span><br><span class="line">  			定义文档结构: schema 用户名密码类型公司</span><br><span class="line">    		定义操作集合的model: UserModel</span><br><span class="line">            根据接口文档编写注册和登陆的路由以及返回给前台的响应数据结构: &#123;code: <span class="number">0</span>, <span class="attr">data</span>: user&#125;, &#123;<span class="attr">code</span>: <span class="number">1</span>, <span class="attr">msg</span>: <span class="string">'xxx'</span>&#125;</span><br><span class="line">	前台处理:完成登陆/注册的静态组件之后</span><br><span class="line">	通过引入redux-thunk发送登陆/注册的异步action</span><br><span class="line">	异步action: 返回一个函数: <span class="function"><span class="params">disptach</span> =&gt;</span> &#123;执行异步代理（注册的接口 向后台发送ajax请求）, 结束时dispatch一个同步action&#125;</span><br><span class="line">    reducer接收到带有后台返回数据的同步action进行数据的处理最终返回一个新的state给store store拿到新的数据就去实现相应的跳转</span><br><span class="line">    补充:<span class="number">1.</span>执行异步代理的时候后台如果是注册的路由判断用户是否已经存在, 如果存在, 返回提示错误的信息, 如果不存在, 保存</span><br><span class="line">			此用户已存在</span><br><span class="line">		<span class="number">2.</span>如果是登陆的路由根据username和password查询数据库users, 如果没有, 返回提示错误的信息, </span><br><span class="line">        	如果有, 返回登陆成功信息(包含user)   用户名或密码不正确</span><br><span class="line">        <span class="number">3.</span>前台也需要进行前台表单验证, 如果不合法返回一个同步 action 对象, 显示提示信息 用户名密码必须输入 密码和确认密码不同</span><br><span class="line">        <span class="number">4.</span>注册成功就不需要登陆 标识登陆有两种技术其中就是cookie，session </span><br><span class="line">          因此在注册成功后还要向res里添加一个cookie数据，放user.id   生成一个 cookie(userid: user._id), 并交给浏览器保			  存</span><br><span class="line">        <span class="number">5.</span>执行异步代理有用到<span class="keyword">async</span>/<span class="keyword">await</span> 其实是对promise的包装</span><br><span class="line">		<span class="number">6.</span>异步注册action中首先进行前台表单验证, 如果不合法返回一个同步 action 对象, 显示提示信息 </span><br><span class="line">		  表单数据合法:返回一个发ajax请求的异步action函数</span><br><span class="line">          			异步 ajax 请求, 得到响应   不加<span class="keyword">await</span>得到的就是promise</span><br><span class="line">                    直接想要结果就加一个<span class="keyword">await</span> 用了<span class="keyword">await</span> 这个声明的函数就要用<span class="keyword">async</span>  </span><br><span class="line">        <span class="number">7.</span>路由组件由于要和redux进行交互，用引入redux-thunk里connect组件将其包装成容器组件            </span><br><span class="line">        <span class="number">8.</span>点击注册的时候会发生跨域的问题 因为前台应用是在<span class="number">3000</span>端口 后台应用是在<span class="number">4000</span>端口</span><br><span class="line">          解决方法:Jsonp不行只支持Get请求 使用代理服务器。具体实现是前台先将请求发送给代理服务器（<span class="number">4000</span>端口），代理服务器帮忙转发请求，然后后台请求返回，代理会将返回的结果交给前台（此时是不存在跨域问题的，因为跨域问题是浏览器的限制，在浏览器看来它还是<span class="number">3000</span>端口，就相当于<span class="number">3000</span>端口发送的请求被代理拦截）</span><br><span class="line"><span class="number">13</span>、实现user信息完善功能</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div>万一真有土豪呢！！！</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/loading.gif" data-original="/images/wechatpay.jpg" alt="Jony J 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/loading.gif" data-original="/images/alipay.png" alt="Jony J 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/React%E9%A1%B9%E7%9B%AE/" rel="tag"># React项目</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/11/11/2021.3.7React%E8%87%AA%E5%AE%9A%E4%B9%89%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/" rel="prev" title="React自定义主题配置">
+      <i class="fa fa-chevron-left"></i> React自定义主题配置
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/11/22/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98%EF%BC%88%E6%AF%8F%E6%97%A510%E9%81%93%EF%BC%89/" rel="next" title="前端面试题总结">
+      前端面试题总结 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#day01"><span class="nav-text">day01</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-项目开发准备"><span class="nav-text">1. 项目开发准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-git管理项目的常用操作"><span class="nav-text">2. git管理项目的常用操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-搭建项目"><span class="nav-text">3. 搭建项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-登陆-注册界面"><span class="nav-text">4. 登陆&#x2F;注册界面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-实现简单后台"><span class="nav-text">5. 实现简单后台</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#day02"><span class="nav-text">day02</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-使用mongoose操作数据库"><span class="nav-text">1. 使用mongoose操作数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-注册-登陆后台处理"><span class="nav-text">2. 注册&#x2F;登陆后台处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-注册-登陆前台处理"><span class="nav-text">3. 注册&#x2F;登陆前台处理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#day03"><span class="nav-text">day03</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-实现user信息完善功能"><span class="nav-text">1. 实现user信息完善功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-搭建整体界面-上"><span class="nav-text">2. 搭建整体界面(上)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#day04"><span class="nav-text">day04</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-搭建整体界面-下"><span class="nav-text">1. 搭建整体界面(下)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-个人中心"><span class="nav-text">2. 个人中心</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-用户列表"><span class="nav-text">3. 用户列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-socket-io"><span class="nav-text">4. socket.io</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#day05"><span class="nav-text">day05</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-聊天组件功能"><span class="nav-text">1. 聊天组件功能:</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#day06"><span class="nav-text">day06</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-消息列表"><span class="nav-text">1. 消息列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-未读消息数量显示"><span class="nav-text">2. 未读消息数量显示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-自定义redux和react-redux"><span class="nav-text">3. 自定义redux和react-redux</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#硅谷直聘总结"><span class="nav-text">硅谷直聘总结</span></a></li></ol></li></ol></div>
+      </div>
+      <br/>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Jony J"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Jony J</p>
+  <div class="site-description" itemprop="description">stay hungry stay foolish！</div>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/wzt2023" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;wzt2023" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/images/wechat.jpg" title="WeChat → &#x2F;images&#x2F;wechat.jpg"><i class="fab fa-weixin fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/images/qq.png" title="QQ → &#x2F;images&#x2F;qq.png"><i class="fab fa-qq fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:710471807@qq.com" title="E-Mail → mailto:710471807@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      友链
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://leetcode-cn.com/problemset/all/" title="https:&#x2F;&#x2F;leetcode-cn.com&#x2F;problemset&#x2F;all&#x2F;" rel="noopener" target="_blank">leetcode</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+      <div id="music163player">
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=441491828&auto=0&height=66"></iframe>
+     
+      </div>
+    </div> 
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">TT 版权所有</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">200k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">3:02</span>
+</div>
+
+
+ <div class="powered-by">
+  <i class="fa fa-user-md"></i>
+  <span id="busuanzi_container_site_uv">
+    本站总访客数:<span id="busuanzi_value_site_uv"></span>&nbsp;&nbsp;| 
+  </span>
+  <span id="busuanzi_container_site_pv">
+      &nbsp;本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  </span>
+</div>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/velocity-animate@1/velocity.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/velocity-animate@1/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  <script defer src="//cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three.min.js"></script>
+    <script defer src="//cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/canvas_lines.min.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : '8YHV7splQK9asMA21ILvvuFe-gzGzoHsz',
+      appKey     : 'DwFfLh2EMujmRQp3tkcWjOJI',
+      placeholder: "分享你的想法",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+
+  <script async src="/js/cursor/fireworks.js"></script>
+
+
+
+
+  <script src="/js/activate-power-mode.min.js"></script>
+  <script>
+    POWERMODE.colorful = true;
+    POWERMODE.shake = false;
+    document.body.addEventListener('input', POWERMODE);
+  </script>
+
+  
+<script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=i;var e=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}i(),n.addEventListener("scroll",function(){var t,e;t=i,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+</html>
