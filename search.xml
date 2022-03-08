@@ -1,6 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>React自定义主题配置</title>
+    <url>/2021/11/11/2021.3.7React%E8%87%AA%E5%AE%9A%E4%B9%89%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<h2 id="React-自定义-antd-主题方法编译失败与解决办法"><a href="#React-自定义-antd-主题方法编译失败与解决办法" class="headerlink" title="React 自定义 antd 主题方法编译失败与解决办法"></a>React 自定义 antd 主题方法编译失败与解决办法</h2><h3 id="一、按照官网操作"><a href="#一、按照官网操作" class="headerlink" title="一、按照官网操作"></a>一、按照官网操作</h3><p>首先我是按照<a href="https://3x.ant.design/docs/react/use-with-create-react-app-cn" target="_blank" rel="noopener"><strong>官网的步骤</strong></a>一步一步操作下来的：</p>
+<ol>
+<li><p>安装 <code>less</code> 和 <code>less-loader</code></p>
+ <figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">npm install less less-loader</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>引入 <code>customize-cra</code> 中提供的 <code>less</code> 相关的函数 <code>addLessLoader</code> 来帮助加载 <code>less</code> 样式，同时修改 <code>config-overrides.js</code> 文件如下:</p>
+ <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//配置具体的修改规则</span></span><br><span class="line"><span class="keyword">const</span> &#123; override, fixBabelImports,addLessLoader&#125; = <span class="built_in">require</span>(<span class="string">'customize-cra'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = override(</span><br><span class="line">  fixBabelImports(<span class="string">'import'</span>, &#123;</span><br><span class="line">    libraryName: <span class="string">'antd'</span>,</span><br><span class="line">    libraryDirectory: <span class="string">'es'</span>,</span><br><span class="line">    style: <span class="literal">true</span>,</span><br><span class="line">  &#125;),</span><br><span class="line">  addLessLoader(&#123;</span><br><span class="line">    javascriptEnabled: <span class="literal">true</span>,</span><br><span class="line">    modifyVars: &#123; <span class="string">'@primary-color'</span>: <span class="string">'green'</span> &#125;,</span><br><span class="line">  &#125;),</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+</li>
+</ol>
+<h3 id="二、出现的问题"><a href="#二、出现的问题" class="headerlink" title="二、出现的问题"></a>二、出现的问题</h3><ol>
+<li><p><code>addLessLoader</code> 这块出现以下问题</p>
+ <figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line"><span class="function">ValidationError: <span class="title">Invalid</span> <span class="title">options</span> <span class="title">object</span>. <span class="title">Less</span> <span class="title">Loader</span> <span class="title">has</span> <span class="title">been</span> <span class="title">initialized</span> <span class="title">using</span> <span class="title">an</span> <span class="title">options</span> <span class="title">object</span></span></span><br><span class="line"><span class="function"><span class="title">that</span> <span class="title">does</span> <span class="title">not</span> <span class="title">match</span> <span class="title">the</span> <span class="title">API</span> <span class="title">schema</span>.</span></span><br><span class="line"><span class="function">- <span class="title">options</span> <span class="title">has</span> <span class="title">a</span> <span class="title">unknown</span> <span class="title">property</span> '<span class="title">modifyVars</span>'. <span class="title">These</span> <span class="title">properties</span> <span class="title">are</span> <span class="title">valid</span>: </span></span><br><span class="line"><span class="function"><span class="title">object</span> &#123; <span class="title">lessOptions</span>?, <span class="title">additonalData</span>?, <span class="title">sourceMap</span>?, <span class="title">webpackImporter</span>? &#125;</span></span><br></pre></td></tr></table></figure>
+<p> 这是由于 <code>less</code> 更新了导致的，解决办法：</p>
+ <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">addLessLoader(&#123;</span><br><span class="line">  lessOptions:&#123;  </span><br><span class="line">    javascriptEnabled: <span class="literal">true</span>,</span><br><span class="line">    modifyVars: &#123; <span class="string">'@primary-color'</span>: <span class="string">'green'</span> &#125;,</span><br><span class="line">  &#125;</span><br><span class="line">&#125;),</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>编译出错如下</p>
+ <figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line"><span class="function">TypeError: <span class="title">this.getOptions</span> <span class="title">is</span> <span class="title">not</span> <span class="title">a</span> <span class="title">function</span></span></span><br></pre></td></tr></table></figure>
+<p> 解决方案：我装的都是最新版本<code>less@4.1.1</code> <code>less-loader@8.0.0</code> ，我们需要降低版本，亲测以下两个版本可以。</p>
+<ul>
+<li><p>先卸载 <code>less</code> 和 <code>less-loader</code></p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">npm uninstall less less-loader</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>再安装指定版本</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">npm i less@<span class="number">3</span>.<span class="number">12</span>.<span class="number">2</span> less-loader@<span class="number">7</span>.<span class="number">1</span>.<span class="number">0</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="三、总结"><a href="#三、总结" class="headerlink" title="三、总结"></a>三、总结</h3><p>前端技术更新太快的同时就会带来不兼容的问题，我们能做的就是<strong>乐在其中</strong>。</p>
+]]></content>
+      <categories>
+        <category>React</category>
+      </categories>
+      <tags>
+        <tag>React</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>前端进击笔记总结</title>
     <url>/2021/02/26/%E5%89%8D%E7%AB%AF%E8%BF%9B%E5%87%BB%E7%AC%94%E8%AE%B0%E6%80%BB%E7%BB%93/</url>
     <content><![CDATA[<h3 id="数据结构与算法"><a href="#数据结构与算法" class="headerlink" title="数据结构与算法"></a>数据结构与算法</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">把一个数组旋转k步 例如[1,2,3,4,5,6，7]=&gt;[5,6,7,1,2,3,4]</span><br><span class="line"></span><br><span class="line">第一种方法</span><br><span class="line">第二个思路</span><br><span class="line">function rotate(arr,k)&#123;</span><br><span class="line">     const length = arr.length</span><br><span class="line">	if(!k||length===0)return arr</span><br><span class="line">	const step = Math.abs(k%length)</span><br><span class="line">	const arr1 = arr.slice(-step)  //O(1)因为原数组没有发生改变</span><br><span class="line">	const arr2 = arr.slice(0,length-step)</span><br><span class="line">	const arr3 = arr1.concat(arr2)</span><br><span class="line">	return arr3                              </span><br><span class="line">&#125;   </span><br><span class="line">时间复杂度为O(1) 空间复杂度为为O(n) 因为定义了3个还是为O(n)</span><br><span class="line"></span><br><span class="line">第二种方法</span><br><span class="line">function rotate1(arr)&#123;</span><br><span class="line">	const length = arr.length</span><br><span class="line">	if(!k||length===0) return arr</span><br><span class="line">	const step = Math.abs(k%length)</span><br><span class="line">	for(let i = 0;i<span class="tag">&lt;<span class="name">length;i++)&#123;</span>    <span class="attr">O</span>(<span class="attr">n</span>) 空间复杂度为<span class="attr">O</span>(<span class="attr">1</span>),因为没有定义和其它数组相关的变量</span></span><br><span class="line"><span class="tag">    	<span class="attr">const</span> <span class="attr">n</span> = <span class="string">arr.pop()</span></span></span><br><span class="line"><span class="tag">        <span class="attr">if</span>(<span class="attr">n</span>!=<span class="string">null)&#123;</span></span></span><br><span class="line"><span class="tag">           <span class="attr">arr.unshift</span>(<span class="attr">n</span>)//数组是一个有序结构，<span class="attr">unshift</span>操作非常慢 你把最后一个元素添加到第一位需要移动所有元素 因此为<span class="attr">O</span>(<span class="attr">n</span>)            	//可以想象成在教室上课 最后一个学生移动第一排所有的学生都要移动</span></span><br><span class="line"><span class="tag">        &#125;                         </span></span><br><span class="line"><span class="tag">    &#125;</span></span><br><span class="line"><span class="tag">  <span class="attr">return</span> <span class="attr">arr</span></span></span><br><span class="line"><span class="tag">&#125;</span></span><br></pre></td></tr></table></figure>
@@ -3095,47 +3136,6 @@ chat静态组件:点击userlist里就要跳转到聊天的界面&lt;Card onClick
       </categories>
       <tags>
         <tag>React项目</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>React自定义主题配置</title>
-    <url>/2021/11/11/2021.3.7React%E8%87%AA%E5%AE%9A%E4%B9%89%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<h2 id="React-自定义-antd-主题方法编译失败与解决办法"><a href="#React-自定义-antd-主题方法编译失败与解决办法" class="headerlink" title="React 自定义 antd 主题方法编译失败与解决办法"></a>React 自定义 antd 主题方法编译失败与解决办法</h2><h3 id="一、按照官网操作"><a href="#一、按照官网操作" class="headerlink" title="一、按照官网操作"></a>一、按照官网操作</h3><p>首先我是按照<a href="https://3x.ant.design/docs/react/use-with-create-react-app-cn" target="_blank" rel="noopener"><strong>官网的步骤</strong></a>一步一步操作下来的：</p>
-<ol>
-<li><p>安装 <code>less</code> 和 <code>less-loader</code></p>
- <figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">npm install less less-loader</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>引入 <code>customize-cra</code> 中提供的 <code>less</code> 相关的函数 <code>addLessLoader</code> 来帮助加载 <code>less</code> 样式，同时修改 <code>config-overrides.js</code> 文件如下:</p>
- <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//配置具体的修改规则</span></span><br><span class="line"><span class="keyword">const</span> &#123; override, fixBabelImports,addLessLoader&#125; = <span class="built_in">require</span>(<span class="string">'customize-cra'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = override(</span><br><span class="line">  fixBabelImports(<span class="string">'import'</span>, &#123;</span><br><span class="line">    libraryName: <span class="string">'antd'</span>,</span><br><span class="line">    libraryDirectory: <span class="string">'es'</span>,</span><br><span class="line">    style: <span class="literal">true</span>,</span><br><span class="line">  &#125;),</span><br><span class="line">  addLessLoader(&#123;</span><br><span class="line">    javascriptEnabled: <span class="literal">true</span>,</span><br><span class="line">    modifyVars: &#123; <span class="string">'@primary-color'</span>: <span class="string">'green'</span> &#125;,</span><br><span class="line">  &#125;),</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-</li>
-</ol>
-<h3 id="二、出现的问题"><a href="#二、出现的问题" class="headerlink" title="二、出现的问题"></a>二、出现的问题</h3><ol>
-<li><p><code>addLessLoader</code> 这块出现以下问题</p>
- <figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line"><span class="function">ValidationError: <span class="title">Invalid</span> <span class="title">options</span> <span class="title">object</span>. <span class="title">Less</span> <span class="title">Loader</span> <span class="title">has</span> <span class="title">been</span> <span class="title">initialized</span> <span class="title">using</span> <span class="title">an</span> <span class="title">options</span> <span class="title">object</span></span></span><br><span class="line"><span class="function"><span class="title">that</span> <span class="title">does</span> <span class="title">not</span> <span class="title">match</span> <span class="title">the</span> <span class="title">API</span> <span class="title">schema</span>.</span></span><br><span class="line"><span class="function">- <span class="title">options</span> <span class="title">has</span> <span class="title">a</span> <span class="title">unknown</span> <span class="title">property</span> '<span class="title">modifyVars</span>'. <span class="title">These</span> <span class="title">properties</span> <span class="title">are</span> <span class="title">valid</span>: </span></span><br><span class="line"><span class="function"><span class="title">object</span> &#123; <span class="title">lessOptions</span>?, <span class="title">additonalData</span>?, <span class="title">sourceMap</span>?, <span class="title">webpackImporter</span>? &#125;</span></span><br></pre></td></tr></table></figure>
-<p> 这是由于 <code>less</code> 更新了导致的，解决办法：</p>
- <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">addLessLoader(&#123;</span><br><span class="line">  lessOptions:&#123;  </span><br><span class="line">    javascriptEnabled: <span class="literal">true</span>,</span><br><span class="line">    modifyVars: &#123; <span class="string">'@primary-color'</span>: <span class="string">'green'</span> &#125;,</span><br><span class="line">  &#125;</span><br><span class="line">&#125;),</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>编译出错如下</p>
- <figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line"><span class="function">TypeError: <span class="title">this.getOptions</span> <span class="title">is</span> <span class="title">not</span> <span class="title">a</span> <span class="title">function</span></span></span><br></pre></td></tr></table></figure>
-<p> 解决方案：我装的都是最新版本<code>less@4.1.1</code> <code>less-loader@8.0.0</code> ，我们需要降低版本，亲测以下两个版本可以。</p>
-<ul>
-<li><p>先卸载 <code>less</code> 和 <code>less-loader</code></p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">npm uninstall less less-loader</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>再安装指定版本</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">npm i less@<span class="number">3</span>.<span class="number">12</span>.<span class="number">2</span> less-loader@<span class="number">7</span>.<span class="number">1</span>.<span class="number">0</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ol>
-<h3 id="三、总结"><a href="#三、总结" class="headerlink" title="三、总结"></a>三、总结</h3><p>前端技术更新太快的同时就会带来不兼容的问题，我们能做的就是<strong>乐在其中</strong>。</p>
-]]></content>
-      <categories>
-        <category>React</category>
-      </categories>
-      <tags>
-        <tag>React</tag>
       </tags>
   </entry>
 </search>
